@@ -4,7 +4,6 @@
     ./docker
     ./gpg
     ./internationalization
-    ./polkit
     ./printer
     ./security
     ./ssh
