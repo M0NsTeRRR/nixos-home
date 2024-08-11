@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 {
   boot.kernel.sysctl = {
     # ANSSI R9
