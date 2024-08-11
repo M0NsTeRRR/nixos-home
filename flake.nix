@@ -14,6 +14,13 @@
 
   outputs = { self, nixpkgs, ... }@attrs:
   {  
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    
+    nixpkgs.config = {
+      allowUnfreePredicate = pkg: true;
+      allowUnfree = true;
+    };
+    
     nixosConfigurations = {
       ludo-desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
