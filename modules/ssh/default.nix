@@ -8,9 +8,6 @@
 
   services.openssh = {
     enable = true;
-    compression = true;
-    serverAliveInterval = 10;
-    serverAliveCountMax = 2;
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
     settings.X11Forwarding = true;
