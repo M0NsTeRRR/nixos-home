@@ -13,36 +13,18 @@ There are no inherent advantages to using the minimal installation as opposed to
    nix --experimental-features 'nix-command flakes' flake new -t 'github:m0nsterrr/nixos-home' ./nixos-home && cd nixos-home
    ```
 
-   ### 2. Run the build script. 
+   ### 2. Generate a hardware-configuration.nix
 
    ```bash
-   sh/build.sh
+   nix --experimental-features 'nix-command flakes' nixos-generate-config
    ```
-      
-   a. Enter a new hostname
-   
-   b. Enter a new username
-      
-   c. Y/n for Nvidia usage.
-     
-   d. If you have an existing `hardware-configuration.nix` stored in `/etc/nixos` the script will ask if you would like to import it. If you have not generated one yet it will do so for you and then import it.
-   
-   ### 3. Initialize the git repo and add the changes
-   ```bash
-   git init
-   git add .
+
    ```
 
    ### 4. Validate the flake imports went okay.
 
    ```bash
-   nix flake check
-   ```
-
-   **If you havent enabled experimental features**
-
-   ```bash
-   nix flake check --extra-experimental-features nix-command --extra-experimental-features flakes
+   nix --experimental-features 'nix-command flakes' flake check
    ```
    
    ### 5. Build the system. 

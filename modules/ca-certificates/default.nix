@@ -8,6 +8,6 @@ let
 in
 {
   security.pki.certificateFiles = [
-    "${unicornafkCert}/etc/ssl/certs/unicornafk.crt"
+    "${unicornafkCert}"
   ];
 }
