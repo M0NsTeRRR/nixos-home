@@ -1,6 +1,5 @@
 {
   imports = [
-    hyprland.nixosModules.default
     ./dns
     ./docker
     ./gpg
