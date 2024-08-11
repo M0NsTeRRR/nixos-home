@@ -1,20 +1,16 @@
 {
   description = "Ludovic Ortega Nix configuration";
 
-  inputs = {}:attrs:
-    let
-      nixOSVersion = "24.05";
-    in
-    {
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-${nixOSVersion}";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
-      nixos-hardware.url = "github:NixOS/nixos-hardware/master";  
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-      home-manager = {
-        url = "github:nix-community/home-manager/release-${nixOSVersion}";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
     
 
   outputs =
