@@ -1,5 +1,7 @@
 {
   imports = [
+    ./boot
+    ./ca-certificates
     ./dns
     ./docker
     ./gpg
