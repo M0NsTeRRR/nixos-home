@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./bluetooth
+    ./network
+    ./audio
+  ];
+}
