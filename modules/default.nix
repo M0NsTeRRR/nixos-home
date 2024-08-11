@@ -5,6 +5,7 @@
     ./dns
     ./docker
     ./gpg
+    ./hardware
     ./internationalization
     ./printer
     ./security
