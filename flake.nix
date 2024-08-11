@@ -44,8 +44,8 @@
     };
 
     templates.default = {
-        path = ./.;
-        description = "The default template for Ludovic Ortega nixflakes.";
+      path = ./.;
+      description = "The default template for Ludovic Ortega nixflakes.";
     };
   };
 }
