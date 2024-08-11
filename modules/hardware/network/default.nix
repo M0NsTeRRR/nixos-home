@@ -8,7 +8,8 @@
       enable = true;
       wifi.powersave = true;
     };
-    firewall.enable = false;
+    nftables.enable = true;
+    firewall.enable = true;
     inherit hostName;
   };
 }
