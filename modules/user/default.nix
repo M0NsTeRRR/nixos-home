@@ -13,4 +13,11 @@
       "lp"
     ];
   };
+
+  home-manager = {
+    backupFileExtension = "backup";
+    users.${username} = {
+      home.stateVersion = "24.05";
+    };
+  };
 }
