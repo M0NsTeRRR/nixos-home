@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, ... }@attrs:
   {  
     nixosConfigurations = {
       ludo-desktop = nixpkgs.lib.nixosSystem {
