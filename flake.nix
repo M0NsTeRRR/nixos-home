@@ -12,40 +12,44 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@attrs:
-  {  
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    
-    nixpkgs.config = {
-      allowUnfreePredicate = pkg: true;
-      allowUnfree = true;
-    };
-    
-    nixosConfigurations = {
-      ludo-desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          hostName = "ludo-desktop";
-          system = "x86_64-linux";
-        } // attrs;
-        modules = [
-          ./.
-        ];
+  outputs =
+    { self, nixpkgs, ... }@attrs: 
+    let
+      username = "lortega";
+      system = "x86_64-linux";
+    in
+    {
+      nix.settings.experimental-features = [ "nix-command" "flakes" ];
+      
+      nixpkgs.config = {
+        allowUnfreePredicate = pkg: true;
+        allowUnfree = true;
+      };
+      
+      nixosConfigurations = {
+        ludo-desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            hostName = "ludo-desktop";
+            inherit username system;
+          } // attrs;
+          modules = [
+            ./.
+          ];
+        };
+
+        ludo-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            hostName = "ludo-laptop";
+            inherit username system;
+          } // attrs;
+          modules = [
+            ./.
+          ];
+        };
       };
 
-      ludo-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          hostName = "ludo-laptop";
-          system = "x86_64-linux";
-        } // attrs;
-        modules = [
-          ./.
-        ];
+      templates.default = {
+        path = ./.;
+        description = "The default template for Ludovic Ortega nixflakes.";
       };
-    };
-
-    templates.default = {
-      path = ./.;
-      description = "The default template for Ludovic Ortega nixflakes.";
-    };
-  };
-}
+    }
