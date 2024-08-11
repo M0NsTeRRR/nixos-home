@@ -1,3 +1,4 @@
+{ pkgs, ...}:
 {
   security.pki.certificateFiles = [
     {
