@@ -1,7 +1,5 @@
 { username, ... }:
 {
-  services.hyprpaper.enable = true;
-
   home-manager.users.${username} = _: {
     home.file = {
 
