@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  # Enable Hyprland
-  programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   environment.systemPackages = with pkgs; [
     hyprpicker  # color picker
     hyprcursor  # cursor
@@ -17,6 +13,9 @@
     SwayOSD                 # OSD window for common actions like volume and capslock
     swaynotificationcenter  # notification daemon
   ];
+
+  programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   imports = [
     ./hypridle
