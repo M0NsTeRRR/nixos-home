@@ -10,7 +10,7 @@
     wl-clipboard            # copy/paste utilities for Wayland
     wl-clip-persist         # Keep Wayland clipboard even after programs close
     rofi-wayland            # app launcher
-    SwayOSD                 # OSD window for common actions like volume and capslock
+    swayosd                 # OSD window for common actions like volume and capslock
     swaynotificationcenter  # notification daemon
   ];
 
