@@ -1,7 +1,7 @@
 { pkgs, username, ... }:
 {
   users.users.${username} = {
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     isNormalUser = true;
     initialPassword = "temp123";
     extraGroups = [
