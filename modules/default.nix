@@ -1,15 +1,13 @@
 {
   imports = [
-    ./boot
     ./ca-certificates
-    ./dns
+    ./core
     ./docker
     ./gpg
-    ./hardware
-    ./internationalization
+    ./hypr
     ./printer
-    ./security
     ./ssh
+    ./terminal
     ./user
   ];
 }

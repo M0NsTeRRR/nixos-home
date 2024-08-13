@@ -1,5 +1,12 @@
+# To do
+
+First install setup
+Luks encryption
+Dual boot windows
+Systemd-boot
+Secureboot
+
 # How to use this repo
-## Requirements: NixOS, x86_64
 
 These steps assume that you have already installed NixOS.
 
