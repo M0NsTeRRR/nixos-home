@@ -3,7 +3,6 @@
     ./boot
     ./dns
     ./hardware
-    ./hyprland
     ./internationalization
     ./security
   ];
