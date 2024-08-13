@@ -19,7 +19,6 @@
   ];
 
   imports = [
-    hyprland.nixosModules.default
     ./hypridle
     ./hyprland
     ./hyprlock
