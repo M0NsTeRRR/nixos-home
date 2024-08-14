@@ -12,6 +12,7 @@
     rofi-wayland            # app launcher
     swayosd                 # OSD window for common actions like volume and capslock
     swaynotificationcenter  # notification daemon
+    waybar                  # Wayland bar
   ];
 
   programs.hyprland.enable = true;
