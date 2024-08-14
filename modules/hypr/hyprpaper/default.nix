@@ -1,12 +1,12 @@
 { username, ... }:
 {
-  home-manager.users.${username} = _: {
-    home.file = {
+  services.hyprpaper.settings = {
+    preload = [
+      "/home/${username}/.config/backgrounds/scifi_landscape.jpg"
+    ];
 
-      ".config/hypr/hyprpaper.conf".text = ''
-        preload = /home/${username}/.config/backgrounds/scifi_landscape.jpg
-        wallpaper = monitor,/home/${username}/.config/backgrounds/scifi_landscape.jpg
-      '';
-    };
+    wallpaper = [
+      "monitor,/home/${username}/.config/backgrounds/scifi_landscape.jpg"
+    ];
   };
 }
