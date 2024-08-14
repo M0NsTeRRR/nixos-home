@@ -23,7 +23,7 @@ There are no inherent advantages to using the minimal installation as opposed to
    ### 2. Generate a hardware-configuration.nix
 
    ```bash
-   nix --experimental-features 'nix-command flakes' nixos-generate-config
+   nixos-generate-config
    ```
 
    ```
