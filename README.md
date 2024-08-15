@@ -1,10 +1,10 @@
-# To do
+# WIP
+Not stable
 
-First install setup
-Luks encryption
-Dual boot windows
-Systemd-boot
-Secureboot
+First install setup  
+Luks encryption  
+Dual boot windows  
+Secureboot  
 
 # How to use this repo
 

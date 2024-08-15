@@ -10,39 +10,41 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
     
 
   outputs =
-    { self, nixpkgs, ... }@attrs: 
+    { self, nixpkgs, ... }@inputs: 
     let
       username = "lortega";
       system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {      
-      nix.settings.experimental-features = [ "nix-command" "flakes" ];
-      
-      nixpkgs.config = {
-        allowUnfreePredicate = pkg: true;
-        allowUnfree = true;
-      };
-      
       nixosConfigurations = {
-        ludo-desktop = nixpkgs.lib.nixosSystem {
+        ludo-desktop = lib.nixosSystem {
+          inherit system;
           specialArgs = {
             hostName = "ludo-desktop";
-            inherit username system;
-          } // attrs;
+            inherit username;
+          } // inputs;
           modules = [
             ./.
           ];
         };
 
-        ludo-laptop = nixpkgs.lib.nixosSystem {
+        ludo-laptop = lib.nixosSystem {
+          inherit system;
           specialArgs = {
             hostName = "ludo-laptop";
-            inherit username system;
-          } // attrs;
+            inherit username;
+          } // inputs;
           modules = [
             ./.
           ];
