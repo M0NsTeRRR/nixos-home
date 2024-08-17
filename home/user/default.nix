@@ -4,7 +4,7 @@
     ./config.nix
     ./environment.nix
     ./packages.nix
-    ./programs.nix
+    ./programs
   ];
 
   nixpkgs = {

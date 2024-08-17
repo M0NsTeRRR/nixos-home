@@ -1,0 +1,64 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["wireplumber", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "sort-by-name": true,
+        "on-click": "activate",
+        "format": " {icon} ",
+        "format-icons": {
+            "default": ""
+        }
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/Paris",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{icon}",
+        "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
+    },
+    "wireplumber": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "helvum"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "loginctl lock-session && hyprctl dispatch dpms off && brightnessctl -sd rgb:kbd_backlight set 0",
+        "format": "",
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "rofi -show drun",
+        "format": "襤"
+    }
+}
