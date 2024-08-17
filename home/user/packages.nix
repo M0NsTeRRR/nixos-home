@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     # DE
+    hyprland                                               # dynamic tiling Wayland compositor
     hyprpicker                                             # color picker
     hyprcursor                                             # cursor
     hyprlock                                               # screen locking utility 
@@ -23,6 +24,8 @@
 
     # dev
     gcc
+    gnumake
+    python3
     go
     rustup
     vscode

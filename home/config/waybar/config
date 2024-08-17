@@ -4,7 +4,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["wireplumber", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -15,7 +15,10 @@
         "format-icons": {
             "default": ""
         }
-     },
+    },
+    "hyprland/window": {
+        "separate-outputs": true
+    },
     "tray": {
         "icon-size": 21,
         "spacing": 10
@@ -53,8 +56,8 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "loginctl lock-session && hyprctl dispatch dpms off && brightnessctl -sd rgb:kbd_backlight set 0",
-        "format": "",
+        "on-click": "pidof hyprlock || hyprlock",
+        "format": ""
     },
     "custom/power": {
         "tooltip": false,
