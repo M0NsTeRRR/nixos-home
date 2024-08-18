@@ -15,11 +15,5 @@
 
     TERMINAL = "kitty";
     MOZ_ENABLE_WAYLAND = "1";
-
-    # cursor
-    HYPRCURSOR_THEME ="Catppuccin-Macchiato-Light";
-    HYPRCURSOR_SIZE = "24";
-    XCURSOR_THEME = "Catppuccin-Macchiato-Light";
-    XCURSOR_SIZE = "24";
   };
 }

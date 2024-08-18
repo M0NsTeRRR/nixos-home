@@ -5,7 +5,6 @@ First install setup
 Luks encryption  
 Dual boot windows  
 Secureboot  
-Replace macchiato config with github ones
 
 # How to use this repo
 

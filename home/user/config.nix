@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let configDir = ../config;
 in
 {
@@ -8,5 +9,11 @@ in
     ".config/wallpapers".source = "${configDir}/wallpapers";
     ".config/waybar".source = "${configDir}/waybar";
   };
-  
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.catppuccin-cursors.macchiatoLight;
+    name = "Catppuccin-Macchiato-Light";
+    size = 24;
+  };
 }

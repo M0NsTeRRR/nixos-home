@@ -2,7 +2,7 @@
 {
   imports = [
     ./system/hosts
-    # lanzaboote.nixosModules.lanzaboote
+    lanzaboote.nixosModules.lanzaboote
     home-manager.nixosModules.home-manager
   ];
 

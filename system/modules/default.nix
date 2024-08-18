@@ -15,6 +15,5 @@
     ./security.nix
     ./ssh.nix
     ./user.nix
-    ./yubikey.nix
   ];
 }

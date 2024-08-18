@@ -13,7 +13,6 @@
     swayosd                                                # OSD window for common actions like volume and capslock
     swaynotificationcenter                                 # notification daemon
     waybar                                                 # Wayland bar
-    catppuccin-cursors.macchiatoLight                      # cursor theme
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # nerdfonts font
     rofi-wayland                                           # Keystroke Launcher
     polkit-kde-agent                                       # authentication agent
