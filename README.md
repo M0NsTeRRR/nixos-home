@@ -1,10 +1,6 @@
 # WIP
 Not stable
-
-First install setup  
-Luks encryption  
-Dual boot windows  
-Secureboot  
+Documentation  
 
 # How to use this repo
 

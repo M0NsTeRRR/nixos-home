@@ -4,6 +4,7 @@
     ./system/hosts
     lanzaboote.nixosModules.lanzaboote
     home-manager.nixosModules.home-manager
+    inputs.disko.nixosModules.disko
   ];
 
   home-manager = {

@@ -10,7 +10,10 @@
       wifi.powersave = true;
     };
     nftables.enable = true;
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      allowPing = true;
+    };
     inherit hostName;
   };
 }
