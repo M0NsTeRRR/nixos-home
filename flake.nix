@@ -21,44 +21,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-    
 
-  outputs =
-    { self, nixpkgs, ... }@inputs: 
-    let
-      username = "lortega";
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {      
-      nixosConfigurations = {
-        ludo-desktop = lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            hostName = "ludo-desktop";
-            inherit username;
-          } // inputs;
-          modules = [
-            ./.
-          ];
-        };
+  outputs = { self, nixpkgs, ... }@inputs: 
+  let
+    username = "lortega";
+    hostNames = [ "laptop" "desktop" ];
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+  in
+  {      
+    nixosConfigurations = lib.genAttrs hostNames (hostName: lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit hostName username;
+      } // inputs;
+      modules = [
+        ./.
+      ];
+    });
 
-        ludo-laptop = lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            hostName = "ludo-laptop";
-            inherit username;
-          } // inputs;
-          modules = [
-            ./.
-          ];
-        };
-      };
-
-      templates.default = {
-        path = ./.;
-        description = "The default template for Ludovic Ortega nixflakes.";
-      };
+    templates.default = {
+      path = ./.;
+      description = "The default template for Ludovic Ortega nixflakes.";
     };
+  };
 }

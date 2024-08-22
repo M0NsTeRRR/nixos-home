@@ -1,10 +1,10 @@
-{ home-manager, lanzaboote, username, ... }:
+{ home-manager, lanzaboote, disko, username, ... }:
 {
   imports = [
     ./system/hosts
     lanzaboote.nixosModules.lanzaboote
     home-manager.nixosModules.home-manager
-    inputs.disko.nixosModules.disko
+    disko.nixosModules.disko
   ];
 
   home-manager = {

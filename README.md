@@ -1,41 +1,55 @@
-# WIP
-Not stable
-Documentation  
+# Install
 
-# How to use this repo
+1. Flash NixOS ISO Image to an USB stick
+2. Boot into it
+3. Setup wifi (if needed)
+    1. Start wpa_supplicant > `systemctl start wpa_supplicant`
+    2. Enable a wireless network > `wpa_cli`
+        ```
+        add_network 0
+        set_network 0 ssid "SSID"
+        set_netwwork 0 psk "PSK"
+        set_network 0 key_mgmt WPA-PSK
+        enable_network 0
+        ```
 
-These steps assume that you have already installed NixOS.
-
-For documentation on how to complete a minimal NixOS install: [Minimal Install](minimal-install.md)
-
-There are no inherent advantages to using the minimal installation as opposed to the GUI. If you want to enable LUKS without manually encrypting your drive, use the GUI.
-
-   ### 1. Fetch the flake template
-
-   ```bash
-   nix --experimental-features 'nix-command flakes' flake new -t 'github:m0nsterrr/nixos-home' ./nixos-home && cd nixos-home
-   ```
-
-   ### 2. Generate a hardware-configuration.nix
+4. Partition the system
 
    ```bash
-   nixos-generate-config
+   sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake github:m0nsterrr/nixos-home/system/hosts/<hostname>/disko.nix
    ```
 
-   ```
-
-   ### 4. Validate the flake imports went okay.
+5. Generate a hardware-configuration.nix
 
    ```bash
-   nix --experimental-features 'nix-command flakes' flake check
+   nixos-generate-config --no-filesystems --dir /mnt
    ```
-   
-   ### 5. Build the system. 
+
+6. Build the system
 
    ```bash
-   sudo nixos-rebuild switch --flake '.#hostname'
+   sudo nixos-install --flake '.#<hostname>'
    ```
+
+7. Reboot
+
+8. Update nixos config as needed
+
+# Update
+
+1. Fetch the flake template
+
+    ```bash
+    nix --experimental-features 'nix-command flakes' flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
+    ```
+
+2. Update nixos config
+   ```bash
+   sudo nixos-rebuild switch --flake '.#<hostname>'
+   ```
+
    **OR if your `hostname` already matches the hostname specificed in the `flake.nix`.**
+
    ```bash
    sudo nixos-rebuild switch --flake .
    ```

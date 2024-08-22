@@ -1,9 +1,9 @@
 {
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      sda = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
@@ -56,10 +56,10 @@
                       mountpoint = "/var/log";
                       mountOptions = ["subvol=log" "compress=zstd" "noatime"];
                     };
-                    # 32 Gb of RAM + 8Gb SWAP
+                    # 48 Gb of RAM + 8Gb SWAP
                     "/swap" = {
                       mountpoint = "/swap";
-                      swap.swapfile.size = "40G";
+                      swap.swapfile.size = "56G";
                     };
                   };
                 };
