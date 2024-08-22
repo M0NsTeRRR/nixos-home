@@ -5,7 +5,6 @@
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    initialPassword = "temp123";
     extraGroups = [
       "wheel"
     ];
