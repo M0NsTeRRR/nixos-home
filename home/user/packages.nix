@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # DE
     hyprland                                               # dynamic tiling Wayland compositor
+    xdg-desktop-portal-wlr                                 # Hyprland XDG Desktop Portal
     hyprpicker                                             # color picker
     hyprcursor                                             # cursor
     hyprlock                                               # screen locking utility 
@@ -18,6 +19,7 @@
     polkit-kde-agent                                       # authentication agent
     papirus-icon-theme                                     # icon theme
     helvum                                                 # GTK patchbay for pipewire
+    xdg-desktop-portal-gtk                                 # file picker
     qt6.qtwayland
     qt5.qtwayland
 
@@ -32,6 +34,7 @@
     # misc
     brightnessctl                                          # controlling backlight
     playerctl                                              # media player command-line controller
+    keepassxc                                              # password manager
   ];
 
   fonts.fontconfig.enable = true;

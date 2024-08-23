@@ -2,7 +2,7 @@
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
-    
+
     # https://wiki.hyprland.org/Configuring/Environment-variables/
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
