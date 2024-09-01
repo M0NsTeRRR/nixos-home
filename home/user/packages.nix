@@ -14,6 +14,7 @@
     swayosd                                                # OSD window for common actions like volume and capslock
     swaynotificationcenter                                 # notification daemon
     waybar                                                 # Wayland bar
+    wlogout                                                # logout menu
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # nerdfonts font
     rofi-wayland                                           # Keystroke Launcher
     polkit-kde-agent                                       # authentication agent
@@ -30,11 +31,18 @@
     go
     rustup
     vscode
-
+    
     # misc
     brightnessctl                                          # controlling backlight
     playerctl                                              # media player command-line controller
+
+    # app
     keepassxc                                              # password manager
+    protonmail-desktop                                     # email client for proton
+    protonvpn-cli                                          # vpn cli for proton
+    (discord.override { withVencord = true; })
+    spotify
+    vlc
   ];
 
   fonts.fontconfig.enable = true;

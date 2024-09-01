@@ -1,7 +1,9 @@
-{ config, username, ... }:
-
+{ home-manager-unstable, config, username, ... }:
 {
+  disabledModules = ["programs/firefox.nix"];
+  
   imports = [
+    (home-manager-unstable + "/modules/programs/firefox.nix")
     ./user
   ];
 

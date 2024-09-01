@@ -30,6 +30,8 @@
         "format": "󰅐 {:%H:%M}"
     },
     "backlight": {
+        "tooltip": false,
+        "scroll-step": 1,
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
@@ -58,14 +60,14 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-        "notification": "<span foreground='red'><sup></sup></span>",
-        "none": "",
-        "dnd-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-none": "",
-        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "inhibited-none": "",
-        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -76,8 +78,8 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "pidof hyprlock || hyprlock",
-        "format": ""
+        "on-click": "wlogout",
+        "format": ""
     },
     "custom/app": {
         "tooltip": false,
