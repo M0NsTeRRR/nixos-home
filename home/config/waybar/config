@@ -1,89 +1,109 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["wireplumber", "backlight", "battery", "clock", "tray", "custom/notification", "custom/lock", "custom/app"],
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces",
+      "temperature",
+      "idle_inhibitor"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "wireplumber",
+      "backlight",
+      "cpu",
+      "memory",
+      "network",
+      "battery",
+      "custom/powermenu",
+      "tray"
+    ],
+    "custom/launcher": {
+      "format": " ",
+      "on-click": "rofi -no-lazy-grab -show drun -modi drun",
+      "tooltip": false
+    },
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "sort-by-name": true,
-        "on-click": "activate",
-        "format": " {icon} ",
-        "format-icons": {
-            "default": ""
-        }
+      "disable-scroll": true
     },
-    "hyprland/window": {
-        "separate-outputs": true
-    },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "timezone": "Europe/Paris",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "󰅐 {:%d/%m/%Y}",
-        "format": "󰅐 {:%H:%M}"
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "󰈈",
+        "deactivated": "󰈉"
+      },
+      "tooltip": false
     },
     "backlight": {
-        "tooltip": false,
-        "scroll-step": 1,
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "󰚥",
-        "format-alt": "{icon}",
-        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      "device": "intel_backlight",
+      "on-scroll-up": "brightnessctl s +5%",
+      "on-scroll-down": "brightnessctl s 5%-",
+      "format": "{icon} {percent}%",
+      "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"]
     },
     "wireplumber": {
-        "scroll-step": 1,
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "helvum"
+      "scroll-step": 1,
+      "format": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "default": ["", "", ""]
+      },
+      "states": {
+        "warning": 85
+      },
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "tooltip": false
     },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{} {icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+    "battery": {
+      "interval": 10,
+      "states": {
+        "warning": 20,
+        "critical": 10
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-full": "{icon} {capacity}%",
+      "format-charging": "󰂄 {capacity}%"
     },
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "wlogout",
-        "format": ""
+    "clock": {
+      "interval": 1,
+      "format": "{:%I:%M %p  %A %b %d}",
+      "tooltip": true,
+      "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>"
     },
-    "custom/app": {
-        "tooltip": false,
-        "on-click": "rofi -show drun",
-        "format": ""
+    "cpu": {
+      "interval": 1,
+      "format": " {usage}%"
+    },
+    "memory": {
+      "interval": 1,
+      "format": " {percentage}%",
+      "states": {
+        "warning": 85
+      }
+    },
+    "network": {
+      "interval": 1,
+      "format-wifi": "󰒢 {essid}",
+      "format-ethernet": "󰈀 {ifname}",
+      "format-linked": "󰖪 {essid}",
+      "format-disconnected": "󰒢 Disconnected",
+      "tooltip": true,
+      "tooltip-format": "{ipaddr}"
+    },
+    "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+      "critical-threshold": 80,
+      "tooltip": false,
+      "format": " {temperatureC}°C"
+    },
+    "custom/powermenu": {
+      "format": "",
+      "on-click": "rofi -show p -modi p:~/.local/bin/rofi/off.sh -theme ~/.config/rofi/poweroff.rasi",
+      "tooltip": false
+    },
+    "tray": {
+      "icon-size": 15,
+      "spacing": 5
     }
-}
+  }

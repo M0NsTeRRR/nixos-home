@@ -12,9 +12,7 @@
     wl-clipboard                                           # copy/paste utilities for Wayland
     wl-clip-persist                                        # Keep Wayland clipboard even after programs close
     swayosd                                                # OSD window for common actions like volume and capslock
-    swaynotificationcenter                                 # notification daemon
     waybar                                                 # Wayland bar
-    wlogout                                                # logout menu
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # nerdfonts font
     rofi-wayland                                           # Keystroke Launcher
     polkit-kde-agent                                       # authentication agent
@@ -30,8 +28,13 @@
     python3
     go
     rustup
+    kitty
     vscode
     
+    # infra
+    kubectl
+    k9s
+
     # misc
     brightnessctl                                          # controlling backlight
     playerctl                                              # media player command-line controller

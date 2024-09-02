@@ -5,6 +5,7 @@
     ./environment.nix
     ./packages.nix
     ./programs
+    ./script.nix
   ];
 
   nixpkgs = {

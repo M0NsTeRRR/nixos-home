@@ -1,5 +1,5 @@
 { hostName, username, ... }:
-{
+{  
   users.users.${username} = {
     extraGroups = [ "networkmanager" ];
   };
@@ -16,4 +16,6 @@
     };
     inherit hostName;
   };
+
+  programs.nm-applet.enable = true;
 }

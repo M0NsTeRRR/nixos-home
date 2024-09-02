@@ -6,6 +6,7 @@
     ./ca-certificates.nix
     ./dns.nix
     ./dm.nix
+    ./file.nix
     ./gpg.nix
     ./internationalization.nix
     ./network.nix
