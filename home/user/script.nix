@@ -2,8 +2,12 @@ let scriptDir = ../script;
 in
 {
   home.file = {
-    ".local/bin/rofi/off.sh" = {
-      source = "${scriptDir}/rofi/off.sh";
+    ".script/dunst/pause.sh" = {
+      source = "${scriptDir}/dunst/pause.sh";
+      executable = true;
+    };
+    ".script/bluetooth/toogle.sh" = {
+      source = "${scriptDir}/bluetooth/toogle.sh";
       executable = true;
     };
   };

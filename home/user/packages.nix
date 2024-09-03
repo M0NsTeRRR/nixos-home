@@ -15,6 +15,7 @@
     waybar                                                 # Wayland bar
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # nerdfonts font
     rofi-wayland                                           # Keystroke Launcher
+    wlogout                                                # logout menu
     polkit-kde-agent                                       # authentication agent
     papirus-icon-theme                                     # icon theme
     helvum                                                 # GTK patchbay for pipewire

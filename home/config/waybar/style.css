@@ -3,51 +3,38 @@
     font-size: 12pt;
     font-weight: bold;
     border-radius: 0px;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-  }
-  @keyframes blink_red {
-    to {
-      background-color: rgb(242, 143, 173);
-      color: rgb(26, 24, 38);
-    }
-  }
-  .warning, .critical, .urgent {
-    animation-name: blink_red;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    padding: 0px;
   }
   window#waybar {
-    background-color: transparent;
-  }
-  window > box {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
     background-color: rgb(30, 30, 46);
   }
-  #workspaces {
-    padding-left: 0px;
-    padding-right: 4px;
+  .modules-left {
+    padding-left: 5px;
+  }
+  .modules-right {
+    padding-right: 5px;
+  }
+  .modules-center {
+    font-weight: bold;
+    background-color: alpha(rgb(73, 77, 100), 0.7);
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  #workspaces button, .modules-right * {
+    padding-left: 5px;
+    padding-right: 5px;
   }
   #workspaces button {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 6px;
-    padding-right: 6px;
+    font-size: 1.25rem;
   }
-  #workspaces button.focused {
-    background-color: rgb(181, 232, 224);
-    color: rgb(26, 24, 38);
+  #workspaces button.empty {
+    color: rgb(110, 115, 141);
   }
-  #workspaces button.urgent {
-    color: rgb(26, 24, 38);
-  }
-  #workspaces button:hover {
-    background-color: rgb(248, 189, 150);
-    color: rgb(26, 24, 38);
+  #workspaces button.active {
+    color: rgb(245, 169, 127);
   }
   tooltip {
     background: rgb(48, 45, 65);
@@ -55,29 +42,29 @@
   tooltip label {
     color: rgb(217, 224, 238);
   }
+  #custom-separator {
+    color: rgb(166, 218, 149);
+  }
+  #custom-separator_dot {
+    color: rgb(166, 218, 149);
+  }
+  #clock.time {
+    color: rgb(240, 198, 198);
+  }
+  #clock.week {
+    color: rgb(125, 196, 228);
+  }
+  #clock.month {
+    color: rgb(125, 196, 228);
+  }
+  #clock.calendar {
+    color: rgb(198, 160, 246);
+  }  
   #custom-launcher {
-    padding-left: 8px;
-    padding-right: 6px;
     color: rgb(201, 203, 255);
-  }
-  #mode, #clock, #memory, #temperature, #cpu, #idle_inhibitor, #temperature, #backlight, #wireplumber, #network, #battery, #custom-powermenu {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  #memory {
-    color: rgb(181, 232, 224);
-  }
-  #cpu {
-    color: rgb(245, 194, 231);
-  }
-  #clock {
-    color: rgb(217, 224, 238);
   }
   #idle_inhibitor {
     color: rgb(221, 182, 242);
-  }
-  #temperature {
-    color: rgb(150, 205, 251);
   }
   #backlight {
     color: rgb(248, 189, 150);
@@ -86,22 +73,32 @@
     color: rgb(245, 224, 220);
   }
   #network {
-    color: #ABE9B3;
+    color: rgb(171, 233, 179);
   }
-  
+  #bluetooth {
+    color: rgb(0, 130, 252);
+  }
+  #wireplumber {
+    color: rgb(245, 224, 220);
+  }
   #network.disconnected {
     color: rgb(255, 255, 255);
   }
-  #battery.charging, #battery.full, #battery.discharging {
-    color: rgb(250, 227, 176);
+  #battery {
+    color: rgb(238, 212, 159);
   }
-  #battery.critical:not(.charging) {
+  #battery.charging {
+    color: rgb(166, 218, 149);
+  }
+  #battery.warning:not(.charging) {
+    color: rgb(242, 143, 173);
+  }
+  #custom-dunst.on {
+    color: rgb(165, 173, 203);
+  }
+  #custom-dunst.off {
     color: rgb(242, 143, 173);
   }
   #custom-powermenu {
     color: rgb(242, 143, 173);
-  }
-  #tray {
-    padding-right: 8px;
-    padding-left: 10px;
   }
