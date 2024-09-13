@@ -18,8 +18,8 @@
       "network",
       "bluetooth",
       "battery",
-      "custom/dunst",
       "idle_inhibitor",
+      "custom/dunst",
       "custom/powermenu"
     ],
     "custom/launcher": {
