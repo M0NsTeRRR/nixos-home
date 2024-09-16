@@ -87,16 +87,16 @@
   #battery {
     color: rgb(238, 212, 159);
   }
-  #battery.charging {
+  #battery.charging, #battery.plugged {
     color: rgb(166, 218, 149);
   }
   #battery.warning:not(.charging) {
     color: rgb(242, 143, 173);
   }
-  #custom-dunst.on {
-    color: rgb(165, 173, 203);
+  #custom-swaync.notification, #custom-swaync.none {
+    color: rgb(80, 182, 212);
   }
-  #custom-dunst.off {
+  #custom-swaync:not(.notification):not(.none) {
     color: rgb(242, 143, 173);
   }
   #custom-powermenu {

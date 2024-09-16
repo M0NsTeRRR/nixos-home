@@ -1,7 +1,6 @@
 { username, ... }:
 {
   imports = [
-    ./dunst.nix
     ./firefox.nix
     ./git.nix
     ./home-manager.nix

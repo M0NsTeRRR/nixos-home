@@ -2,7 +2,6 @@ let configDir = ../config;
 in
 {
   home.file = {
-    ".config/dunstrc".source = "${configDir}/dunstrc";
     ".config/hypr".source = "${configDir}/hypr";
     ".config/rofi".source = "${configDir}/rofi";
     ".config/swaync".source = "${configDir}/swaync";

@@ -20,6 +20,7 @@
     papirus-icon-theme                                     # icon theme
     helvum                                                 # GTK patchbay for pipewire
     xdg-desktop-portal-gtk                                 # file picker
+    swaynotificationcenter                                 # notification center
     qt6.qtwayland
     qt5.qtwayland
 
@@ -31,22 +32,31 @@
     rustup
     kitty
     vscode
-    
+    yq
+    bat
+
     # infra
     kubectl
+    kubectx
+    helm
     k9s
+    postgresql
+    ldns                                                   # drill
+    restic
+    rclone
 
     # misc
     brightnessctl                                          # controlling backlight
     playerctl                                              # media player command-line controller
+    unzip
 
     # app
     keepassxc                                              # password manager
     protonmail-desktop                                     # email client for proton
     protonvpn-cli                                          # vpn cli for proton
-    (discord.override { withVencord = true; })
-    spotify
-    vlc
+    (discord.override { withVencord = true; })             # social media
+    spotify                                                # music service
+    vlc                                                    # video player
   ];
 
   fonts.fontconfig.enable = true;

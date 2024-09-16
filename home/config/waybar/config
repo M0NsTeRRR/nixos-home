@@ -19,7 +19,7 @@
       "bluetooth",
       "battery",
       "idle_inhibitor",
-      "custom/dunst",
+      "custom/swaync",
       "custom/powermenu"
     ],
     "custom/launcher": {
@@ -153,12 +153,23 @@
       "tooltip-format-wifi":"SSID: {essid}({signalStrength}%), {frequency} MHz\nInterface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
       "tooltip-format-ethernet":"Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>"
     },
-    "custom/dunst": {
+    "custom/swaync": {
       "return-type": "json",
-      "exec": "bash ~/.script/dunst/pause.sh",
-      "on-click": "dunstctl history-pop",
-      "on-click-right": "dunstctl set-paused toggle",
-      "restart-interval": 1
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "format": "{} {icon}",
+      "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "",
+        "inhibited-notification": "󱏨",
+        "inhibited-none": "󱏨",
+        "dnd-inhibited-notification": "󱏨",
+        "dnd-inhibited-none": "󱏨"
+      },
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw"
     },
     "custom/powermenu": {
       "format": "",
