@@ -140,8 +140,8 @@
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
       "max-length": 35,
-      "on-click": "bash ~/.script/bluetooth/toogle.sh",
-      "on-click-right": "blueman-manager"
+      "on-click": "blueman-manager",
+      "on-click-right": "bash ~/.script/bluetooth/toogle.sh"
     },
     "network": {
       "interval": 1,
@@ -156,7 +156,8 @@
     "custom/dunst": {
       "return-type": "json",
       "exec": "bash ~/.script/dunst/pause.sh",
-      "on-click": "dunstctl set-paused toggle",
+      "on-click": "dunstctl history-pop",
+      "on-click-right": "dunstctl set-paused toggle",
       "restart-interval": 1
     },
     "custom/powermenu": {
