@@ -80,6 +80,9 @@
   #bluetooth {
     color: rgb(0, 130, 252);
   }
+  #bluetooth.disabled {
+    color: rgb(242, 143, 173);
+  }
   #wireplumber {
     color: rgb(245, 224, 220);
   }
