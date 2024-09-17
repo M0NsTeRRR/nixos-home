@@ -130,8 +130,8 @@
     }
   },
   "bluetooth": {
-    "format": "󰂯",
-    "format-disabled": "󰂲",
+    "format": "󰂯 on",
+    "format-disabled": "󰂲 off",
     "format-connected": "󰂱 {device_alias}",
     "format-connected-battery": "󰂱 {device_alias} (󰥉 {device_battery_percentage}%)",
     "tooltip-format": "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected",
@@ -161,12 +161,12 @@
     "format-icons": {
       "notification": "󰂚",
       "none": "",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰂠",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰂛",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰂛"
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󱏧",
+      "inhibited-none": "󱏧",
+      "dnd-inhibited-notification": "󱏧",
+      "dnd-inhibited-none": "󱏧"
     },
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw"
