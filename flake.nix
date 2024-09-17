@@ -7,6 +7,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+    
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -28,7 +33,7 @@
     };
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, home-manager-stable, home-manager-unstable, ... }@inputs:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, lix-module, home-manager-stable, home-manager-unstable, ... }@inputs:
   let
     username = "lortega";
     hostNames = [ "laptop" "desktop" ];
