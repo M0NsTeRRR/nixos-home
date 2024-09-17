@@ -7,6 +7,7 @@
   }
   window#waybar {
     background-color: rgb(30, 30, 46);
+    border-radius: 10px;
   }
   .modules-left {
     padding-left: 5px;
@@ -38,6 +39,7 @@
   }
   tooltip {
     background: rgb(48, 45, 65);
+    border-radius: 10px;
   }
   tooltip label {
     color: rgb(177, 183, 197);
@@ -73,7 +75,7 @@
     color: rgb(245, 224, 220);
   }
   #network {
-    color: rgb(171, 233, 179);
+    color: rgb(233, 229, 171);
   }
   #bluetooth {
     color: rgb(0, 130, 252);
@@ -82,7 +84,7 @@
     color: rgb(245, 224, 220);
   }
   #network.disconnected {
-    color: rgb(255, 255, 255);
+    color: rgb(242, 143, 173);
   }
   #battery {
     color: rgb(238, 212, 159);
@@ -94,7 +96,7 @@
     color: rgb(242, 143, 173);
   }
   #custom-swaync.notification, #custom-swaync.none {
-    color: rgb(80, 182, 212);
+    color: rgb(179, 220, 221);
   }
   #custom-swaync:not(.notification):not(.none) {
     color: rgb(242, 143, 173);
