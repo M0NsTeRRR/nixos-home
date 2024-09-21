@@ -7,6 +7,7 @@
     ./dns.nix
     ./dm.nix
     ./file.nix
+    ./game.nix
     ./gpg.nix
     ./internationalization.nix
     ./network.nix

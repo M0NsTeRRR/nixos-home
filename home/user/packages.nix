@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "discord"
+  ];
+
   home.packages = with pkgs; [
     # DE
     hyprland                                               # dynamic tiling Wayland compositor
@@ -24,27 +28,37 @@
     qt6.qtwayland
     qt5.qtwayland
 
+    # office tool
+    libreoffice-qt
+    hunspell
+    hunspellDicts.fr-moderne
+    hunspellDicts.en_US
+
     # dev
     gcc
     gnumake
     python3
+    poetry
+    uv
     go
     rustup
     kitty
-    vscode
     yq
     bat
 
     # infra
+    tio                                                    # serial device I/O tool
+    tcpdump                                                # network sniffer
     kubectl
     kubectx
     helm
     k9s
     postgresql
+    sqlite
     ldns                                                   # drill
     restic
     rclone
-
+    
     # misc
     brightnessctl                                          # controlling backlight
     playerctl                                              # media player command-line controller
@@ -53,10 +67,13 @@
     # app
     keepassxc                                              # password manager
     protonmail-desktop                                     # email client for proton
-    protonvpn-cli                                          # vpn cli for proton
+    protonvpn-gui                                          # proton vpn
+    wireguard-tools                                        # wireguard vpn
     (discord.override { withVencord = true; })             # social media
     spotify                                                # music service
     vlc                                                    # video player
+    firefox                                                # browser
+    google-chrome                                          # browser
   ];
 
   fonts.fontconfig.enable = true;

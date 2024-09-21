@@ -1,5 +1,15 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vscode"
+    "vscode-extension-ms-vscode-remote-remote-ssh"
+    "vscode-extension-ms-vscode-remote-remote-containers"
+  ];
+  
+  userSettings = {
+    "files.autoSave" = "on";
+  };
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [

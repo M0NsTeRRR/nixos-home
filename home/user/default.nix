@@ -7,11 +7,4 @@
     ./programs
     ./script.nix
   ];
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
-  };
 }
