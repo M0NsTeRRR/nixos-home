@@ -15,3 +15,5 @@ jobs:
           name: deadnix
       - name: Run deadnix
         uses: astro/deadnix-action@main
+        with:
+          flags: "--exclude **/hardware-configuration.nix ./flake.nix"

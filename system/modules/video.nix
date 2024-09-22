@@ -1,4 +1,4 @@
-{ config, username, ... }:
+{ config, ... }:
 {
   # Enable NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];

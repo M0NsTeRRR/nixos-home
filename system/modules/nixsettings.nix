@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, config, ... }:
 {
   documentation.nixos.enable = false;
 
@@ -18,7 +18,6 @@
       options = "--delete-older-than 7d";
     };
   };
-
   
   nixpkgs.config.allowUnfreePredicate =
     pkg:

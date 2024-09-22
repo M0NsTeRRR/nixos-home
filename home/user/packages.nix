@@ -68,7 +68,6 @@
     (discord.override { withVencord = true; }) # social media
     spotify # music service
     vlc # video player
-    firefox # browser
     google-chrome # browser
   ];
 

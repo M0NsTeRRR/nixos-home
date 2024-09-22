@@ -1,4 +1,4 @@
-{ lib, username, ... }:
+{ lib, ... }:
 {
   imports = [
     ./config.nix

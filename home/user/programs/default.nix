@@ -1,4 +1,3 @@
-{ username, ... }:
 {
   imports = [
     ./firefox.nix
