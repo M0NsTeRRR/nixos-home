@@ -1,4 +1,5 @@
-let scriptDir = ../script;
+let
+  scriptDir = ../script;
 in
 {
   home.file = {

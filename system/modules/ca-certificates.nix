@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 let
   # Unicornafk
   unicornafkCert = pkgs.fetchurl {
@@ -7,7 +7,5 @@ let
   };
 in
 {
-  security.pki.certificateFiles = [
-    "${unicornafkCert}"
-  ];
+  security.pki.certificateFiles = [ "${unicornafkCert}" ];
 }

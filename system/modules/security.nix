@@ -33,7 +33,7 @@
     "fs.protected_fifos" = 2;
     "fs.protected_regular" = 2;
   };
-  
+
   security = {
     sudo.wheelNeedsPassword = false;
     apparmor = {

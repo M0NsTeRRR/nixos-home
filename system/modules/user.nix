@@ -8,9 +8,7 @@
     isNormalUser = true;
     initialPassword = "temp123";
     shell = pkgs.zsh;
-    extraGroups = [
-      "wheel"
-    ];
+    extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvw79Nxlt23DXgQTglV7pw3HdHuTrDEWrlGTHhbWie1 ${username}"
     ];

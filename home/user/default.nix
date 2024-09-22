@@ -1,4 +1,4 @@
-{ username, ... }:
+{ lib, username, ... }:
 {
   imports = [
     ./config.nix
@@ -7,4 +7,16 @@
     ./programs
     ./script.nix
   ];
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+      "vscode-extension-ms-vscode-remote-remote-ssh"
+      "vscode-extension-ms-vscode-remote-remote-containers"
+      "discord"
+      "spotify"
+      "steam"
+      "google-chrome"
+    ];
 }

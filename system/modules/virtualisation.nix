@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: 
+{ pkgs, username, ... }:
 {
   users.users.${username} = {
     extraGroups = [ "libvirtd" ];
@@ -13,7 +13,7 @@
     virt-manager
     virt-viewer
     win-spice
-    win-virtio  
+    win-virtio
   ];
 
   virtualisation = {

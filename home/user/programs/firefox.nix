@@ -1,8 +1,10 @@
-
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [ "fr" "en-US" ];
+    languagePacks = [
+      "fr"
+      "en-US"
+    ];
     # https://mozilla.github.io/policy-templates/
     policies = {
       DisableTelemetry = true;

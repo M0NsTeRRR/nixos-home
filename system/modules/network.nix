@@ -1,5 +1,5 @@
 { hostName, username, ... }:
-{  
+{
   users.users.${username} = {
     extraGroups = [ "networkmanager" ];
   };

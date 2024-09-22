@@ -1,4 +1,12 @@
-{ home-manager-stable, home-manager-unstable, lix-module, lanzaboote, disko, username, ... }:
+{
+  home-manager-stable,
+  home-manager-unstable,
+  lix-module,
+  lanzaboote,
+  disko,
+  username,
+  ...
+}:
 {
   imports = [
     ./system/hosts
@@ -10,7 +18,9 @@
 
   home-manager = {
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit home-manager-unstable username; };
+    extraSpecialArgs = {
+      inherit home-manager-unstable username;
+    };
     users = {
       ${username} = import ./home;
     };
