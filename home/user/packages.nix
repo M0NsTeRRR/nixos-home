@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # DE
     hyprland # dynamic tiling Wayland compositor
-    xdg-desktop-portal-wlr # Hyprland XDG Desktop Portal
+    xdg-desktop-portal-hyprland # Hyprland XDG Desktop Portal
     hyprpicker # color picker
     hyprcursor # cursor
     hyprlock # screen locking utility
@@ -17,7 +17,6 @@
     rofi-wayland # Keystroke Launcher
     wlogout # logout menu
     polkit-kde-agent # authentication agent
-    papirus-icon-theme # icon theme
     helvum # GTK patchbay for pipewire
     xdg-desktop-portal-gtk # file picker
     swaynotificationcenter # notification center
@@ -49,6 +48,7 @@
     kubectx
     helm
     k9s
+    pulumi
     postgresql
     sqlite
     ldns # drill
