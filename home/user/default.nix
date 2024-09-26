@@ -6,6 +6,7 @@
     ./packages.nix
     ./programs
     ./script.nix
+    ./theme.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate =

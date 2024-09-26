@@ -5,11 +5,11 @@
     ./boot.nix
     ./ca-certificates.nix
     ./dns.nix
-    ./dm.nix
     ./file.nix
     ./game.nix
     ./gpg.nix
     ./internationalization.nix
+    ./logind.nix
     ./network.nix
     ./nixsettings.nix
     ./video.nix

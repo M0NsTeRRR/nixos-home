@@ -37,7 +37,6 @@
     uv
     go
     rustup
-    kitty
     yq
     bat
 
