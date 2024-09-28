@@ -19,5 +19,6 @@
       "spotify"
       "steam"
       "google-chrome"
+      "packer"
     ];
 }

@@ -46,7 +46,9 @@
     kubectl
     kubectx
     helm
+    talosctl
     k9s
+    packer
     pulumi
     postgresql
     sqlite

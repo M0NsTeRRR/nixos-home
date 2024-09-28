@@ -6,13 +6,11 @@
     ./ca-certificates.nix
     ./dns.nix
     ./file.nix
-    ./game.nix
     ./gpg.nix
     ./internationalization.nix
     ./logind.nix
     ./network.nix
     ./nixsettings.nix
-    ./video.nix
     ./printer.nix
     ./security.nix
     ./ssh.nix
