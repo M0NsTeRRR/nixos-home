@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.displayManager = {
     enable = true;
