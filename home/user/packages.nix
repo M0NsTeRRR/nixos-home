@@ -61,6 +61,7 @@
     playerctl # media player command-line controller
     unzip
     pciutils # lspci
+    xdg-user-dirs # autocreate user directory
 
     # app
     keepassxc # password manager
