@@ -1,0 +1,5 @@
+{
+  hardware.opengl = {
+    enable = true;
+  };
+}

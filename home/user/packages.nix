@@ -60,6 +60,7 @@
     brightnessctl # controlling backlight
     playerctl # media player command-line controller
     unzip
+    pciutils # lspci
 
     # app
     keepassxc # password manager

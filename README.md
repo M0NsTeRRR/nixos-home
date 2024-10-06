@@ -48,7 +48,7 @@
       nixos-rebuild switch --flake '.#<hostname>'
       ```
 
-11. Reboot and enable secure boot
+11. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
 
 12. GG 🥳
 

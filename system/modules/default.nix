@@ -16,6 +16,7 @@
     ./security.nix
     ./ssh.nix
     ./user.nix
+    ./video.nix
     ./virtualisation.nix
   ];
 }
