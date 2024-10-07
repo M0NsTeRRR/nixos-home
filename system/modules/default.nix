@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./boot.nix
     ./ca-certificates.nix
+    ./console.nix
     ./display-manager.nix
     ./dns.nix
     ./file.nix

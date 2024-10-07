@@ -52,6 +52,7 @@
       system = "x86_64-linux";
       lib = nixpkgs-stable.lib;
       pkgs = nixpkgs-stable.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
@@ -61,7 +62,7 @@
         lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit hostName username;
+            inherit hostName username pkgs-unstable;
           } // inputs;
           modules = [ ./. ];
         }
