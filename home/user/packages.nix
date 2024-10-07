@@ -9,6 +9,7 @@
     hyprlock # screen locking utility
     hypridle # idle daemon
     hyprpaper # wallpaper utility
+    hyprshot # screenshot utility
     wl-clipboard # copy/paste utilities for Wayland
     wl-clip-persist # Keep Wayland clipboard even after programs close
     swayosd # OSD window for common actions like volume and capslock
