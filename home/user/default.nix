@@ -6,6 +6,7 @@
     ./packages.nix
     ./programs
     ./script.nix
+    ./services
     ./theme.nix
   ];
 
