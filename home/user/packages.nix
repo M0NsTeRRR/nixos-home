@@ -12,15 +12,12 @@
     hyprshot # screenshot utility
     wl-clipboard # copy/paste utilities for Wayland
     wl-clip-persist # Keep Wayland clipboard even after programs close
-    swayosd # OSD window for common actions like volume and capslock
-    waybar # Wayland bar
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # nerdfonts font
-    rofi-wayland # Keystroke Launcher
-    wlogout # logout menu
     polkit-kde-agent # authentication agent
-    helvum # GTK patchbay for pipewire
     xdg-desktop-portal-gtk # file picker
-    swaynotificationcenter # notification center
+    hyprpanel # wayland bar for hyprland
+    rofi-wayland # Keystroke Launcher
+    dolphin # file manager
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # nerdfonts font
     qt6.qtwayland
     qt5.qtwayland
 
@@ -47,7 +44,6 @@
     kubectl
     kubectx
     helm
-    talosctl
     k9s
     packer
     pulumi
@@ -70,7 +66,7 @@
     protonvpn-gui # proton vpn
     wireguard-tools # wireguard vpn
     (discord.override { withVencord = true; }) # social media
-    spotify # music service
+    spotify-launcher # music service
     vlc # video player
     google-chrome # browser
   ];

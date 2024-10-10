@@ -31,6 +31,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    hyprpanel = {
+      url = "github:M0NsTeRRR/HyprPanel/try-fix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
@@ -41,6 +46,7 @@
       lix-module,
       home-manager-stable,
       home-manager-unstable,
+      hyprpanel,
       ...
     }@inputs:
     let
