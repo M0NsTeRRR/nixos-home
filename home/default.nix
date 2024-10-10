@@ -1,6 +1,7 @@
 {
   pkgs,
   home-manager-unstable,
+  hyprpanel,
   username,
   ...
 }:
@@ -10,6 +11,7 @@
   imports = [
     (home-manager-unstable + "/modules/programs/firefox.nix")
     ./user
+    (hyprpanel.packages."${pkgs.system}".default)
   ];
 
   home = {

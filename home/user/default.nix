@@ -1,9 +1,8 @@
-{ lib, hyprpanel, ... }:
+{ lib, ... }:
 {
   imports = [
     ./config.nix
     ./environment.nix
-    ./overlays
     ./packages.nix
     ./programs
     ./theme.nix
@@ -17,11 +16,9 @@
         "vscode-extension-ms-vscode-remote-remote-ssh"
         "vscode-extension-ms-vscode-remote-remote-containers"
         "discord"
-        "spotify"
         "steam"
         "google-chrome"
         "packer"
       ];
-    overlays = [ hyprpanel.overlay ];
   };
 }
