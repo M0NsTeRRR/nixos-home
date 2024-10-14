@@ -226,14 +226,14 @@
         "workspaces"
       ],
       "middle": [
-        "media"
+        "clock"
       ],
       "right": [
         "systray",
+        "media",
         "volume",
         "network",
         "bluetooth",
-        "clock",
         "battery",
         "notifications"
       ]

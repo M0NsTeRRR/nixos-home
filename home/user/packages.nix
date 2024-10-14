@@ -28,6 +28,7 @@
     hunspellDicts.en_US
 
     # dev
+    vim
     gcc
     gnumake
     python3
