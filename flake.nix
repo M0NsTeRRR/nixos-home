@@ -33,7 +33,7 @@
     };
 
     hyprpanel = {
-      url = "github:M0NsTeRRR/HyprPanel/try-fix";
+      url = "github:M0NsTeRRR/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };

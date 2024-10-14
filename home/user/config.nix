@@ -3,10 +3,9 @@ let
 in
 {
   home.file = {
-    ".config/user-dirs/ags".source = "${configDir}/ags";
+    ".cache/ags/hyprpanel".source = "${configDir}/hyprpanel";
     ".config/hypr".source = "${configDir}/hypr";
-    ".config/user-dirs/user-dirs.dirs".source = "${configDir}/user-dirs.dirs";
-    ".config/user-dirs/user-dirs.locale".source = "${configDir}/user-dirs.locale";
+    ".config/rofi".source = "${configDir}/rofi";
     ".config/wallpapers".source = "${configDir}/wallpapers";
   };
 }

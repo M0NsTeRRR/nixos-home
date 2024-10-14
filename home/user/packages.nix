@@ -13,10 +13,10 @@
     wl-clipboard # copy/paste utilities for Wayland
     wl-clip-persist # Keep Wayland clipboard even after programs close
     polkit-kde-agent # authentication agent
-    xdg-desktop-portal-gtk # file picker
     hyprpanel # wayland bar for hyprland
     rofi-wayland # Keystroke Launcher
-    dolphin # file manager
+    cinnamon.nemo # file manager
+    yad # gui dialog (used as shortcut reminder)
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # nerdfonts font
     qt6.qtwayland
     qt5.qtwayland
@@ -58,7 +58,6 @@
     playerctl # media player command-line controller
     unzip
     pciutils # lspci
-    xdg-user-dirs # autocreate user directory
 
     # app
     keepassxc # password manager
@@ -66,9 +65,10 @@
     protonvpn-gui # proton vpn
     wireguard-tools # wireguard vpn
     (discord.override { withVencord = true; }) # social media
-    spotify-launcher # music service
     vlc # video player
     google-chrome # browser
+    qbittorrent-qt5 # torrent
+    spotify # music
   ];
 
   fonts.fontconfig.enable = true;

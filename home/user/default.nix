@@ -6,7 +6,10 @@
     ./overlays
     ./packages.nix
     ./programs
+    ./scripts
+    ./services
     ./theme.nix
+    ./xdg.nix
   ];
 
   nixpkgs = {

@@ -13,6 +13,7 @@
     firewall = {
       enable = true;
       allowPing = true;
+      filterForward = true;
     };
     inherit hostName;
   };
