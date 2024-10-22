@@ -28,10 +28,10 @@
     hunspellDicts.en_US
 
     # dev
+    vim
     gcc
     gnumake
     python3
-    poetry
     uv
     go
     rustup
