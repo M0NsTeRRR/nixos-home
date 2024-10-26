@@ -17,12 +17,10 @@
       " + Q" "Terminal" " + V" "Toogle floating" \
       " + C" "Kill active" " + R" "App menu" \
       " + M" "Exit" " + P" "Pseudo dwindle" \
-      " + E" "File Manager" " J" "Toogle split" \
-
+      " + E" "File Manager" " + J" "Toogle split" \
       " + <Number>" "Switch workspace" " + SHIFT + <Number>" "Move active window to a workspace" \
       " + <Scroll>" "Switch workspace" " + <Direction arrow>" "Move focus" \
-
-      "PRINT" "Screenshot a region" \
+      "PRINT" "Screenshot a region"
     '')
   ];
 }
