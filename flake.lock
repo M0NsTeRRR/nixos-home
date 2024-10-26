@@ -220,11 +220,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729632495,
-        "narHash": "sha256-8p/AHu2EsGEQ5cyx0J9EkUP9ACK28RZ8TW9XB0RhZZA=",
+        "lastModified": 1729958248,
+        "narHash": "sha256-1jAwjevz+1JurrnWlASQhO3BNp/lfCNE6d9BkRt24ok=",
         "owner": "M0NsTeRRR",
         "repo": "HyprPanel",
-        "rev": "b59dc01e9e7dfc2d130eff1bb539437cbbd23ece",
+        "rev": "7a7a70d559b36e07d8bfb17e995ab7458aab20d1",
         "type": "github"
       },
       "original": {
