@@ -4,6 +4,8 @@
     enable = true;
     userSettings = {
       "files.autoSave" = "on";
+      "dev.containers.dockerPath" = "podman";
+      "dev.containers.dockerComposePath" = "podman-compose";
     };
     extensions = with pkgs.vscode-extensions; [
       # remote
