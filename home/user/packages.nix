@@ -34,13 +34,18 @@
     python3
     uv
     go
+    delve # go debugger
     rustup
+    protobuf
+    bpftrace
     yq
     bat
+    tldr
 
     # infra
     tio # serial device I/O tool
-    tcpdump # network sniffer
+    tcpdump
+    nmap
     kubectl
     kubectx
     helm
