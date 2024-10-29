@@ -3,6 +3,7 @@
   home-manager-unstable,
   lix-module,
   lanzaboote,
+  hyprpanel,
   disko,
   username,
   ...
@@ -19,7 +20,7 @@
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = {
-      inherit home-manager-unstable username;
+      inherit home-manager-unstable hyprpanel username;
     };
     users = {
       ${username} = import ./home;

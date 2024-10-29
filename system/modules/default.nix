@@ -9,7 +9,6 @@
     ./dns.nix
     ./file.nix
     ./fwupd.nix
-    ./gpg.nix
     ./internationalization.nix
     ./logind.nix
     ./network.nix
