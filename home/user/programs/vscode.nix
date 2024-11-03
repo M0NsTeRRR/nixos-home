@@ -6,6 +6,7 @@
       "files.autoSave" = "afterDelay";
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
+      "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
     };
     extensions = with pkgs.vscode-extensions; [
       # remote
