@@ -47,7 +47,6 @@
     tcpdump
     nmap
     kubectl
-    kubectx
     helm
     k9s
     packer

@@ -6,6 +6,7 @@
     ./hyprland.nix
     ./gpg.nix
     ./kitty.nix
+    ./kubeswitch.nix
     ./starship.nix
     ./vscode.nix
     ./zsh.nix
