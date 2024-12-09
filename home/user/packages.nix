@@ -15,7 +15,7 @@
     polkit-kde-agent # authentication agent
     hyprpanel # wayland bar for hyprland
     rofi-wayland # Keystroke Launcher
-    cinnamon.nemo # file manager
+    nemo # file manager
     yad # gui dialog (used as shortcut reminder)
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # nerdfonts font
     qt6.qtwayland
@@ -49,6 +49,7 @@
     kubectl
     helm
     k9s
+    kubeswitch
     packer
     pulumi
     postgresql
@@ -71,7 +72,7 @@
     (discord.override { withVencord = true; }) # social media
     vlc # video player
     google-chrome # browser
-    qbittorrent-qt5 # torrent
+    qbittorrent # torrent
     spotify # music
   ];
 

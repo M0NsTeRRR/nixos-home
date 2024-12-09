@@ -21,7 +21,6 @@
         "vscode-extension-ms-vscode-remote-remote-containers"
         "discord"
         "spotify"
-        "steam"
         "google-chrome"
         "packer"
       ];
