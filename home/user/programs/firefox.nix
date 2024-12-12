@@ -19,6 +19,9 @@
 
           # disable translation popup panel
           "browser.translations.automaticallyPopup" = false;
+
+          # tell websites not to sell or share my data
+          "privacy.globalprivacycontrol.enabled" = true;
         };
         search = {
           force = true;
