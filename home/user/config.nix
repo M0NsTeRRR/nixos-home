@@ -3,7 +3,7 @@ let
 in
 {
   home.file = {
-    ".cache/ags/hyprpanel".source = "${configDir}/hyprpanel";
+    ".config/hyprpanel/config.json".source = "${configDir}/hyprpanel/config.json";
     ".config/hypr".source = "${configDir}/hypr";
     ".config/rofi".source = "${configDir}/rofi";
     ".config/wallpapers".source = "${configDir}/wallpapers";
