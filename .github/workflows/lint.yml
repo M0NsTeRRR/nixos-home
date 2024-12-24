@@ -14,5 +14,3 @@ jobs:
         run: nix flake check
       - name: Run nix fmt
         run: nix fmt
-      - name: Run flake check
-        run: nix flake check

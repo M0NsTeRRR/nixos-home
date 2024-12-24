@@ -23,6 +23,7 @@
       # kubernetes
       ms-kubernetes-tools.vscode-kubernetes-tools
       # misc
+      vscodevim.vim
       editorconfig.editorconfig
       redhat.vscode-yaml
       ms-vscode.makefile-tools
