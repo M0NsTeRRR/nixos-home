@@ -19,5 +19,6 @@
     ./user.nix
     ./video.nix
     ./virtualisation.nix
+    ./vpn.nix
   ];
 }
