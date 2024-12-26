@@ -10,6 +10,8 @@
     hypridle # idle daemon
     hyprpaper # wallpaper utility
     hyprshot # screenshot utility
+    hyprpolkitagent # polkit authentication
+    # hyprland-qtutils
     wl-clipboard # copy/paste utilities for Wayland
     wl-clip-persist # Keep Wayland clipboard even after programs close
     polkit-kde-agent # authentication agent
@@ -51,7 +53,7 @@
     k9s
     kubeswitch
     packer
-    pulumi
+    # pulumi
     postgresql
     sqlite
     ldns # drill
