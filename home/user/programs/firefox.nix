@@ -48,6 +48,7 @@
       OverridePostUpdatePage = "";
       DontCheckDefaultBrowser = true;
       DisplayBookmarksToolbar = "always";
+      DisableFormHistory = true;
       DisplayMenuBar = "default-off";
       SearchBar = "unified";
       ShowHomeButton = true;
