@@ -1,5 +1,6 @@
 {
   imports = [
+    ./atuin.nix
     ./firefox.nix
     ./git.nix
     ./home-manager.nix
