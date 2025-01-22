@@ -31,6 +31,7 @@
 
     # dev
     vim
+    strace
     gcc
     gnumake
     python3
@@ -52,6 +53,7 @@
     helm
     k9s
     kubeswitch
+    stern
     packer
     # pulumi
     postgresql
