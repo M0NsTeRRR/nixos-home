@@ -39,7 +39,7 @@
    nix --experimental-features 'nix-command flakes' flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
    ```
 
-9. Follow [Lanzaboot quickstart](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)  
+9. Follow [Lanzaboot quickstart](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
    If sbctl is not available in the current context you can do `nix-shell -p sbctl --run "sbctl create-keys"`
 
 10. Update nixos config as needed
@@ -58,3 +58,10 @@
    ```bash
    sudo nixos-rebuild switch --flake github:m0nsterrr/nixos-home#<hostname>
    ```
+
+# Static files
+
+Some static files must be manually setup :
+
+- `/home/<username>/cifs/credentials`
+- `/home/<username>/wireguard-keys/homelab.peer`

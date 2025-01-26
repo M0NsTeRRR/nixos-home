@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./boot.nix
     ./ca-certificates.nix
+    ./cifs.nix
     ./console.nix
     ./display-manager.nix
     ./dns.nix
@@ -19,6 +20,5 @@
     ./user.nix
     ./video.nix
     ./virtualisation.nix
-    ./vpn.nix
   ];
 }
