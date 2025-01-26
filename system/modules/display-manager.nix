@@ -16,6 +16,7 @@
   };
 
   environment.systemPackages = [
+    qt5.qtgraphicaleffects
     (pkgs.sddm-astronaut.override {
       themeConfig = {
         AccentColor = "#B2D0E2";
