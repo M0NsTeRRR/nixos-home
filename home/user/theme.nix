@@ -11,7 +11,7 @@
   dconf = {
     enable = true;
     settings = {
-      "org/cinnamon/desktop/applications/terminal".exec = "kitty";
+      "org/cinnamon/desktop/applications/terminal".exec = "ghostty";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
   };
