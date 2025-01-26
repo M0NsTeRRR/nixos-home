@@ -1,4 +1,4 @@
-{ username }:
+{ username, ... }:
 {
   services.rpcbind.enable = true;
   systemd.mounts = let commonMountOptions = {
