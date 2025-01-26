@@ -37,7 +37,7 @@
     python3
     uv
     go
-    delve # go debugger
+    delve
     rustup
     protobuf
     bpftrace
