@@ -2,6 +2,7 @@
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
 
     # https://wiki.hyprland.org/Configuring/Environment-variables/
     CLUTTER_BACKEND = "waland";
@@ -20,5 +21,8 @@
 
     # Python SSL self signed certs
     REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt";
+
+    # game
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 }
