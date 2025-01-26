@@ -15,6 +15,7 @@
     lanzaboote.nixosModules.lanzaboote
     home-manager-stable.nixosModules.home-manager
     disko.nixosModules.disko
+    ghostty.nixosModules.ghostty
   ];
 
   home-manager = {
