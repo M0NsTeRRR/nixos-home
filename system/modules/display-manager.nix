@@ -12,11 +12,15 @@
       theme = "sddm-astronaut-theme";
       enableHidpi = true;
       wayland.enable = true;
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtmultimedia
+        kdePackages.qtvirtualkeyboard
+      ];
     };
   };
 
   environment.systemPackages = [
-    qt5.qtgraphicaleffects
     (pkgs.sddm-astronaut.override {
       themeConfig = {
         AccentColor = "#B2D0E2";
