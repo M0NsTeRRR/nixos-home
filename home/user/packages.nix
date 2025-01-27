@@ -61,6 +61,7 @@
     ldns # drill
     restic
     rclone
+    go-task
 
     # misc
     brightnessctl # controlling backlight

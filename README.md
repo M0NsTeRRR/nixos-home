@@ -59,6 +59,12 @@
    sudo nixos-rebuild switch --flake github:m0nsterrr/nixos-home#<hostname>
    ```
 
+# Update depenencies
+
+   ```bash
+   nix flakes update
+   ```
+
 # Static files
 
 Some static files must be manually setup :

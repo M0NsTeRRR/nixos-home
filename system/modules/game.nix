@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     steam-run
@@ -10,8 +11,8 @@
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
+      gamescopeSession.enable = true;
     };
-    gamescopeSession.enable = true;
     gamemode.enable = true;
   };
 }

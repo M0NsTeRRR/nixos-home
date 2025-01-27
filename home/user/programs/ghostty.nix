@@ -3,13 +3,9 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = ''
-        {
-          theme = "catppuccin-mocha";
-          font-size = 12;
-          background-opacity = 0.5;
-        }
-      '';
+      theme = "catppuccin-mocha";
+      font-size = 12;
+      background-opacity = 0.8;
     };
   };
 }

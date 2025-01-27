@@ -1,6 +1,11 @@
-{ username, ... }:
+{ pkgs, username, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    cifs-utils
+  ];
+
   services.rpcbind.enable = true;
+
   systemd.mounts = let commonMountOptions = {
     type = "cifs";
     mountConfig = {
@@ -10,11 +15,11 @@
   in
   [
     (commonMountOptions // {
-      what = "nas.unicornafk.fr:/backup";
+      what = "//nas.unicornafk.fr/backup";
       where = "/mnt/backup";
     })
     (commonMountOptions // {
-      what = "nas.unicornafk.fr:/multimedia";
+      what = "//nas.unicornafk.fr/multimedia";
       where = "/mnt/multimedia";
     })
   ];
