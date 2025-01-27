@@ -5,9 +5,9 @@
     settings = {
       theme = ''
         {
-          theme = "catppuccin-macchiato";
+          theme = "catppuccin-mocha";
           font-size = 12;
-          background-opacity = 0.4;
+          background-opacity = 0.5;
         }
       '';
     };
