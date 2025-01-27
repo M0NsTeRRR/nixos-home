@@ -189,7 +189,7 @@
   "bar.workspaces.reverse_scroll": false,
   "bar.workspaces.workspaceMask": false,
   "bar.workspaces.hideUnoccupied": true,
-  "bar.workspaces.monitorSpecific": true,
+  "bar.workspaces.monitorSpecific": false,
   "bar.workspaces.spacing": 1,
   "bar.workspaces.workspaces": 10,
   "bar.workspaces.workspaceIconMap": {},
