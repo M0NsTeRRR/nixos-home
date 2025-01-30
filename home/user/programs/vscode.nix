@@ -4,6 +4,7 @@
     enable = true;
     userSettings = {
       "files.autoSave" = "afterDelay";
+      "editor.formatOnSave" = true;
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
       "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
