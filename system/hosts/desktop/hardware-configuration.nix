@@ -13,14 +13,17 @@
   imports = [ ];
 
   boot.initrd.availableKernelModules = [
+    "vmd"
     "xhci_pci"
     "ahci"
+    "nvme"
+    "usbhid"
+    "uas"
     "usb_storage"
     "sd_mod"
-    "rtsx_usb_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   swapDevices = [ ];
