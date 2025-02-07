@@ -5,7 +5,6 @@
     flags = [ "--disable-up-arrow" ];
     settings = {
       update_check = false;
-      disable_up_arrow = true;
     };
   };
 }
