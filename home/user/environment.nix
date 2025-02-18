@@ -5,7 +5,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
 
     # https://wiki.hyprland.org/Configuring/Environment-variables/
-    CLUTTER_BACKEND = "waland";
+    CLUTTER_BACKEND = "wayland";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
