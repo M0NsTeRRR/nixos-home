@@ -5,6 +5,7 @@
     flags = [ "--disable-up-arrow" ];
     settings = {
       update_check = false;
+      enter_accept = true;
     };
   };
 }
