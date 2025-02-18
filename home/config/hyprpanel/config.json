@@ -5,7 +5,9 @@
   "notifications.active_monitor": true,
   "notifications.monitor": 0,
   "notifications.displayedTotal": 10,
-  "notifications.ignore": ["spotify"],
+  "notifications.ignore": [
+    "spotify"
+  ],
   "notifications.position": "top right",
   "wallpaper.pywal": false,
   "wallpaper.image": "",
@@ -197,7 +199,8 @@
   "bar.workspaces.icons.active": "",
   "bar.workspaces.icons.available": "",
   "bar.workspaces.numbered_active_indicator": "underline",
-  "bar.workspaces.showWsIcons": false,
+  "bar.workspaces.showApplicationIcons": true,
+  "bar.workspaces.showWsIcons": true,
   "bar.workspaces.show_numbered": false,
   "bar.workspaces.ignored": "",
   "bar.workspaces.showAllActive": true,
