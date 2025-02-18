@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "files.autoSave" = "afterDelay";
+      "files.autoSave" = "onFocusChange";
       "editor.formatOnSave" = true;
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
@@ -24,7 +24,8 @@
       # kubernetes
       ms-kubernetes-tools.vscode-kubernetes-tools
       # misc
-      vscodevim.vim
+      eamodio.gitlens
+      jnoortheen.nix-ide
       editorconfig.editorconfig
       redhat.vscode-yaml
       ms-vscode.makefile-tools
