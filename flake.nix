@@ -32,10 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs =
@@ -62,7 +59,7 @@
     in
     {
       formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
-
+      
       nixosConfigurations = lib.genAttrs hostNames (
         hostName:
         lib.nixosSystem {

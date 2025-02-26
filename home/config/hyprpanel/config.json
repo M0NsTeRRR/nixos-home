@@ -203,7 +203,7 @@
   "bar.workspaces.showWsIcons": true,
   "bar.workspaces.show_numbered": false,
   "bar.workspaces.ignored": "",
-  "bar.workspaces.showAllActive": true,
+  "bar.workspaces.showAllActive": false,
   "bar.workspaces.show_icons": false,
   "bar.windowtitle.scrollDown": "",
   "bar.windowtitle.scrollUp": "",
