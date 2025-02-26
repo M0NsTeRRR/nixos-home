@@ -13,9 +13,7 @@
       enableHidpi = true;
       wayland.enable = true;
       extraPackages = with pkgs; [
-        kdePackages.qtsvg
-        kdePackages.qtmultimedia
-        kdePackages.qtvirtualkeyboard
+        sddm-astronaut
       ];
     };
   };
