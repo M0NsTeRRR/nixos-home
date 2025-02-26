@@ -43,15 +43,13 @@
       # for now.
       systemd-boot = {
         enable = lib.mkForce false;
+        consoleMode = "auto";
       };
       efi.canTouchEfiVariables = true;
     };
     lanzaboote = {
       enable = true;
       pkiBundle = "/etc/secureboot";
-      settings = {
-        console-mode = "auto";
-      };
     };
   };
 }
