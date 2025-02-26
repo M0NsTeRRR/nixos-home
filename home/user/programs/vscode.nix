@@ -5,6 +5,7 @@
     userSettings = {
       "files.autoSave" = "onFocusChange";
       "editor.formatOnSave" = true;
+      "git.confirmSync" = false;
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
       "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
