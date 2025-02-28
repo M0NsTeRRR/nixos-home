@@ -3,6 +3,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
+      "window.titleBarStyle" = "native";
       "files.autoSave" = "onFocusChange";
       "editor.formatOnSave" = true;
       "git.confirmSync" = false;
