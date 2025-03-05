@@ -18,6 +18,7 @@
       " + C" "Kill active" " + R" "App menu" \
       " + L" "Lock" " + P" "Pseudo dwindle" \
       " + E" "File Manager" " + J" "Toogle split" \
+      " + I" "Hyprexpo" \
       " + <Number>" "Switch workspace" " + SHIFT + <Number>" "Move active window to a workspace" \
       " + Tab" "Move to next workspace" " + <Direction arrow>" "Move focus" \
       "PRINT" "Screenshot a region" 

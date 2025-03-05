@@ -193,7 +193,7 @@
   "bar.workspaces.hideUnoccupied": true,
   "bar.workspaces.monitorSpecific": false,
   "bar.workspaces.spacing": 1,
-  "bar.workspaces.workspaces": 10,
+  "bar.workspaces.workspaces": 9,
   "bar.workspaces.workspaceIconMap": {},
   "bar.workspaces.icons.occupied": "",
   "bar.workspaces.icons.active": "",
