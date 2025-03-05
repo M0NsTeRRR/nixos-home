@@ -3,10 +3,14 @@
   programs.vscode = {
     enable = true;
     userSettings = {
+      "telemetry.telemetryLevel" = "off";
+      "update.showReleaseNotes" = false;
       "window.titleBarStyle" = "native";
       "files.autoSave" = "onFocusChange";
       "editor.formatOnSave" = true;
       "git.confirmSync" = false;
+      "git.autofetch" = true;
+      "git.replaceTagsWhenPull" = true;
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
       "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
