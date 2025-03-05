@@ -44,6 +44,7 @@
     yq
     bat
     tldr
+    hoppscotch
 
     # infra
     tio # serial device I/O tool
