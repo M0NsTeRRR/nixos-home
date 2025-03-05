@@ -68,6 +68,39 @@
         Snippets = false;
         Locked = true;
       };
+      ExtensionUpdate = true;
+      HardwareAcceleration = true;
+      Permissions = {
+        Camera = {
+          BlockNewRequests = true;
+          Locked = false;
+        };
+        Microphone = {
+          BlockNewRequests = true;
+          Locked = false;
+        };
+        Location = {
+          BlockNewRequests = true;
+          Locked = false;
+        };
+        Notifications = {
+          BlockNewRequests = true;
+          Locked = false;
+        };
+        Autoplay = {
+          Default = "block-audio-video";
+          Locked = false;
+        };
+      }
+      PictureInPicture = {
+        Enabled: true;
+        Locked: false;
+      };
+      PopupBlocking = {
+        Default: true;
+        Locked: false;
+      };
+      RequestedLocales = "fr,fr-FR";
 
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
