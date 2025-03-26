@@ -24,10 +24,9 @@
 
           # tell websites not to sell or share my data
           "privacy.globalprivacycontrol.enabled" = true;
-        };
-        search = {
-          force = true;
-          default = "duckduckgo";
+
+          # disable clipboard events for annoying websites that block them
+          "dom.event.clipboardevents.enabled" = false;
         };
       };
     };
@@ -91,14 +90,14 @@
           Default = "block-audio-video";
           Locked = false;
         };
-      }
+      };
       PictureInPicture = {
-        Enabled: true;
-        Locked: false;
+        Enabled = true;
+        Locked = false;
       };
       PopupBlocking = {
-        Default: true;
-        Locked: false;
+        Default = true;
+        Locked = false;
       };
       RequestedLocales = "fr,fr-FR";
 

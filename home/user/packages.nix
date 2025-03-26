@@ -45,6 +45,7 @@
     bat
     tldr
     hoppscotch
+    hyperfine
 
     # infra
     tio # serial device I/O tool
@@ -63,6 +64,7 @@
     restic
     rclone
     go-task
+    rdap
 
     # misc
     brightnessctl # controlling backlight
@@ -80,6 +82,7 @@
     google-chrome # browser
     qbittorrent # torrent
     spotify # music
+    spotube # music
   ];
 
   fonts.fontconfig.enable = true;
