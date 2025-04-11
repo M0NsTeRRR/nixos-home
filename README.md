@@ -59,7 +59,7 @@
    sudo nixos-rebuild switch --flake github:m0nsterrr/nixos-home#<hostname>
    ```
 
-# Update depenencies
+# Update dependencies
 
    ```bash
    nix flakes update

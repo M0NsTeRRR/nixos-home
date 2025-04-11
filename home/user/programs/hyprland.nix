@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -6,7 +6,7 @@
       hyprbars
       hyprexpo
     ];
-    systemd.variables = ["--all"];
+    systemd.variables = [ "--all" ];
     settings = {
       source = "~/.config/hypr/macchiato.conf";
 

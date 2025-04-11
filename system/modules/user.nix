@@ -4,7 +4,7 @@
 
   users.users.root.hashedPassword = "!";
 
-  users.groups.${username} = {};
+  users.groups.${username} = { };
   users.users.${username} = {
     isNormalUser = true;
     initialPassword = "temp123";
