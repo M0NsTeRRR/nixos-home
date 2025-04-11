@@ -14,6 +14,10 @@
       "dev.containers.dockerPath" = "podman";
       "dev.containers.dockerComposePath" = "podman-compose";
       "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
+      "python.analysis.autoFormatStrings" = true;
+      "python.analysis.autoImportCompletions" = true;
+      "python.analysis.completeFunctionParens" = true;
+      "python.analysis.typeCheckingMode" = "strict";
     };
     extensions = with pkgs.vscode-extensions; [
       # remote
@@ -26,6 +30,7 @@
       # python
       ms-python.python
       ms-python.debugpy
+      ms-python.vscode-pylance
       charliermarsh.ruff
       # kubernetes
       ms-kubernetes-tools.vscode-kubernetes-tools
