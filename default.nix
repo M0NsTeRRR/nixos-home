@@ -1,26 +1,21 @@
 {
-  home-manager-stable,
-  home-manager-unstable,
-  lix-module,
-  lanzaboote,
-  hyprpanel,
-  disko,
+  inputs,
   username,
   ...
 }:
 {
   imports = [
     ./system/hosts
-    lix-module.nixosModules.default
-    lanzaboote.nixosModules.lanzaboote
-    home-manager-stable.nixosModules.home-manager
-    disko.nixosModules.disko
+    inputs.lix-module.nixosModules.default
+    inputs.lanzaboote.nixosModules.lanzaboote
+    inputs.home-manager-stable.nixosModules.home-manager
+    inputs.disko.nixosModules.disko
   ];
 
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = {
-      inherit home-manager-unstable hyprpanel username;
+      inherit inputs username;
     };
     users = {
       ${username} = import ./home;

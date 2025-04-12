@@ -17,7 +17,7 @@
       "python.analysis.autoFormatStrings" = true;
       "python.analysis.autoImportCompletions" = true;
       "python.analysis.completeFunctionParens" = true;
-      "python.analysis.typeCheckingMode" = "strict";
+      "python.analysis.typeCheckingMode" = "standard";
     };
     extensions = with pkgs.vscode-extensions; [
       # remote

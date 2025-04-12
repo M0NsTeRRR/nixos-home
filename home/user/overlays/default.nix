@@ -1,4 +1,4 @@
-{ pkgs, hyprpanel, ... }:
+{ pkgs, inputs, ... }:
 {
-  nixpkgs.overlays = [ hyprpanel.overlay ];
+  nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
 }

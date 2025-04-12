@@ -1,8 +1,8 @@
-{ nixos-hardware, ... }:
+{ inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
-    nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
     ./disko.nix
     ../../modules
     {

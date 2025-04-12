@@ -1,4 +1,4 @@
-{ lib, hyprpanel, ... }:
+{ lib, inputs, ... }:
 {
   imports = [
     ./config.nix
@@ -25,6 +25,5 @@
         "google-chrome"
         "packer"
       ];
-    overlays = [ hyprpanel.overlay ];
   };
 }

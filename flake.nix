@@ -65,8 +65,8 @@
         lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit hostName username pkgs-unstable;
-          } // inputs;
+            inherit hostName username inputs;
+          };
           modules = [ ./. ];
         }
       );
