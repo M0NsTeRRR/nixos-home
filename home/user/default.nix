@@ -21,8 +21,7 @@
         "vscode-extension-ms-vscode-remote-remote-containers"
         "vscode-extension-MS-python-vscode-pylance"
         "discord"
-        "spotify"
-        "google-chrome"
+        "spotify" "google-chrome"
         "packer"
       ];
   };

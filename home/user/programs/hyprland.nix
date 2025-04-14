@@ -10,12 +10,6 @@
     settings = {
       source = "~/.config/hypr/macchiato.conf";
 
-      monitor = [
-        "DP-1, 2560x1440, 0x0, 1"
-        "DP-2, 2560x1440, -2560x0, 1"
-        ", preferred, auto, auto"
-      ];
-
       exec-once = [
         "/usr/lib/polkit-kde-authentication-agent-1"
         "hyprpaper"

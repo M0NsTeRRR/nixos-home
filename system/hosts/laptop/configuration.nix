@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ username, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -13,4 +13,11 @@
     }
     ../../modules/battery.nix
   ];
+
+  home-manager.users.${username} = {
+    wayland.windowManager.hyprland.settings.monitor = [
+      "eDP-1,highres,auto,1.5,bitdepth,10"
+      ",preferred,auto,auto"
+    ];
+  };
 }

@@ -5,6 +5,7 @@
 3. Setup wifi (if needed)
     1. Start wpa_supplicant > `systemctl start wpa_supplicant`
     2. Enable a wireless network > `wpa_cli`
+
         ```
         add_network 0
         set_network 0 ssid "SSID"
@@ -53,6 +54,7 @@
 12. GG 🥳
 
 # Update
+
    If you need to update the configuration at anytime.
 
    ```bash
@@ -69,5 +71,6 @@
 
 Some static files must be manually setup :
 
-- `/home/<username>/cifs/credentials`
-- `/home/<username>/wireguard-keys/homelab.peer`
+- `~/cifs/credentials`
+- `~/wireguard-keys/homelab.peer`
+- `~/.kube/static-kubeconfigs/<files>`

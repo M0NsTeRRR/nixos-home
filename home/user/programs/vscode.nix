@@ -34,6 +34,8 @@
       charliermarsh.ruff
       # kubernetes
       ms-kubernetes-tools.vscode-kubernetes-tools
+      # presentation with plain Markdown
+      marp-team.marp-vscode
       # misc
       eamodio.gitlens
       jnoortheen.nix-ide

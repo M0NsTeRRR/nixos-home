@@ -32,25 +32,29 @@
     # dev
     vim
     strace
+    curl
     gcc
     gnumake
     python3
     uv
     go
-    delve
+    delve # go debugger
     rustup
     protobuf
     bpftrace
-    yq
-    bat
-    tldr
-    hoppscotch
-    hyperfine
+    yq # command-line YAML, JSON, XML, CSV, TOML
+    bat # enhanced cat command
+    tldr # Collaborative cheatsheets for console commands
+    hoppscotch # open-source alternative to Postman
+    hyperfine # benchmarking tool
+    btop #  A monitor of resources
+    ripgrep
 
     # infra
     tio # serial device I/O tool
     tcpdump
     nmap
+    iperf
     kubectl
     helm
     k9s
@@ -60,16 +64,18 @@
     # pulumi
     postgresql
     sqlite
-    ldns # drill
+    dogdns # command-line DNS client
     restic
+    rsync
     rclone
     go-task
-    rdap
+    rdap # Registry Data Access Protocol
 
     # misc
     brightnessctl # controlling backlight
     playerctl # media player command-line controller
     unzip
+    gnutar
     pciutils # lspci
 
     # app
@@ -83,6 +89,7 @@
     qbittorrent # torrent
     spotify # music
     spotube # music
+    marp-cli # presentation with plain Markdown
   ];
 
   fonts.fontconfig.enable = true;
