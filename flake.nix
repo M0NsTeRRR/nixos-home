@@ -32,7 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =

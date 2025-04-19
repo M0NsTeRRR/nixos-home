@@ -3,7 +3,6 @@
   imports = [
     ./config.nix
     ./environment.nix
-    ./overlays
     ./packages.nix
     ./programs
     ./scripts
