@@ -16,7 +16,7 @@
 
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [
-      "eDP-1,highres,auto,1.5,bitdepth,10"
+      "eDP-1,highres,auto,2,bitdepth,10" 
       ",preferred,auto,auto"
     ];
   };
