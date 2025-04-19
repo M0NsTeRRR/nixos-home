@@ -7,6 +7,7 @@
     ./gpg.nix
     ./home-manager.nix
     ./hyprland.nix
+    ./k9s.nix
     ./obs.nix
     ./starship.nix
     ./vscode.nix

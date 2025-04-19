@@ -1,6 +1,7 @@
 {
   inputs,
   username,
+  pkgs-unstable,
   ...
 }:
 {
@@ -15,7 +16,7 @@
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = {
-      inherit inputs username;
+      inherit inputs username pkgs-unstable;
     };
     users = {
       ${username} = import ./home;

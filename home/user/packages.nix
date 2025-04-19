@@ -47,7 +47,7 @@
     tldr # Collaborative cheatsheets for console commands
     hoppscotch # open-source alternative to Postman
     hyperfine # benchmarking tool
-    btop #  A monitor of resources
+    btop # A monitor of resources
     ripgrep
 
     # infra
@@ -57,7 +57,6 @@
     iperf
     kubectl
     helm
-    k9s
     kubeswitch
     stern
     packer
