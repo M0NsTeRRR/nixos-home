@@ -81,6 +81,8 @@
         showWsIcons = true;
         showApplicationIcons = true;
 
+        applicationIconEmptyWorkspace = "";
+
         icons = {
           occupied = "";
           active = "";
