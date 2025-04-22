@@ -3,9 +3,24 @@
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
   programs.hyprpanel = {
+    # Enable the module.
+    # Default: false
     enable = true;
+
+    # Automatically restart HyprPanel with systemd.
+    # Useful when updating your config so that you
+    # don't need to manually restart it.
+    # Default: false
     systemd.enable = true;
+
+    # Add '/nix/store/.../hyprpanel' to your
+    # Hyprland config 'exec-once'.
+    # Default: false
     hyprland.enable = true;
+
+    # Fix the overwrite issue with HyprPanel.
+    # See below for more information.
+    # Default: false
     overwrite.enable = true;
 
     theme = "catppuccin_macchiato";
@@ -22,10 +37,23 @@
     # Default: null
     layout = {
       "bar.layouts" = {
-        "0" = {
-          left = [ "dashboard" "workspaces" ];
-          middle = [ "media" ];
-          right = [ "volume" "systray" "notifications" ];
+        "*" = {
+          left = [
+            "dashboard"
+            "workspaces"
+          ];
+          middle = [
+            "clock"
+          ];
+          right = [
+            "systray"
+            "media"
+            "volume"
+            "network"
+            "bluetooth"
+            "battery"
+            "notifications"
+          ];
         };
       };
     };
@@ -58,7 +86,7 @@
           active = "";
           available = "";
         };
-      }
+      };
 
       wallpaper.enable = false;
 
@@ -71,58 +99,6 @@
         time.military = false;
       };
 
-      layout = ''
-        {
-          "bar.layouts" = {
-            "0" = {
-              left = [
-                "dashboard"
-                "workspaces"
-              ];
-              middle = [
-                "clock"
-              ];
-              right = [
-                "systray"
-                "media"
-                "volume"
-                "network"
-                "bluetooth"
-                "battery"
-                "notifications
-              ];
-            };
-            "1" = {
-              left = [
-                "dashboard"
-                "workspaces"
-              ];
-              middle = [
-                "media"
-              ];
-              right = [
-                "volume"
-                "clock"
-                "notifications"
-              ];
-            };
-            "2" = {
-              left = [
-                "dashboard"
-                "workspaces"
-              ];
-              middle = [
-                "media"
-              ];
-              right = [
-                "volume"
-                "clock"
-                "notifications"
-              ];
-            };
-          };
-        };
-        '';
 
       menus.dashboard = {
         powermenu.avatar.image = "/home/lortega/.config/wallpapers/avatar.png";
@@ -130,31 +106,31 @@
         directories = {
           right = {
             directory1 = {
-              command = bash -c \"nemo $HOME/Pictures/\"";
-              label = 󰉏 Pictures";
+              command = "bash -c \"nemo $HOME/Pictures/\"";
+              label = "󰉏 Pictures";
             };
             directory2 = {
-              command = bash -c \"nemo $HOME/Videos/\"";
-              label = 󰉏 Videos";
+              command = "bash -c \"nemo $HOME/Videos/\"";
+              label = "󰉏 Videos";
             };
             directory3 = {
-              command = bash -c \"nemo $HOME/Projects/\"";
-              label = 󰚝 Projects";
+              command = "bash -c \"nemo $HOME/Projects/\"";
+              label = "󰚝 Projects";
             };
           };
 
           left = {
             directory1 = {
-              command = bash -c \"nemo $HOME/\"";
-              label = 󱂵 Home";
+              command = "bash -c \"nemo $HOME/\"";
+              label = "󱂵 Home";
             };
             directory2 = {
-              command = bash -c \"nemo $HOME/Documents/\"";
-              label = 󱧶 Documents";
+              command = "bash -c \"nemo $HOME/Documents/\"";
+              label = "󱧶 Documents";
             };
             directory3 = {
-              command = bash -c \"nemo $HOME/Downloads/\"";
-              label = 󰉍 Downloads";
+              command = "bash -c \"nemo $HOME/Downloads/\"";
+              label = "󰉍 Downloads";
             };
           };
         };
@@ -162,37 +138,37 @@
         shortcuts = {
           right = {
             shortcut1 = {
-              command = hyprpicker -a";
-              tooltip = Color Picker";
-              icon = ";
+              command = "hyprpicker -a";
+              tooltip = "Color Picker";
+              icon = "";
             };
             shortcut3 = {
-              command = hyprshot -m region -o $HOME/Pictures/";
-              tooltip = Screenshot";
-              icon = 󰄀";
+              command = "hyprshot -m region -o $HOME/Pictures/";
+              tooltip = "Screenshot";
+              icon = "󰄀";
             };
           };
 
           left = {
             shortcut1 = {
-              command = firefox";
-              tooltip = Firefox";
-              icon = 󰈹";
+              command = "firefox";
+              tooltip = "Firefox";
+              icon = "󰈹";
             };
             shortcut2 = {
-              command = list-bindings";
-              tooltip = Keybindings helper";
-              icon = ";
+              command = "list-bindings";
+              tooltip = "Keybindings helper";
+              icon = "";
             };
             shortcut3 = {
-              shortcut3.command = ghostty";
-              shortcut3.tooltip = Terminal";
-              shortcut3.icon = ";
+              command = "ghostty";
+              tooltip = "Terminal";
+              icon = "";
             };
             shortcut4 = {
-              shortcut4.command = rofi -show drun";
-              shortcut4.tooltip = Search Apps";
-              shortcut4.icon = ";
+              command = "rofi -show drun";
+              tooltip = "Search Apps";
+              icon = "";
             };
           };
         };
