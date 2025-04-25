@@ -4,6 +4,9 @@
     enable = true;
     userSettings = {
       "telemetry.telemetryLevel" = "off";
+      "terminal.integrated.initialHint" = false;
+      "chat.agent.enabled" = false;
+      "chat.commandCenter.enabled" = false;
       "update.showReleaseNotes" = false;
       "window.titleBarStyle" = "native";
       "files.autoSave" = "onFocusChange";
