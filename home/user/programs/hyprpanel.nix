@@ -7,11 +7,7 @@
     # Default: false
     enable = true;
 
-    # Automatically restart HyprPanel with systemd.
-    # Useful when updating your config so that you
-    # don't need to manually restart it.
-    # Default: false
-    systemd.enable = true;
+    overlay.enable = true;
 
     # Add '/nix/store/.../hyprpanel' to your
     # Hyprland config 'exec-once'.
@@ -23,40 +19,10 @@
     # Default: false
     overwrite.enable = true;
 
-    theme = "catppuccin_macchiato";
-
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
     # Default: {}
-    override = {
-      theme.bar.menus.text = "#123ABC";
-    };
-
-    # Configure bar layouts for monitors.
-    # See 'https://hyprpanel.com/configuration/panel.html'.
-    # Default: null
-    layout = {
-      "bar.layouts" = {
-        "*" = {
-          left = [
-            "dashboard"
-            "workspaces"
-          ];
-          middle = [
-            "clock"
-          ];
-          right = [
-            "systray"
-            "media"
-            "volume"
-            "network"
-            "bluetooth"
-            "battery"
-            "notifications"
-          ];
-        };
-      };
-    };
+    override = {};
 
     # Configure and theme almost all options from the GUI.
     # Options that require '{}' or '[]' are not yet implemented,
@@ -65,6 +31,9 @@
     # Default: <same as gui>
     settings = {
       scalingPriority = "hyprland";
+
+      theme.name = "catppuccin_macchiato";
+
       terminal = "ghostty";
 
       bar.clock.format = "%a %d %b  %H:%M:%S";
@@ -75,7 +44,7 @@
       };
 
       bar.workspaces = {
-        workspaces = 9.0;
+        workspaces = 9;
         show_icons = false;
         showAllActive = false;
         showWsIcons = true;
@@ -101,6 +70,28 @@
         time.military = false;
       };
 
+      layout = {
+        "bar.layouts" = {
+          "*" = {
+            left = [
+              "dashboard"
+              "workspaces"
+            ];
+            middle = [
+              "clock"
+            ];
+            right = [
+              "systray"
+              "media"
+              "volume"
+              "network"
+              "bluetooth"
+              "battery"
+              "notifications"
+            ];
+          };
+        };
+      };
 
       menus.dashboard = {
         powermenu.avatar.image = "/home/lortega/.config/wallpapers/avatar.png";
