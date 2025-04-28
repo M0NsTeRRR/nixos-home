@@ -22,7 +22,9 @@
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
     # Default: {}
-    override = {};
+    override = {
+      "theme.bar.buttons.dashboard.icon" = "#7eb9e3";
+    };
 
     # Configure and theme almost all options from the GUI.
     # Options that require '{}' or '[]' are not yet implemented,
@@ -32,7 +34,13 @@
     settings = {
       scalingPriority = "hyprland";
 
-      theme.name = "catppuccin_macchiato";
+      theme = {
+        name = "catppuccin_macchiato";
+        font = {
+          name = "Ubuntu Nerd Font";
+          size = "1.0rem";
+        };
+      };
 
       terminal = "ghostty";
 
@@ -45,6 +53,7 @@
 
       bar.workspaces = {
         workspaces = 9;
+        monitorSpecific = false;
         show_icons = false;
         showAllActive = false;
         showWsIcons = true;
@@ -165,11 +174,6 @@
             };
           };
         };
-      };
-
-      theme.font = {
-        name = "Ubuntu Nerd Font";
-        size = "1.0rem";
       };
     };
   };
