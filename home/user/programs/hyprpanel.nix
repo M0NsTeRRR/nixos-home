@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
@@ -103,7 +103,7 @@
       };
 
       menus.dashboard = {
-        powermenu.avatar.image = "/home/lortega/.config/wallpapers/avatar.png";
+        powermenu.avatar.image = "${config.home.homeDirectory}/.config/wallpapers/avatar.png";
 
         directories = {
           right = {
