@@ -7,6 +7,8 @@
     size = 24;
   };
 
+  fonts.fontconfig.enable = true;
+
   # for nemo file manager
   dconf = {
     enable = true;

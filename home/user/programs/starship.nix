@@ -1,1 +1,7 @@
-{ programs.starship.enable = true; }
+{ pkgs-unstable, ... }:
+{
+  programs.starship = {
+    enable = true;
+    package = pkgs-unstable.starship;
+  };
+}
