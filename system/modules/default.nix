@@ -18,6 +18,7 @@
     ./security.nix
     ./ssh.nix
     ./user.nix
+    ./usbguard.nix
     ./video.nix
     ./virtualisation.nix
     ./vpn.nix

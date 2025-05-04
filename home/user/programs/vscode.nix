@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   programs.vscode = {
     enable = true;
+    package = pkgs-unstable.vscode;
     userSettings = {
       "telemetry.telemetryLevel" = "off";
       "terminal.integrated.initialHint" = false;
@@ -22,7 +23,7 @@
       "python.analysis.completeFunctionParens" = true;
       "python.analysis.typeCheckingMode" = "standard";
     };
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs-unstable.vscode-extensions; [
       # remote
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-containers

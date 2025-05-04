@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":automergePr",
+    ":automergePatch",
+    ":disableRateLimiting",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":timezone(Europe/Paris)",
+    "github>m0nsterrr/nixos-home//.github/renovate/labels.json5",
+    "github>m0nsterrr/nixos-home//.github/renovate/semantic_commits.json5",
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+  },
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "schedule": [
+    "before 9pm on friday",
+  ],
+  "labels": [
+    "dependencies",
+  ]
+}
