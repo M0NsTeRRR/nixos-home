@@ -40,6 +40,10 @@
           name = "Ubuntu Nerd Font";
           size = "1.0rem";
         };
+        bar = {
+          floating = true;
+          layer = "bottom";
+        };
       };
 
       terminal = "ghostty";
