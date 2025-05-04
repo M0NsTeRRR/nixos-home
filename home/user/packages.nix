@@ -82,7 +82,6 @@
       # app
       keepassxc # password manager
       protonmail-desktop # email client for proton
-      protonvpn-gui # proton vpn
       wireguard-tools # wireguard vpn
       (discord.override { withVencord = true; }) # social media
       vlc # video player
