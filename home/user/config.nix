@@ -4,6 +4,7 @@ let
 in
 {
   home.file = {
+    ".config/containers/containers.conf".source = "${configDir}/containers/containers.conf";
     ".config/hypr/hypridle.conf".source = "${configDir}/hypr/hypridle.conf";
     ".config/hypr/hyprlock.conf".source = "${configDir}/hypr/hyprlock.conf";
     ".config/hypr/hyprpaper.conf".source = "${configDir}/hypr/hyprpaper.conf";
