@@ -71,6 +71,8 @@
       rclone
       go-task
       rdap # Registry Data Access Protocol
+      zizmor # Tool for finding security issues in GitHub Actions setups
+      containerlab # Container-based networking lab.
 
       # misc
       brightnessctl # controlling backlight
