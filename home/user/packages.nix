@@ -67,6 +67,7 @@
       postgresql
       sqlite
       dogdns # command-line DNS client
+      viddy # Modern watch command
       restic
       rsync
       rclone
@@ -91,7 +92,6 @@
       google-chrome # browser
       qbittorrent # torrent
       spotify # music
-      spotube # music
       marp-cli # presentation with plain Markdown
     ]);
 }

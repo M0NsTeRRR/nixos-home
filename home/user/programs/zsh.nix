@@ -8,6 +8,9 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
+      cat = "bat";
+      watch = "viddy";
+      kubectl = "kubecolor";
       k = "kubectl";
     };
 
