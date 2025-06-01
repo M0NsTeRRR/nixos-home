@@ -45,6 +45,7 @@
       protobuf
       bpftrace
       yq # command-line YAML, JSON, XML, CSV, TOML
+      eza # a modern, maintained replacement for ls
       bat # enhanced cat command
       tldr # Collaborative cheatsheets for console commands
       hoppscotch # open-source alternative to Postman

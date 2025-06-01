@@ -10,6 +10,7 @@
     shellAliases = {
       cat = "bat";
       watch = "viddy";
+      ls = "eza";
       kubectl = "kubecolor";
       k = "kubectl";
     };
