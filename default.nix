@@ -27,7 +27,7 @@ let
 in
 {
   imports = [
-    ./system/hosts
+    ./hosts
     inputs.lix-module.nixosModules.default
     inputs.lanzaboote.nixosModules.lanzaboote
     inputs.home-manager-stable.nixosModules.home-manager
