@@ -2,8 +2,13 @@
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    ../../system/modules
-    ../../system/modules/nvidia.nix
+    ../../system/modules/ca-certificates.nix
+    ../../system/modules/internationalization.nix
+    ../../system/modules/nixsettings.nix
+    ../../system/modules/security.nix
+    ../../system/modules/ssh.nix
+    ../../system/modules/user.nix
+    ../../system/modules/virtualization.nix
   ];
 
   wsl.enable = true;
