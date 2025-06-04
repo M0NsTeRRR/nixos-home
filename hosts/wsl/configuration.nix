@@ -14,6 +14,8 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
+  environment.etc."resolv.conf".source = "/etc/resolv.conf";
+
   # fix for vscode remote : https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
   environment.systemPackages = [
     pkgs.wget

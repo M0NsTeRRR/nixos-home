@@ -15,12 +15,12 @@
       # hyprland-qtutils
       wl-clipboard # copy/paste utilities for Wayland
       wl-clip-persist # Keep Wayland clipboard even after programs close
-      polkit-kde-agent # authentication agent
+      kdePackages.polkit-kde-agent-1 # authentication agent
       hyprpanel # wayland bar for hyprland
       rofi-wayland # Keystroke Launcher
       nemo # file manager
       yad # gui dialog (used as shortcut reminder)
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # nerdfonts font
+      nerd-fonts.jetbrains-mono # nerdfonts font
       qt6.qtwayland
       qt5.qtwayland
     ])

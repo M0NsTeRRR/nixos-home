@@ -20,7 +20,7 @@
       path = "$HOME/zsh/history";
     };
 
-    initExtra = ''
+    initContent = ''
       ### ctrl+arrows
       bindkey "\e[1;5C" forward-word
       bindkey "\e[1;5D" backward-word
