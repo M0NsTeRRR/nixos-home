@@ -36,6 +36,11 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
@@ -47,6 +52,7 @@
       home-manager-stable,
       home-manager-unstable,
       hyprpanel,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -54,6 +60,7 @@
       hostNames = [
         "laptop"
         "desktop"
+        "wsl"
       ];
       system = "x86_64-linux";
       lib = nixpkgs-stable.lib;

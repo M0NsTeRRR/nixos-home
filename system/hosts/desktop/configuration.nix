@@ -14,6 +14,8 @@
     ../../modules/nvidia.nix
   ];
 
+  boot.supportedFilesystems = [ "btrfs" ];
+
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [
       "DP-1,2560x1440,0x0,1"

@@ -26,6 +26,8 @@
     ../../modules/battery.nix
   ];
 
+  boot.supportedFilesystems = [ "btrfs" ];
+
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [
       "eDP-1,highres,auto,2,bitdepth,10"

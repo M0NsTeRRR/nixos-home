@@ -1,5 +1,8 @@
 # Install
 
+> [!CAUTION]
+> The instructions below apply to non-WSL machines. For WSL, follow these instructions: [NixOS-WSL](https://nix-community.github.io/NixOS-WSL/index.html).
+
 1. Flash NixOS ISO Image to an USB stick
 2. Boot into it
 3. Setup wifi (if needed)
@@ -64,7 +67,7 @@
 # Update dependencies
 
    ```bash
-   nix flakes update
+   nix flake update
    ```
 
 # Static files
