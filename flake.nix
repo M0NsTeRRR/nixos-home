@@ -82,7 +82,7 @@
               pkgs-unstable
               ;
           };
-          modules = [ ./. ];
+          modules = [ ./hosts ];
         }
       );
 
