@@ -1,4 +1,4 @@
-{ gui, config, ... }:
+{ lib, config, guiEnabled, ... }:
 let
   guiFile = {
     ".config/hypr/hypridle.conf".source = "${configDir}/hypr/hypridle.conf";
@@ -18,5 +18,5 @@ let
   configDir = ../config;
 in
 {
-  home.file = defaultFile // (if gui then guiFile else { });
+  home.file = defaultFile // lib.optionalAttrs guiEnabled guiFile;
 }

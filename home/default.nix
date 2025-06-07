@@ -2,6 +2,7 @@
   inputs,
   username,
   pkgs,
+  config,
   lib,
   ...
 }:
@@ -27,15 +28,9 @@ in
 {
   imports = [
     inputs.home-manager-stable.nixosModules.home-manager
+    ./options.nix
   ];
 
-  options = {
-    gui = lib.mkOption {
-      type = with lib.types; bool;
-      default = true;
-      description = "Enable GUI-specific configurations.";
-    };
-  };
   config = {
     home-manager = {
       backupFileExtension = "backup";
@@ -43,12 +38,11 @@ in
 
       extraSpecialArgs = {
         inherit inputs username pkgs-unstable;
+        guiEnabled = config.mySystem.gui.enable;
       };
 
       users.${username} = {
-        imports = [
-          ./user
-        ];
+        imports = [ ./user ];
 
         home = {
           username = "${username}";

@@ -1,4 +1,4 @@
-{ gui, ... }:
+{ guiEnabled, ... }:
 let
   defaultImports = [
     ./atuin.nix
@@ -21,5 +21,5 @@ let
   ];
 in
 {
-  imports = defaultImports ++ (if gui then guiImports else []);
+  imports = defaultImports ++ (if guiEnabled then guiImports else []);
 }

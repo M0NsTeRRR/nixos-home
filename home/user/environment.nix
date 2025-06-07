@@ -1,4 +1,4 @@
-{ gui, ... }:
+{ lib, guiEnabled, ... }:
 let
   guiSessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -23,5 +23,5 @@ let
   };
 in
 {
-  home.sessionVariables = defaultSessionVariables // (if gui then guiSessionVariables else { });
+  home.sessionVariables = defaultSessionVariables // lib.optionalAttrs guiEnabled guiSessionVariables;
 }

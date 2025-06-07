@@ -1,4 +1,4 @@
-{ gui, ... }:
+{ lib, guiEnabled, ... }:
 let
   defaultImports = [
     ./gpg.nix
@@ -10,5 +10,5 @@ let
   ];
 in
 {
-  imports = defaultImports ++ (if gui then guiImports else []);
+  imports = defaultImports ++ lib.optionals guiEnabled guiImports;
 }

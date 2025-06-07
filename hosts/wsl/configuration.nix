@@ -11,7 +11,7 @@
     ../../system/modules/virtualization.nix
     ../../home
     {
-      gui = false;
+      mySystem.gui.enable = false;
     }
   ];
 

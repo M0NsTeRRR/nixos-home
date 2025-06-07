@@ -1,4 +1,4 @@
-{ gui, ... }:
+{ lib, guiEnabled, ... }:
 let
   defaultImports = [];
 
@@ -7,5 +7,5 @@ let
   ];
 in
 {
-  imports = defaultImports ++ (if gui then guiImports else []);
+  imports = defaultImports ++ lib.optionals guiEnabled guiImports;
 }

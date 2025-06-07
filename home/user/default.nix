@@ -1,4 +1,5 @@
-{ config, ... }:
+{ lib, guiEnabled, ... }:
+
 let
   defaultImports = [
     ./config.nix
@@ -15,5 +16,5 @@ let
   ];
 in
 {
-  imports = defaultImports ++ (if config.gui then guiImports else []);
+  imports = defaultImports ++ lib.optionals guiEnabled guiImports;
 }
