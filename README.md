@@ -1,7 +1,6 @@
 # Install
 
-> [!CAUTION]
-> The instructions below apply to non-WSL machines. For WSL, follow these instructions: [NixOS-WSL](https://nix-community.github.io/NixOS-WSL/index.html).
+## Classic
 
 1. Flash NixOS ISO Image to an USB stick
 2. Boot into it
@@ -55,6 +54,25 @@
 11. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
 
 12. GG 🥳
+
+## WSL
+
+Enable WSL2, download the latest [NixOS release](https://github.com/nix-community/NixOS-WSL/releases), and execute the downloaded file. Once it's installed, restart WSL with `wsl --shutdown`, open a new shell, and complete the installation:
+
+```bash
+sudo nix-channel --update
+sudo nixos-rebuild switch
+```
+
+[Change your username](https://nix-community.github.io/NixOS-WSL/how-to/change-username.html) and run:
+
+```bash
+cd ~
+nix-shell -p git
+nix --experimental-features 'nix-command flakes' flake new -t github:m0nsterrr/nixos-home ./nixos-home
+cd nixos-home
+sudo nixos-rebuild switch --flake '.#wsl'
+```
 
 # Update
 
