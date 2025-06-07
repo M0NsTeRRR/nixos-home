@@ -7,7 +7,6 @@ let
     ./gpg.nix
     ./git.nix
     ./starship.nix
-    ./vscode.nix
     ./zsh.nix
   ];
 
