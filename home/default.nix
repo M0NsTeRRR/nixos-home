@@ -29,31 +29,40 @@ in
     inputs.home-manager-stable.nixosModules.home-manager
   ];
 
-  home-manager = {
-    backupFileExtension = "backup";
-    useUserPackages = true;
-
-    extraSpecialArgs = {
-      inherit inputs username pkgs-unstable;
+  options = {
+    gui = lib.mkOption {
+      type = with lib.types; bool;
+      default = true;
+      description = "Enable GUI-specific configurations.";
     };
+  };
+  config = {
+    home-manager = {
+      backupFileExtension = "backup";
+      useUserPackages = true;
 
-    users.${username} = {
-      imports = [
-        ./user
-      ];
-
-      home = {
-        username = "${username}";
-        homeDirectory = "/home/${username}";
+      extraSpecialArgs = {
+        inherit inputs username pkgs-unstable;
       };
 
-      # This value determines the NixOS release from which the default
-      # settings for stateful data, like file locations and database versions
-      # on your system were taken. It‘s perfectly fine and recommended to leave
-      # this value at the release version of the first install of this system.
-      # Before changing this value read the documentation for this option
-      # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-      home.stateVersion = "24.05";
+      users.${username} = {
+        imports = [
+          ./user
+        ];
+
+        home = {
+          username = "${username}";
+          homeDirectory = "/home/${username}";
+        };
+
+        # This value determines the NixOS release from which the default
+        # settings for stateful data, like file locations and database versions
+        # on your system were taken. It‘s perfectly fine and recommended to leave
+        # this value at the release version of the first install of this system.
+        # Before changing this value read the documentation for this option
+        # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+        home.stateVersion = "24.05";
+      };
     };
   };
 }

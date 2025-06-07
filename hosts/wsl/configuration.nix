@@ -9,6 +9,10 @@
     ../../system/modules/ssh.nix
     ../../system/modules/user.nix
     ../../system/modules/virtualization.nix
+    ../../home
+    {
+      gui = false;
+    }
   ];
 
   wsl.enable = true;

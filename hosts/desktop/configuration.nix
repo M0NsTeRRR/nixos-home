@@ -12,6 +12,7 @@
     }
     ../../system/modules/game.nix
     ../../system/modules/nvidia.nix
+    ../../home
   ];
 
   boot.supportedFilesystems = [ "btrfs" ];

@@ -1,7 +1,14 @@
-{
-  imports = [
+{ gui, ... }:
+let
+  defaultImports = [
     ./gpg.nix
-    ./kdeconnect.nix
     ./ssh-agent.nix
   ];
+
+  guiImports = [
+    ./kdeconnect.nix
+  ];
+in
+{
+  imports = defaultImports ++ (if gui then guiImports else []);
 }

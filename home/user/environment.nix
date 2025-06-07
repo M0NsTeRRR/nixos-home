@@ -1,10 +1,9 @@
-{
-  home.sessionVariables = {
+{ gui, ... }:
+let
+  guiSessionVariables = {
     NIXOS_OZONE_WL = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
-
-    # https://wiki.hyprland.org/Configuring/Environment-variables/
     CLUTTER_BACKEND = "wayland";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
@@ -15,14 +14,14 @@
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     SDL_VIDEODRIVER = "wayland";
-
-    # firefox
     MOZ_ENABLE_WAYLAND = "1";
-
-    # Python SSL self signed certs
-    REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt";
-
-    # game
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
+
+  defaultSessionVariables = {
+    REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt";
+  };
+in
+{
+  home.sessionVariables = defaultSessionVariables // (if gui then guiSessionVariables else { });
 }

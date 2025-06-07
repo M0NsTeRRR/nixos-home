@@ -1,17 +1,25 @@
-{
-  imports = [
+{ gui, ... }:
+let
+  defaultImports = [
     ./atuin.nix
-    ./firefox.nix
-    ./git.nix
-    ./ghostty.nix
-    ./gpg.nix
     ./home-manager.nix
-    ./hyprland.nix
     ./k9s.nix
-    ./hyprpanel.nix
-    ./obs.nix
+    ./gpg.nix
+    ./git.nix
     ./starship.nix
     ./vscode.nix
     ./zsh.nix
   ];
+
+  guiImports = [
+    ./firefox.nix
+    ./ghostty.nix
+    ./hyprland.nix
+    ./hyprpanel.nix
+    ./obs.nix
+    ./vscode.nix
+  ];
+in
+{
+  imports = defaultImports ++ (if gui then guiImports else []);
 }

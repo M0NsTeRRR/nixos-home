@@ -24,6 +24,7 @@
       ];
     }
     ../../system/modules/battery.nix
+    ../../home
   ];
 
   boot.supportedFilesystems = [ "btrfs" ];
