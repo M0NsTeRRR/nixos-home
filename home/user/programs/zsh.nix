@@ -8,11 +8,12 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      cat = "bat";
+      cat = "bat --paging=never";
       watch = "viddy";
       ls = "eza";
       kubectl = "kubecolor";
       k = "kubectl";
+      top = "btop";
     };
 
     history = {
@@ -20,7 +21,7 @@
       path = "$HOME/zsh/history";
     };
 
-    initExtra = ''
+    initContent = ''
       ### ctrl+arrows
       bindkey "\e[1;5C" forward-word
       bindkey "\e[1;5D" backward-word

@@ -1,12 +1,20 @@
-{
-  imports = [
+{ lib, guiEnabled, ... }:
+
+let
+  defaultImports = [
     ./config.nix
     ./environment.nix
     ./packages.nix
     ./programs
-    ./scripts
+    ./script.nix
     ./services
-    ./theme.nix
     ./xdg.nix
   ];
+
+  guiImports = [
+    ./theme.nix
+  ];
+in
+{
+  imports = defaultImports ++ lib.optionals guiEnabled guiImports;
 }

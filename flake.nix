@@ -2,18 +2,18 @@
   description = "Ludovic Ortega Nix configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-3.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     home-manager-stable = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -36,6 +36,11 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
@@ -47,6 +52,7 @@
       home-manager-stable,
       home-manager-unstable,
       hyprpanel,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -54,6 +60,7 @@
       hostNames = [
         "laptop"
         "desktop"
+        "wsl"
       ];
       system = "x86_64-linux";
       lib = nixpkgs-stable.lib;
@@ -75,7 +82,7 @@
               pkgs-unstable
               ;
           };
-          modules = [ ./. ];
+          modules = [ ./hosts ];
         }
       );
 

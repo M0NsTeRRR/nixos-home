@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
     ./disko.nix
-    ../../modules
+    ../../system/modules
     {
       usbguard-rules = ''
         allow id 1d6b:0002 serial "0000:06:00.0" name "xHCI Host Controller" hash "ryHCmG3nsLVuHD/YMplTUyPWzK2YMO368ASLReR84VQ=" parent-hash "WHpbB/3UKLhaqrI19okWw69kopR4n9TG9RQ9uOo5acI=" with-interface 09:00:00 with-connect-type ""
@@ -23,8 +23,11 @@
         "2a0c:b641:02c0:104::12/128"
       ];
     }
-    ../../modules/battery.nix
+    ../../system/modules/battery.nix
+    ../../home
   ];
+
+  boot.supportedFilesystems = [ "btrfs" ];
 
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [

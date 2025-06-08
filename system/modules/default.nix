@@ -20,7 +20,7 @@
     ./user.nix
     ./usbguard.nix
     ./video.nix
-    ./virtualisation.nix
+    ./virtualization.nix
     ./vpn.nix
   ];
 }
