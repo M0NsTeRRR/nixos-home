@@ -86,7 +86,19 @@ Start-Service ssh-agent
 setx WSLENV 'ProgramFiles/up:USERPROFILE/up'
 ```
 
-Install niperelay on windows in %USERPROFILE%\.wsl
+Install niperelay on windows
+
+```
+# Using WinGet
+winget install npiperelay
+
+# Or using Chocolatey
+choco install npiperelay
+
+# Or using a binary in %USERPROFILE%\.wsl
+# for example : https://github.com/rupor-github/wsl-ssh-agent
+```
+
 Enable ssh agent support for OpenSSH on keepassXC
 
 # Update

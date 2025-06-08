@@ -6,9 +6,7 @@ let
     (pkgs.writeShellScriptBin "yad" (builtins.readFile (scriptDir + "/yad.sh")))
   ];
 
-  wslScripts = [
-    (pkgs.writeShellScriptBin "wsl-ssh-agent-relay" (builtins.readFile (scriptDir + "/wsl-ssh-agent-relay.sh")))
-  ];
+  wslScripts = [];
 in
 {
   home.packages = []

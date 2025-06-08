@@ -1,4 +1,4 @@
-{ pkgs-unstable, wslEnabled, ... }:
+{ pkgs-unstable, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -33,12 +33,6 @@
 
       ### ctrl+shift+delete
       bindkey "\e[3;6~" kill-line
-
-      ${if wslEnabled then ''
-        # SSH agent
-        wsl-ssh-agent-relay -s start
-        export SSH_AUTH_SOCK=~/.ssh/wsl-ssh-agent.sock
-      '' else ""}
     '';
   };
 }
