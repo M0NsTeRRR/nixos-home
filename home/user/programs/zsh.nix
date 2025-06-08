@@ -36,7 +36,7 @@
 
       ${if wslEnabled then ''
         # SSH agent
-        ~/.local/bin/wsl-ssh-agent-relay -s start
+        wsl-ssh-agent-relay -s start
         export SSH_AUTH_SOCK=~/.ssh/wsl-ssh-agent.sock
       '' else ""}
     '';
