@@ -1,15 +1,12 @@
-{ pkgs, lib, guiEnabled, wslEnabled, ... }:
+{ pkgs, lib, guiEnabled, ... }:
 let
   scriptDir = ../script;
 
   guiScripts = [
     (pkgs.writeShellScriptBin "yad" (builtins.readFile (scriptDir + "/yad.sh")))
   ];
-
-  wslScripts = [];
 in
 {
   home.packages = []
-    ++ lib.optionals guiEnabled guiScripts
-    ++ lib.optionals wslEnabled wslScripts;
+    ++ lib.optionals guiEnabled guiScripts;
 }

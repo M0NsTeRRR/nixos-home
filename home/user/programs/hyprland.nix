@@ -12,9 +12,9 @@
 
       exec-once = [
         "/usr/lib/polkit-kde-authentication-agent-1"
-        "hyprpaper"
-        "hypridle"
-        "hyprbars"
+        "${pkgs.hyprpaper}/bin/hyprpaper" # wallpaper utility
+        "${pkgs.hypridle}/bin/hypridle" # idle daemon
+        "${pkgs.hyprlandPlugins.hyprbars}/bin/hyprbars"
       ];
 
       general = {
@@ -84,16 +84,16 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Q, exec, $ghostty"
+        "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
         "$mainMod, C, killactive,"
-        "$mainMod, L, exec, pidof hyprlock || hyprlock"
-        "$mainMod, E, exec, dolphin"
+        "$mainMod, L, exec, pidof ${pkgs.hyprlock}/bin/hyprlock || ${pkgs.hyprlock}/bin/hyprlock"
+        "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, rofi -show drun"
+        "$mainMod, R, exec, ${pkgs.rofi}/bin/rofi -show drun"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, I, hyprexpo:expo, toggle"
-        ", PRINT, exec, hyprshot -m region -o $HOME/Pictures"
+        "$mainMod, I, ${pkgs.hyprlandPlugins.hyprexpo}/bin/hyprexpo:expo, toggle"
+        ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures"
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
@@ -143,8 +143,8 @@
           bar_precedence_over_border = true;
 
           hyprbars-button = [
-            "rgb(f38ba8),15,,hyprctl dispatch killactive"
-            "rgb(74c7ec),15,,hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 80% 80%; hyprctl dispatch centerwindow"
+            "rgb(f38ba8),15,,${pkgs.hyprland}/bin/hyprctl dispatch killactive"
+            "rgb(74c7ec),15,,${pkgs.hyprland}/bin/hyprctl dispatch togglefloating; hyp${pkgs.hyprland}/bin/hyprctl dispatch resizeactive exact 80% 80%; ${pkgs.hyprland}/bin/hyprctl dispatch centerwindow"
           ];
         };
 

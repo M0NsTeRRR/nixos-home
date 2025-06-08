@@ -115,10 +115,19 @@ Enable ssh agent support for OpenSSH on keepassXC
    nix flake update
    ```
 
-# Static files
+# Import static config
+
+Import your GPG keys
+
+```bash
+gpg --import < priv.asc
+gpg --import < pub.asc
+gpg --import-ownertrust < trust.asc
+```
 
 Some static files must be manually setup :
 
 - `~/cifs/credentials`
 - `~/wireguard-keys/homelab.peer`
 - `~/.kube/static-kubeconfigs/<files>`
+- `~/passwords.kdbx`
