@@ -57,6 +57,7 @@
 
 ## WSL
 
+Install Windows Terminal and [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads).
 Enable WSL2, download the latest [NixOS release](https://github.com/nix-community/NixOS-WSL/releases), and execute the downloaded file. Once it's installed, restart WSL with `wsl --shutdown`, open a new shell, and complete the installation:
 
 ```bash
