@@ -9,7 +9,6 @@
     ../../system/modules/ssh.nix
     ../../system/modules/user.nix
     ../../system/modules/virtualization.nix
-    ../../system/modules/wsl.nix
     ../../home
     {
       mySystem = {
@@ -20,7 +19,7 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = username;
 
   environment.etc."resolv.conf".source = "/etc/resolv.conf";
 
