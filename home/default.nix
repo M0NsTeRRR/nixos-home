@@ -39,6 +39,7 @@ in
       extraSpecialArgs = {
         inherit inputs username pkgs-unstable;
         guiEnabled = config.mySystem.gui.enable;
+        wslEnabled = config.mySystem.wsl.enable;
       };
 
       users.${username} = {

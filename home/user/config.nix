@@ -1,5 +1,7 @@
 { lib, config, guiEnabled, ... }:
 let
+  configDir = ../config;
+
   guiFile = {
     ".config/hypr/hypridle.conf".source = "${configDir}/hypr/hypridle.conf";
     ".config/hypr/hyprlock.conf".source = "${configDir}/hypr/hyprlock.conf";
@@ -14,8 +16,6 @@ let
     ".config/containers/containers.conf".source = "${configDir}/containers/containers.conf";
     ".kube/switch-config.yaml".source = "${configDir}/kube/switch-config.yaml";
   };
-
-  configDir = ../config;
 in
 {
   home.file = defaultFile // lib.optionalAttrs guiEnabled guiFile;

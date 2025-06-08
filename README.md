@@ -74,6 +74,20 @@ cd nixos-home
 sudo nixos-rebuild switch --flake '.#wsl'
 ```
 
+### Use SSH-agent and gpg key from your windows host
+
+Install SSH client from winget  winget install "openssh beta" (it can causes error using old version)
+Enable ssh-agent on windows and share UserProfile and ProgramFiles env var to WSL2, open powershell prompt with admin right
+
+```powershell
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+setx WSLENV 'ProgramFiles/up:USERPROFILE/up'
+```
+
+Install niperelay on windows in %USERPROFILE%\.wsl
+Enable ssh agent support for OpenSSH on keepassXC
+
 # Update
 
    If you need to update the configuration at anytime.

@@ -11,7 +11,10 @@
     ../../system/modules/virtualization.nix
     ../../home
     {
-      mySystem.gui.enable = false;
+      mySystem = {
+        gui.enable = false;
+        wsl.enable = true;
+      };
     }
   ];
 

@@ -6,7 +6,7 @@ let
     ./environment.nix
     ./packages.nix
     ./programs
-    ./scripts
+    ./script.nix
     ./services
     ./xdg.nix
   ];

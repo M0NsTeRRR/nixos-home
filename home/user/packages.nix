@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, guiEnabled, lib, ... }:
+{ pkgs, pkgs-unstable, lib, guiEnabled, ... }:
 let
   # Packages CLI/serveur uniquement (pas de GUI)
   cliPackages = with pkgs-unstable; [
