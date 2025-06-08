@@ -1,4 +1,9 @@
-{ lib, guiEnabled, wslEnabled, ... }:
+{
+  lib,
+  guiEnabled,
+  wslEnabled,
+  ...
+}:
 let
   defaultImports = [
     ./gpg.nix

@@ -14,7 +14,17 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      Environment = [ "PATH=${lib.makeBinPath [ pkgs.wslu pkgs.coreutils pkgs.gnused pkgs.gnugrep pkgs.bash ]}" ];
+      Environment = [
+        "PATH=${
+          lib.makeBinPath [
+            pkgs.wslu
+            pkgs.coreutils
+            pkgs.gnused
+            pkgs.gnugrep
+            pkgs.bash
+          ]
+        }"
+      ];
       ExecStartPre = [
         "${pkgs.coreutils}/bin/mkdir -p /mnt/wsl"
         "${pkgs.coreutils}/bin/rm -f /mnt/wsl/ssh-agent.sock"

@@ -1,4 +1,9 @@
-{ lib, config, guiEnabled, ... }:
+{
+  lib,
+  config,
+  guiEnabled,
+  ...
+}:
 let
   configDir = ../config;
 

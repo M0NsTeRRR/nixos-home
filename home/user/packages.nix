@@ -1,4 +1,10 @@
-{ pkgs, pkgs-unstable, lib, guiEnabled, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  guiEnabled,
+  ...
+}:
 let
   # Packages CLI/serveur uniquement (pas de GUI)
   cliPackages = with pkgs-unstable; [
@@ -56,52 +62,54 @@ let
     marp-cli # presentation with plain Markdown
   ];
 
-  guiPackages = (with pkgs; [
-    # DE (Desktop Environment) - stable
-    hyprland # dynamic tiling Wayland compositor
-    xdg-desktop-portal-hyprland # Hyprland XDG Desktop Portal
-    hyprpicker # color picker
-    hyprcursor # cursor
-    hyprlock # screen locking utility
-    hypridle # idle daemon
-    hyprpaper # wallpaper utility
-    hyprshot # screenshot utility
-    hyprpolkitagent # polkit authentication
-    # hyprland-qtutils
-    wl-clipboard # copy/paste utilities for Wayland
-    wl-clip-persist # Keep Wayland clipboard even after programs close
-    kdePackages.polkit-kde-agent-1 # authentication agent
-    hyprpanel # wayland bar for hyprland
-    rofi-wayland # Keystroke Launcher
-    nemo # file manager
-    yad # gui dialog (used as shortcut reminder)
-    nerd-fonts.jetbrains-mono # nerdfonts font
-    qt6.qtwayland
-    qt5.qtwayland
-  ]) ++ (with pkgs-unstable; [
-    # office tool
-    libreoffice-qt
-    hunspell
-    hunspellDicts.fr-moderne
-    hunspellDicts.en_US
+  guiPackages =
+    (with pkgs; [
+      # DE (Desktop Environment) - stable
+      hyprland # dynamic tiling Wayland compositor
+      xdg-desktop-portal-hyprland # Hyprland XDG Desktop Portal
+      hyprpicker # color picker
+      hyprcursor # cursor
+      hyprlock # screen locking utility
+      hypridle # idle daemon
+      hyprpaper # wallpaper utility
+      hyprshot # screenshot utility
+      hyprpolkitagent # polkit authentication
+      # hyprland-qtutils
+      wl-clipboard # copy/paste utilities for Wayland
+      wl-clip-persist # Keep Wayland clipboard even after programs close
+      kdePackages.polkit-kde-agent-1 # authentication agent
+      hyprpanel # wayland bar for hyprland
+      rofi-wayland # Keystroke Launcher
+      nemo # file manager
+      yad # gui dialog (used as shortcut reminder)
+      nerd-fonts.jetbrains-mono # nerdfonts font
+      qt6.qtwayland
+      qt5.qtwayland
+    ])
+    ++ (with pkgs-unstable; [
+      # office tool
+      libreoffice-qt
+      hunspell
+      hunspellDicts.fr-moderne
+      hunspellDicts.en_US
 
-    # dev tools
-    hoppscotch # open-source alternative to Postman
-    wireshark
+      # dev tools
+      hoppscotch # open-source alternative to Postman
+      wireshark
 
-    # misc
-    brightnessctl # controlling backlight
-    playerctl # media player command-line controller
+      # misc
+      brightnessctl # controlling backlight
+      playerctl # media player command-line controller
 
-    # app
-    keepassxc # password manager
-    protonmail-desktop # email client for proton
-    (discord.override { withVencord = true; }) # social media
-    vlc # video player
-    google-chrome # browser
-    qbittorrent # torrent
-    spotify # music
-  ]);
+      # app
+      keepassxc # password manager
+      protonmail-desktop # email client for proton
+      (discord.override { withVencord = true; }) # social media
+      vlc # video player
+      google-chrome # browser
+      qbittorrent # torrent
+      spotify # music
+    ]);
 in
 {
   home.packages = cliPackages ++ lib.optionals guiEnabled guiPackages;

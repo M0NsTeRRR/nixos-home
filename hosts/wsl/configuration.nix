@@ -1,4 +1,9 @@
-{ username, inputs, pkgs, ... }:
+{
+  username,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default

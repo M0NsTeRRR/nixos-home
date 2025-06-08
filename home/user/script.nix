@@ -1,4 +1,9 @@
-{ pkgs, lib, guiEnabled, ... }:
+{
+  pkgs,
+  lib,
+  guiEnabled,
+  ...
+}:
 let
   scriptDir = ../script;
 
@@ -7,6 +12,5 @@ let
   ];
 in
 {
-  home.packages = []
-    ++ lib.optionals guiEnabled guiScripts;
+  home.packages = [ ] ++ lib.optionals guiEnabled guiScripts;
 }

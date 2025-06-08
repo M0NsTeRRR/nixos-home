@@ -20,5 +20,5 @@ let
   ];
 in
 {
-  imports = defaultImports ++ (if guiEnabled then guiImports else []);
+  imports = defaultImports ++ (if guiEnabled then guiImports else [ ]);
 }
