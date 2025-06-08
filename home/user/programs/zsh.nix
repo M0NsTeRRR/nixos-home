@@ -8,11 +8,12 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      cat = "bat";
+      cat = "bat --paging=never";
       watch = "viddy";
       ls = "eza";
       kubectl = "kubecolor";
       k = "kubectl";
+      top = "btop";
     };
 
     history = {

@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    coreutils
+    wslu
+    socat
+  ];
+
   systemd.user.services.ssh-agent-proxy = {
     Unit = {
       Description = "Windows SSH agent proxy";
@@ -8,6 +14,7 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
+      Environment = [ "PATH=${lib.makeBinPath [ pkgs.wslu pkgs.coreutils pkgs.gnused pkgs.gnugrep pkgs.bash ]}" ];
       ExecStartPre = [
         "${pkgs.coreutils}/bin/mkdir -p /mnt/wsl"
         "${pkgs.coreutils}/bin/rm -f /mnt/wsl/ssh-agent.sock"
