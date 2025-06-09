@@ -18,7 +18,6 @@
     "ahci"
     "nvme"
     "usbhid"
-    "uas"
     "usb_storage"
     "sd_mod"
   ];
