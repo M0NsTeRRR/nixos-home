@@ -105,6 +105,7 @@ let
       # app
       keepassxc # password manager
       protonmail-desktop # email client for proton
+      protonvpn-gui # vpn client for proton
       (discord.override { withVencord = true; }) # social media
       vlc # video player
       imv # image viewer
