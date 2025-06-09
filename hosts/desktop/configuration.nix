@@ -33,8 +33,8 @@
 
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [
-      "DP-1,2560x1440,0x0,1"
-      "DP-2,2560x1440,-2560x0,1"
+      "DP-1,2560x1440@240.00Hz,0x0,1"
+      "DP-2,2560x1440@144.00Hz,-2560x0,1"
       ",preferred,auto,auto"
     ];
   };
