@@ -1,7 +1,8 @@
 kind: SwitchConfig
-kubeconfigRediscoveryInterval: 1h
-kubeconfigPaths:
-  - path: "~/.kube/config"
-    store: filesystem
-  - path: "~/.kube/static-kubeconfigs/"
-    store: filesystem
+version: v1alpha1
+kubeconfigName: "*"
+kubeconfigStores:
+  - kind: filesystem
+    paths:
+      - ~/.kube/static-kubeconfigs/
+      - ~/.kube/config
