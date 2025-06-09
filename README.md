@@ -47,6 +47,9 @@
 
 10. Update nixos config as needed
 
+   > [!IMPORTANT]
+   > Don't forget to whitelist your USB devices otherwise you will not be able to login.
+
       ```bash
       nixos-rebuild switch --flake '.#<hostname>'
       ```
