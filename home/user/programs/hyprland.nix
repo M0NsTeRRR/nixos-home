@@ -92,7 +92,7 @@
         "$mainMod, R, exec, ${pkgs.rofi}/bin/rofi -show drun"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, I, ${pkgs.hyprlandPlugins.hyprexpo}/bin/hyprexpo:expo, toggle"
+        "$mainMod, I, hyprexpo:expo, toggle"
         ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures"
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
