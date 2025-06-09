@@ -7,13 +7,13 @@
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    ../../system/modules/ca-certificates.nix
-    ../../system/modules/internationalization.nix
-    ../../system/modules/nixsettings.nix
-    ../../system/modules/security.nix
-    ../../system/modules/ssh.nix
-    ../../system/modules/user.nix
-    ../../system/modules/virtualization.nix
+    ../../system/ca-certificates.nix
+    ../../system/internationalization.nix
+    ../../system/nixsettings.nix
+    ../../system/security.nix
+    ../../system/ssh.nix
+    ../../system/user.nix
+    ../../system/virtualization.nix
     ../../home
     {
       mySystem = {
