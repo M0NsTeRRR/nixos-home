@@ -107,6 +107,7 @@ let
       protonmail-desktop # email client for proton
       (discord.override { withVencord = true; }) # social media
       vlc # video player
+      imv # image viewer
       google-chrome # browser
       qbittorrent # torrent
       spotify # music
