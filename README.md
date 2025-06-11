@@ -50,9 +50,9 @@
    > [!IMPORTANT]
    > Don't forget to whitelist your USB devices otherwise you will not be able to login.
 
-      ```bash
-      nixos-rebuild switch --flake '.#<hostname>'
-      ```
+   ```bash
+   nixos-rebuild switch --flake '.#<hostname>'
+   ```
 
 11. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
 

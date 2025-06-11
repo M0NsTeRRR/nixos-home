@@ -6,6 +6,7 @@ let
     ./k9s.nix
     ./gpg.nix
     ./git.nix
+    ./kubecolor.nix
     ./starship.nix
     ./zsh.nix
   ];

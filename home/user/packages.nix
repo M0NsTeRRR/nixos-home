@@ -36,7 +36,6 @@ let
     nmap
     iperf
     kubectl
-    kubecolor
     helm
     kubeswitch
     stern
