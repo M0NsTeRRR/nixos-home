@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  username,
   ...
 }:
 with lib;

@@ -41,18 +41,20 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
     {
       self,
+      systems,
       nixpkgs-stable,
       nixpkgs-unstable,
-      lix-module,
-      home-manager-stable,
-      home-manager-unstable,
-      hyprpanel,
-      nixos-wsl,
+      treefmt-nix,
       ...
     }@inputs:
     let
@@ -63,12 +65,16 @@
         "wsl"
       ];
       system = "x86_64-linux";
+      eachSystem =
+        f: nixpkgs-stable.lib.genAttrs (import systems) (system: f nixpkgs-stable.legacyPackages.${system});
       lib = nixpkgs-stable.lib;
-      pkgs = nixpkgs-stable.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in
     {
-      formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      });
 
       nixosConfigurations = lib.genAttrs hostNames (
         hostName:
@@ -79,8 +85,8 @@
               hostName
               username
               inputs
-              pkgs-unstable
               ;
+            pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-linux";
           };
           modules = [ ./hosts ];
         }
