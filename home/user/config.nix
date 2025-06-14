@@ -19,7 +19,6 @@ let
 
   defaultFile = {
     ".config/containers/containers.conf".source = "${configDir}/containers/containers.conf";
-    ".kube/switch-config.yaml".source = "${configDir}/kube/switch-config.yaml";
   };
 in
 {

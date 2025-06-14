@@ -37,7 +37,6 @@ let
     iperf
     kubectl
     helm
-    kubeswitch
     stern
     packer
     pulumi

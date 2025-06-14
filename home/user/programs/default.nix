@@ -7,6 +7,7 @@ let
     ./gpg.nix
     ./git.nix
     ./kubecolor.nix
+    ./../../modules/kubeswitch.nix
     ./starship.nix
     ./zsh.nix
   ];
@@ -22,4 +23,22 @@ let
 in
 {
   imports = defaultImports ++ (if guiEnabled then guiImports else [ ]);
+  programs.kubeswitch = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      kind = "SwitchConfig";
+      version = "v1alpha1";
+      kubeconfigName = "*";
+      kubeconfigStores = [
+        {
+          kind = "filesystem";
+          paths = [
+            "~/.kube/static-kubeconfigs/"
+            "~/.kube/config"
+          ];
+        }
+      ];
+    };
+  };
 }
