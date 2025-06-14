@@ -107,6 +107,7 @@
         "$mainMod, egrave, workspace, 7"
         "$mainMod, underscore, workspace, 8"
         "$mainMod, ccedilla, workspace, 9"
+        "$mainMod, agrave, workspace, 0"
         "$mainMod SHIFT, ampersand, movetoworkspace, 1"
         "$mainMod SHIFT, eacute, movetoworkspace, 2"
         "$mainMod SHIFT, quotedbl, movetoworkspace, 3"
@@ -116,6 +117,7 @@
         "$mainMod SHIFT, egrave, movetoworkspace, 7"
         "$mainMod SHIFT, underscore, movetoworkspace, 8"
         "$mainMod SHIFT, ccedilla, movetoworkspace, 9"
+        "$mainMod SHIFT, agrave, movetoworkspace, 10"
         "$mainMod, tab, workspace, e+1"
       ];
 
