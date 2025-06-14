@@ -25,6 +25,11 @@
     }
     ../../system/battery.nix
     ../../home
+    {
+      mySystem = {
+        battery.enable = true;
+      };
+    }
   ];
 
   boot.supportedFilesystems = [ "btrfs" ];

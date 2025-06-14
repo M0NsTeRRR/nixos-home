@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  batteryEnabled,
+  ...
+}:
 {
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
@@ -32,55 +37,39 @@
     # See 'https://hyprpanel.com/configuration/settings.html'.
     # Default: <same as gui>
     settings = {
-      scalingPriority = "hyprland";
+      bar = {
+        autoHide = "fullscreen";
 
-      theme = {
-        name = "catppuccin_macchiato";
-        font = {
-          name = "Ubuntu Nerd Font";
-          size = "1.0rem";
+        clock.format = "%a %d %b  %H:%M:%S";
+
+        launcher = {
+          autoDetectIcon = true;
+          icon = "";
         };
-        bar = {
-          floating = true;
-          layer = "bottom";
+
+        workspaces = {
+          workspaces = 10;
+          monitorSpecific = true;
+          show_icons = false;
+          showAllActive = false;
+          showWsIcons = true;
+          showApplicationIcons = true;
+
+          numbered_active_indicator = "highlight";
+
+          applicationIconEmptyWorkspace = "";
+
+          icons = {
+            occupied = "";
+            active = "";
+            available = "";
+          };
+
+          applicationIconMap = {
+            "org.keepassxc.KeePassXC" = "";
+            "Proton Mail" = "󰇮";
+          };
         };
-      };
-
-      terminal = "ghostty";
-
-      bar.clock.format = "%a %d %b  %H:%M:%S";
-
-      bar.launcher = {
-        autoDetectIcon = true;
-        icon = "";
-      };
-
-      bar.workspaces = {
-        workspaces = 9;
-        monitorSpecific = false;
-        show_icons = false;
-        showAllActive = false;
-        showWsIcons = true;
-        showApplicationIcons = true;
-
-        applicationIconEmptyWorkspace = "";
-
-        icons = {
-          occupied = "";
-          active = "";
-          available = "";
-        };
-      };
-
-      wallpaper.enable = false;
-
-      notifications.ignore = [
-        "spotify"
-      ];
-
-      menus.clock = {
-        weather.enabled = false;
-        time.military = false;
       };
 
       layout = {
@@ -93,92 +82,124 @@
             middle = [
               "clock"
             ];
-            right = [
-              "systray"
-              "media"
-              "volume"
-              "network"
-              "bluetooth"
-              "battery"
-              "notifications"
-            ];
+            right =
+              [
+                "systray"
+                "media"
+                "volume"
+                "network"
+                "bluetooth"
+              ]
+              ++ (if batteryEnabled then [ "battery" ] else [ ])
+              ++ [
+                "notifications"
+              ];
           };
         };
       };
 
-      menus.dashboard = {
-        powermenu.avatar.image = "${config.home.homeDirectory}/.config/wallpapers/avatar.png";
-
-        directories = {
-          right = {
-            directory1 = {
-              command = "bash -c \"nemo $HOME/Pictures/\"";
-              label = "󰉏 Pictures";
-            };
-            directory2 = {
-              command = "bash -c \"nemo $HOME/Videos/\"";
-              label = "󰉏 Videos";
-            };
-            directory3 = {
-              command = "bash -c \"nemo $HOME/Projects/\"";
-              label = "󰚝 Projects";
-            };
-          };
-
-          left = {
-            directory1 = {
-              command = "bash -c \"nemo $HOME/\"";
-              label = "󱂵 Home";
-            };
-            directory2 = {
-              command = "bash -c \"nemo $HOME/Documents/\"";
-              label = "󱧶 Documents";
-            };
-            directory3 = {
-              command = "bash -c \"nemo $HOME/Downloads/\"";
-              label = "󰉍 Downloads";
-            };
-          };
+      menus = {
+        clock = {
+          weather.enabled = false;
+          time.military = false;
         };
 
-        shortcuts = {
-          right = {
-            shortcut1 = {
-              command = "hyprpicker -a";
-              tooltip = "Color Picker";
-              icon = "";
+        dashboard = {
+          powermenu.avatar.image = "${config.home.homeDirectory}/.config/wallpapers/avatar.png";
+
+          directories = {
+            right = {
+              directory1 = {
+                command = "bash -c \"nemo $HOME/Pictures/\"";
+                label = "󰉏 Pictures";
+              };
+              directory2 = {
+                command = "bash -c \"nemo $HOME/Videos/\"";
+                label = "󰉏 Videos";
+              };
+              directory3 = {
+                command = "bash -c \"nemo $HOME/Projects/\"";
+                label = "󰚝 Projects";
+              };
             };
-            shortcut3 = {
-              command = "hyprshot -m region -o $HOME/Pictures/";
-              tooltip = "Screenshot";
-              icon = "󰄀";
+
+            left = {
+              directory1 = {
+                command = "bash -c \"nemo $HOME/\"";
+                label = "󱂵 Home";
+              };
+              directory2 = {
+                command = "bash -c \"nemo $HOME/Documents/\"";
+                label = "󱧶 Documents";
+              };
+              directory3 = {
+                command = "bash -c \"nemo $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
             };
           };
 
-          left = {
-            shortcut1 = {
-              command = "firefox";
-              tooltip = "Firefox";
-              icon = "󰈹";
+          shortcuts = {
+            right = {
+              shortcut1 = {
+                command = "hyprpicker -a";
+                tooltip = "Color Picker";
+                icon = "";
+              };
+              shortcut3 = {
+                command = "hyprshot -m region -o $HOME/Pictures/";
+                tooltip = "Screenshot";
+                icon = "󰄀";
+              };
             };
-            shortcut2 = {
-              command = "list-bindings";
-              tooltip = "Keybindings helper";
-              icon = "";
-            };
-            shortcut3 = {
-              command = "ghostty";
-              tooltip = "Terminal";
-              icon = "";
-            };
-            shortcut4 = {
-              command = "rofi -show drun";
-              tooltip = "Search Apps";
-              icon = "";
+
+            left = {
+              shortcut1 = {
+                command = "firefox";
+                tooltip = "Firefox";
+                icon = "󰈹";
+              };
+              shortcut2 = {
+                command = "list-bindings";
+                tooltip = "Keybindings helper";
+                icon = "";
+              };
+              shortcut3 = {
+                command = "ghostty";
+                tooltip = "Terminal";
+                icon = "";
+              };
+              shortcut4 = {
+                command = "rofi -show drun";
+                tooltip = "Search Apps";
+                icon = "";
+              };
             };
           };
         };
       };
+
+      notifications.ignore = [
+        "spotify"
+      ];
+
+      scalingPriority = "hyprland";
+
+      terminal = "ghostty";
+
+      theme = {
+        name = "catppuccin_macchiato";
+        font = {
+          name = "Ubuntu Nerd Font";
+          size = "1.0rem";
+        };
+        bar = {
+          floating = false;
+          layer = "bottom";
+        };
+      };
+
+      wallpaper.enable = false;
     };
   };
 }

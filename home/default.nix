@@ -40,6 +40,7 @@ in
         inherit inputs username pkgs-unstable;
         guiEnabled = config.mySystem.gui.enable;
         wslEnabled = config.mySystem.wsl.enable;
+        batteryEnabled = config.mySystem.battery.enable;
       };
 
       users.${username} = {
