@@ -68,6 +68,7 @@
           applicationIconMap = {
             "org.keepassxc.KeePassXC" = "";
             "Proton Mail" = "󰇮";
+            "com.mitchellh.ghostty" = "";
           };
         };
       };

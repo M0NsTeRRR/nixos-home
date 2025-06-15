@@ -86,6 +86,7 @@
       bind = [
         "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
         "$mainMod, C, killactive,"
+        "$mainMod, K, forcekillactive,"
         "$mainMod, L, exec, pidof ${pkgs.hyprlock}/bin/hyprlock || ${pkgs.hyprlock}/bin/hyprlock"
         "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
         "$mainMod, V, togglefloating,"
