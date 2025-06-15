@@ -1,25 +1,34 @@
 {
-  lib,
   config,
+  lib,
   username,
   ...
 }:
-with lib;
+let
+  cfg = config.mySystem.vpn;
+in
 {
-  options = {
-    home-vpn-address = mkOption {
-      type = with types; listOf str;
-      default = [ ];
-      example = [ "192.168.2.1/24" ];
-      description = "The IP addresses of the interface.";
+  options.mySystem = {
+    vpn = {
+      enable = lib.mkOption {
+        type = with lib.types; bool;
+        default = false;
+        description = "Enable VPN.";
+      };
+      addresses = lib.mkOption {
+        type = with lib.types; listOf str;
+        default = [ ];
+        example = [ "192.168.2.1/24" ];
+        description = "The IP addresses of the interface.";
+      };
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     networking.wg-quick.interfaces = {
       homelab = {
         autostart = false;
-        address = config.home-vpn-address;
+        address = cfg.addresses;
         dns = [
           "192.168.10.21"
           "192.168.10.22"

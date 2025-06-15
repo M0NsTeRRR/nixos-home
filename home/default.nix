@@ -7,6 +7,8 @@
   ...
 }:
 let
+  wslEnabled = if config ? wsl then config.wsl.enable else false;
+
   allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
@@ -28,8 +30,15 @@ in
 {
   imports = [
     inputs.home-manager-stable.nixosModules.home-manager
-    ./options.nix
   ];
+
+  options.mySystem = {
+    battery.enable = lib.mkOption {
+      type = with lib.types; bool;
+      default = false;
+      description = "Enable battery configurations.";
+    };
+  };
 
   config = {
     home-manager = {
@@ -37,9 +46,13 @@ in
       useUserPackages = true;
 
       extraSpecialArgs = {
-        inherit inputs username pkgs-unstable;
-        guiEnabled = config.mySystem.gui.enable;
-        wslEnabled = config.mySystem.wsl.enable;
+        inherit
+          inputs
+          username
+          pkgs-unstable
+          wslEnabled
+          ;
+        guiEnabled = !wslEnabled;
         batteryEnabled = config.mySystem.battery.enable;
         nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };

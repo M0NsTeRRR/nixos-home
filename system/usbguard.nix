@@ -1,23 +1,28 @@
+{ config, lib, ... }:
+let
+  cfg = config.mySystem.usbguard;
+in
 {
-  lib,
-  config,
-  ...
-}:
-with lib;
-{
-  options = {
-    usbguard-rules = mkOption {
-      type = with types; str;
-      default = "";
-      example = [ ];
-      description = "USBGuard rules";
+  options.mySystem = {
+    usbguard = {
+      enable = lib.mkOption {
+        type = with lib.types; bool;
+        default = false;
+        description = "Enable USBGuard.";
+      };
+      rules = lib.mkOption {
+        type = with lib.types; str;
+        default = "";
+        example = [ ];
+        description = "USBGuard rules.";
+      };
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     services.usbguard = {
-      enable = true;
-      rules = config.usbguard-rules;
+      enable = cfg.enable;
+      rules = cfg.rules;
     };
   };
 }
