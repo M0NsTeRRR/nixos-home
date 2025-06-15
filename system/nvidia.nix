@@ -8,6 +8,7 @@
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     NVD_BACKEND = "direct";
+    WEBKIT_DISABLE_DMABUF_RENDERER = "1";
   };
 
   environment.systemPackages = with pkgs; [

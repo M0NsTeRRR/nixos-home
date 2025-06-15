@@ -41,6 +41,7 @@ in
         guiEnabled = config.mySystem.gui.enable;
         wslEnabled = config.mySystem.wsl.enable;
         batteryEnabled = config.mySystem.battery.enable;
+        nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };
 
       users.${username} = {

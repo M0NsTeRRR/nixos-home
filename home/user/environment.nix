@@ -1,4 +1,10 @@
-{ lib, guiEnabled, ... }:
+{
+  config,
+  lib,
+  guiEnabled,
+  nvidiaEnabled,
+  ...
+}:
 let
   guiSessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -18,10 +24,17 @@ let
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
+  nvidiaSessionVariables = {
+    WEBKIT_DISABLE_DMABUF_RENDERER = "1";
+  };
+
   defaultSessionVariables = {
     REQUESTS_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt";
   };
 in
 {
-  home.sessionVariables = defaultSessionVariables // lib.optionalAttrs guiEnabled guiSessionVariables;
+  home.sessionVariables =
+    defaultSessionVariables
+    // lib.optionalAttrs guiEnabled guiSessionVariables
+    // lib.optionalAttrs nvidiaEnabled nvidiaSessionVariables;
 }
