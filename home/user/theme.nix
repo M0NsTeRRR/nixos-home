@@ -20,7 +20,7 @@
 
   qt = {
     enable = true;
-    style.name = "breeze-dark";
+    style.name = "adwaita-dark";
     platformTheme.name = "qt6ct";
   };
 
