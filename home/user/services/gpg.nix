@@ -4,5 +4,6 @@
     enable = true;
     pinentry.package = lib.mkForce pkgs.pinentry-qt;
     enableZshIntegration = true;
+    enableExtraSocket = true;
   };
 }
