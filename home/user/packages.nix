@@ -86,12 +86,6 @@ let
       qt5.qtwayland
     ])
     ++ (with pkgs-unstable; [
-      # office tool
-      libreoffice-qt
-      hunspell
-      hunspellDicts.fr-moderne
-      hunspellDicts.en_US
-
       # dev tools
       hoppscotch # open-source alternative to Postman
       wireshark
@@ -110,6 +104,15 @@ let
       google-chrome # browser
       qbittorrent # torrent
       spotify # music
+      telegram-desktop # messaging app
+
+      # office tool
+      libreoffice-qt
+      hunspell
+      hunspellDicts.fr-moderne
+      hunspellDicts.en_US
+      gimp # Image Manipulation Program
+      imv # image viewer
     ]);
 in
 {

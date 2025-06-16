@@ -17,8 +17,8 @@
     ./printer.nix
     ./security.nix
     ./ssh.nix
-    ./user.nix
     ./usbguard.nix
+    ./user.nix
     ./video.nix
     ./virtualization.nix
     ./vpn.nix

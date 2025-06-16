@@ -2,10 +2,11 @@
 let
   defaultImports = [
     ./atuin.nix
+    ./direnv.nix
+    ./git.nix
+    ./gpg.nix
     ./home-manager.nix
     ./k9s.nix
-    ./gpg.nix
-    ./git.nix
     ./kubecolor.nix
     ./../../modules/kubeswitch.nix
     ./starship.nix

@@ -1,8 +1,11 @@
 let
   browser = "firefox.desktop";
   editor = "vscode.desktop";
+  telegram = "org.telegram.desktop.desktop";
 in
 {
+  xdg.configFile."mimeapps.list".force = true;
+
   xdg = {
     userDirs.enable = true;
     mimeApps = {
@@ -26,6 +29,9 @@ in
 
         "image/*" = "imv.desktop";
         "video/*" = "vlc.desktop";
+
+        "x-scheme-handler/tg" = telegram;
+        "x-scheme-handler/tonsite" = telegram;
       };
     };
   };
