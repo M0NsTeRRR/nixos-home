@@ -50,14 +50,12 @@ let
     go-task
     rdap # Registry Data Access Protocol
     zizmor # Tool for finding security issues in GitHub Actions setups
+    wireguard-tools # wireguard vpn
 
     # misc
     unzip
     gnutar
     pciutils # lspci
-
-    # tools
-    wireguard-tools # wireguard vpn
     marp-cli # presentation with plain Markdown
   ];
 

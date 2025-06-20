@@ -3,7 +3,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = with pkgs.hyprlandPlugins; [
-      hyprbars
       hyprexpo
     ];
     systemd.variables = [ "--all" ];
@@ -14,7 +13,6 @@
         "/usr/lib/polkit-kde-authentication-agent-1"
         "${pkgs.hyprpaper}/bin/hyprpaper" # wallpaper utility
         "${pkgs.hypridle}/bin/hypridle" # idle daemon
-        "${pkgs.hyprlandPlugins.hyprbars}/bin/hyprbars"
       ];
 
       general = {
@@ -23,7 +21,7 @@
         border_size = 2;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
-        resize_on_border = false;
+        resize_on_border = true;
         allow_tearing = false;
         layout = "dwindle";
       };
@@ -99,6 +97,11 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+        "$mainMod SHIFT, left, movewindow, l"
+        "$mainMod SHIFT, right, movewindow, r"
+        "$mainMod SHIFT, up, movewindow, u"
+        "$mainMod SHIFT, down, movewindow, d"
+        "$mainMod, S, togglespecialworkspace, 1"
         "$mainMod, ampersand, workspace, 1"
         "$mainMod, eacute, workspace, 2"
         "$mainMod, quotedbl, workspace, 3"
@@ -132,34 +135,12 @@
       ];
 
       plugin = {
-        hyprbars = {
-          bar_height = 34;
-          bar_color = "rgba(36365601)";
-          col.text = "rgba(b4befe)";
-          bar_text_font = "SF Pro Display SemiBold";
-          bar_text_size = 10;
-          bar_text_align = "center";
-          bar_title_enabled = true;
-          bar_buttons_alignment = "left";
-          bar_button_padding = 10;
-          bar_padding = 13;
-          bar_precedence_over_border = true;
-
-          hyprbars-button = [
-            "rgb(f38ba8),15,,${pkgs.hyprland}/bin/hyprctl dispatch killactive"
-            "rgb(74c7ec),15,,${pkgs.hyprland}/bin/hyprctl dispatch togglefloating; hyp${pkgs.hyprland}/bin/hyprctl dispatch resizeactive exact 80% 80%; ${pkgs.hyprland}/bin/hyprctl dispatch centerwindow"
-          ];
-        };
-
         hyprexpo = {
           columns = 3;
           gap_size = 5;
           bg_col = "rgb(111111)";
-          workspace_method = "center current";
-          enable_gesture = true;
-          gesture_fingers = 3;
-          gesture_distance = 300;
-          gesture_positive = true;
+          workspace_method = "first 1";
+          enable_gesture = false;
         };
       };
     };
