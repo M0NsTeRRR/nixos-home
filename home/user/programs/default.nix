@@ -1,4 +1,4 @@
-{ guiEnabled, ... }:
+{ pkgs-unstable, guiEnabled, ... }:
 let
   defaultImports = [
     ./atuin.nix
@@ -10,6 +10,7 @@ let
     ./kubecolor.nix
     ./../../modules/kubeswitch.nix
     ./starship.nix
+    ./../../modules/trippy.nix
     ./zsh.nix
   ];
 
@@ -24,8 +25,10 @@ let
 in
 {
   imports = defaultImports ++ (if guiEnabled then guiImports else [ ]);
+
   programs.kubeswitch = {
     enable = true;
+    package = pkgs-unstable.kubeswitch;
     enableZshIntegration = true;
     settings = {
       kind = "SwitchConfig";
@@ -40,6 +43,20 @@ in
           ];
         }
       ];
+    };
+  };
+
+  programs.trippy = {
+    enable = true;
+    package = pkgs-unstable.trippy;
+    enableZshIntegration = true;
+    settings = {
+      tui = {
+        tui-locale = "en";
+      };
+      strategy = {
+        addr-family = "system";
+      };
     };
   };
 }
