@@ -1,6 +1,8 @@
 #!/bin/bash
 
-yad --width=950 --height=550 \
+yad \
+--width=950 \
+--height=550 \
 --center \
 --fixed \
 --title="Keybindings" \
@@ -8,15 +10,22 @@ yad --width=950 --height=550 \
 --list \
 --column=Key: \
 --column=Description: \
---column=Key: \
---column=Description: \
 --timeout=90 \
 --timeout-indicat \
-" + Q" "Terminal" " + V" "Toogle floating" \
-" + C" "Kill active" " + R" "App menu" \
-" + L" "Lock" " + P" "Pseudo dwindle" \
-" + E" "File Manager" " + J" "Toogle split" \
+" + Q" "Terminal" \
+" + C" "Kill active" \
+" + K" "Force Kill active" \
+" + L" "Lock" \
+" + E" "File Manager" \
+" + V" "Toogle floating" \
+" + R" "App menu" \
+" + P" "Pseudo dwindle" \
+" + J" "Toogle split" \
 " + I" "Hyprexpo" \
-" + <Number>" "Switch workspace" " + SHIFT + <Number>" "Move active window to a workspace" \
-" + Tab" "Move to next workspace" " + <Direction arrow>" "Move focus" \
-"PRINT" "Screenshot a region"
+"PRINT" "Screenshot a region" \
+" + <Direction arrow>" "Move focus" \
+" + SHIFT + <Direction arrow>" "Move window" \
+" + S" "Toggle special workspace" \
+" + <Number>" "Switch workspace" \
+" + SHIFT + <Number>" "Move active window to a workspace" \
+" + Tab" "Move to next workspace"
