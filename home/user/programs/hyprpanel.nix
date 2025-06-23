@@ -48,6 +48,7 @@
         };
 
         workspaces = {
+          ignored = "-\\d";
           workspaces = 10;
           monitorSpecific = true;
           show_icons = false;
