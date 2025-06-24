@@ -10,6 +10,7 @@ let
     ./kubecolor.nix
     ./../../modules/kubeswitch.nix
     ./starship.nix
+    ./tealdeer.nix
     ./../../modules/trippy.nix
     ./zsh.nix
   ];
