@@ -15,12 +15,6 @@
     ../../system/user.nix
     ../../system/virtualization.nix
     ../../home
-    {
-      mySystem = {
-        gui.enable = false;
-        wsl.enable = true;
-      };
-    }
   ];
 
   wsl.enable = true;
