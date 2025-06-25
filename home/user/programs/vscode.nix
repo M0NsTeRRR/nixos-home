@@ -23,6 +23,8 @@
         "python.analysis.autoImportCompletions" = true;
         "python.analysis.completeFunctionParens" = true;
         "python.analysis.typeCheckingMode" = "standard";
+        "python.testing.pytestEnabled" = true;
+        "python.testing.pytestArgs" = "-vv";
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
