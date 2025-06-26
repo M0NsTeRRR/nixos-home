@@ -36,7 +36,7 @@ let
     nmap
     iperf
     kubectl
-    helm
+    kubernetes-helm
     stern
     packer
     pulumi
