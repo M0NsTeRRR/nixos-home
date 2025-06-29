@@ -8,7 +8,7 @@
       signByDefault = true;
     };
     extraConfig = {
-      core.editor = "vim";
+      core.editor = "vi";
       ui.color = true;
       push.autoSetupRemote = true;
     };
