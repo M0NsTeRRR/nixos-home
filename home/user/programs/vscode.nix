@@ -24,7 +24,7 @@
         "python.analysis.completeFunctionParens" = true;
         "python.analysis.typeCheckingMode" = "standard";
         "python.testing.pytestEnabled" = true;
-        "python.testing.pytestArgs" = "-vv";
+        "python.testing.pytestArgs" = [ "-vv" ];
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
