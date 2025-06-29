@@ -119,8 +119,8 @@
                 icon = "";
               };
               shortcut3 = {
-                command = "hyprshot -m region -o $HOME/Pictures/";
-                tooltip = "Screenshot";
+                command = "gpu-screen-recorder-gtk";
+                tooltip = "Record";
                 icon = "󰄀";
               };
             };

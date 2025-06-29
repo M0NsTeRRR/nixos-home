@@ -91,6 +91,7 @@ let
       # misc
       brightnessctl # controlling backlight
       playerctl # media player command-line controller
+      gpu-screen-recorder-gtk
 
       # app
       keepassxc # password manager
