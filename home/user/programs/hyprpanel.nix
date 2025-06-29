@@ -5,37 +5,9 @@
   ...
 }:
 {
-  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
-
   programs.hyprpanel = {
-    # Enable the module.
-    # Default: false
     enable = true;
 
-    overlay.enable = true;
-
-    # Add '/nix/store/.../hyprpanel' to your
-    # Hyprland config 'exec-once'.
-    # Default: false
-    hyprland.enable = true;
-
-    # Fix the overwrite issue with HyprPanel.
-    # See below for more information.
-    # Default: false
-    overwrite.enable = true;
-
-    # Override the final config with an arbitrary set.
-    # Useful for overriding colors in your selected theme.
-    # Default: {}
-    override = {
-      "theme.bar.buttons.dashboard.icon" = "#7eb9e3";
-    };
-
-    # Configure and theme almost all options from the GUI.
-    # Options that require '{}' or '[]' are not yet implemented,
-    # except for the layout above.
-    # See 'https://hyprpanel.com/configuration/settings.html'.
-    # Default: <same as gui>
     settings = {
       bar = {
         autoHide = "fullscreen";
@@ -45,6 +17,30 @@
         launcher = {
           autoDetectIcon = true;
           icon = "";
+        };
+
+        layouts = {
+          "*" = {
+            left = [
+              "dashboard"
+              "workspaces"
+            ];
+            middle = [
+              "clock"
+            ];
+            right =
+              [
+                "systray"
+                "media"
+                "volume"
+                "network"
+                "bluetooth"
+              ]
+              ++ (if batteryEnabled then [ "battery" ] else [ ])
+              ++ [
+                "notifications"
+              ];
+          };
         };
 
         workspaces = {
@@ -70,32 +66,6 @@
             "org.keepassxc.KeePassXC" = "";
             "Proton Mail" = "󰇮";
             "com.mitchellh.ghostty" = "";
-          };
-        };
-      };
-
-      layout = {
-        "bar.layouts" = {
-          "*" = {
-            left = [
-              "dashboard"
-              "workspaces"
-            ];
-            middle = [
-              "clock"
-            ];
-            right =
-              [
-                "systray"
-                "media"
-                "volume"
-                "network"
-                "bluetooth"
-              ]
-              ++ (if batteryEnabled then [ "battery" ] else [ ])
-              ++ [
-                "notifications"
-              ];
           };
         };
       };
@@ -198,6 +168,7 @@
         bar = {
           floating = false;
           layer = "bottom";
+          buttons.dashboard.icon = "#7eb9e3";
         };
       };
 
