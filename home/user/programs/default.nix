@@ -2,7 +2,6 @@
 let
   defaultImports = [
     ./atuin.nix
-    ./direnv.nix
     ./git.nix
     ./gpg.nix
     ./home-manager.nix

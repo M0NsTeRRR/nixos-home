@@ -47,7 +47,6 @@
         # misc
         eamodio.gitlens
         jnoortheen.nix-ide
-        mkhl.direnv
         editorconfig.editorconfig
         redhat.vscode-yaml
         ms-vscode.makefile-tools
