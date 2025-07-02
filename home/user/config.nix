@@ -13,7 +13,6 @@ let
     ".config/hypr/macchiato.conf".source = "${configDir}/hypr/macchiato.conf";
     ".config/rofi".source = "${configDir}/rofi";
     ".config/wallpapers".source = "${configDir}/wallpapers";
-    ".config/keepassxc/keepassxc.ini".source = "${configDir}/keepassxc/keepassxc.ini";
   };
 
   defaultFile = {
