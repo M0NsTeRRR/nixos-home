@@ -21,6 +21,9 @@
           # then have Firefox open on some other workspace.
           "widget.disable-workspace-management" = true;
 
+          # fix the file picker not opening
+          "widget.use-xdg-desktop-portal.file-picker" = 0;
+
           # disable translation popup panel
           "browser.translations.automaticallyPopup" = false;
 
