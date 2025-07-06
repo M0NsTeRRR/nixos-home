@@ -30,23 +30,20 @@ in
     settings = lib.mkOption {
       type = yamlFormat.type;
       default = { };
-      defaultText = lib.literalExpression "{ }";
-      example = lib.literalExpression ''
-        {
-          kind = "SwitchConfig";
-          version = "v1alpha1";
-          kubeconfigName = "*.myconfig";
-          kubeconfigStores = [
-            {
-              kind = "filesystem";
-              kubeconfigName = "*.myconfig";
-              paths = [
-                "~/.kube/my-other-kubeconfigs/"
-              ];
-            }
-          ];
-        }
-      '';
+      example = {
+        kind = "SwitchConfig";
+        kubeconfigName = "*.myconfig";
+        kubeconfigStores = [
+          {
+            kind = "filesystem";
+            kubeconfigName = "*.myconfig";
+            paths = [
+              "~/.kube/my-other-kubeconfigs/"
+            ];
+          }
+        ];
+        version = "v1alpha1";
+      };
       description = ''
         Configuration written to
         {file}`~/.kube/switch-config.yaml`.
@@ -54,65 +51,63 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable (
-    lib.mkMerge [
+  config = lib.mkIf cfg.enable {
+    home = {
+      packages = [ cfg.package ];
+
+      file.".kube/switch-config.yaml" = lib.mkIf (cfg.settings != { }) {
+        source = yamlFormat.generate "kubeswitch-settings" cfg.settings;
+      };
+    };
+
+    programs =
+      let
+        generateKubeswitchShellFiles =
+          shell:
+          pkgs.runCommand "kubeswitch-${cfg.commandName}-shell-files-for-${shell}"
+            {
+              nativeBuildInputs = [ cfg.package ];
+            }
+            ''
+              mkdir -p $out/share
+              switcher init "${shell}" | sed "s/switch(/${cfg.commandName}(/" > "$out/share/${cfg.commandName}_init.${shell}"
+              switcher --cmd "${cfg.commandName}" completion "${shell}" > "$out/share/${cfg.commandName}_completion.${shell}"
+            '';
+      in
       {
-        home.packages = [ cfg.package ];
-
-        home.file = {
-          ".kube/switch-config.yaml" = lib.mkIf (cfg.settings != { }) {
-            source = yamlFormat.generate "kubeswitch-settings" cfg.settings;
-          };
-        };
-      }
-
-      (lib.mkIf cfg.enableBashIntegration (
-        let
-          shell_files = pkgs.runCommand "kubeswitch-shell-files" { buildInputs = [ cfg.package ]; } ''
-            mkdir -p $out/share
-            switcher init bash | sed 's/switch(/${cfg.commandName}(/' > $out/share/${cfg.commandName}_init.bash
-            switcher --cmd ${cfg.commandName} completion bash > $out/share/${cfg.commandName}_completion.bash
+        bash.initExtra =
+          let
+            kubeswitchBashFiles = generateKubeswitchShellFiles "bash";
+          in
+          lib.mkIf cfg.enableBashIntegration ''
+            source ${kubeswitchBashFiles}/share/${cfg.commandName}_init.bash
+            source ${kubeswitchBashFiles}/share/${cfg.commandName}_completion.bash
           '';
-        in
-        {
-          programs.bash.initExtra = ''
-            source ${shell_files}/share/${cfg.commandName}_init.bash
-            source ${shell_files}/share/${cfg.commandName}_completion.bash
-          '';
-        }
-      ))
 
-      (lib.mkIf cfg.enableFishIntegration (
-        let
-          shell_files = pkgs.runCommand "kubeswitch-shell-files" { buildInputs = [ cfg.package ]; } ''
-            mkdir -p $out/share
-            switcher init fish | sed 's/switch(/${cfg.commandName}(/' > $out/share/${cfg.commandName}_init.fish
-            switcher --cmd ${cfg.commandName} completion fish > $out/share/${cfg.commandName}_completion.fish
-          '';
-        in
-        {
-          programs.fish.interactiveShellInit = ''
+        fish.interactiveShellInit =
+          let
+            shell_files =
+              pkgs.runCommand "kubeswitch-${cfg.commandName}-shell-files-for-fish"
+                { buildInputs = [ cfg.package ]; }
+                ''
+                  mkdir -p $out/share
+                  switcher init fish | sed "s/kubeswitch/${cfg.commandName}/" > $out/share/${cfg.commandName}_init.fish
+                  switcher --cmd ${cfg.commandName} completion fish > $out/share/${cfg.commandName}_completion.fish
+                '';
+          in
+          lib.mkIf cfg.enableFishIntegration ''
             source ${shell_files}/share/${cfg.commandName}_init.fish
             source ${shell_files}/share/${cfg.commandName}_completion.fish
           '';
-        }
-      ))
 
-      (lib.mkIf cfg.enableZshIntegration (
-        let
-          shell_files = pkgs.runCommand "kubeswitch-shell-files" { buildInputs = [ cfg.package ]; } ''
-            mkdir -p $out/share
-            switcher init zsh | sed 's/switch(/${cfg.commandName}(/' > $out/share/${cfg.commandName}_init.zsh
-            switcher --cmd ${cfg.commandName} completion zsh > $out/share/${cfg.commandName}_completion.zsh
+        zsh.initContent =
+          let
+            kubeswitchZshFiles = generateKubeswitchShellFiles "zsh";
+          in
+          lib.mkIf cfg.enableZshIntegration ''
+            source ${kubeswitchZshFiles}/share/${cfg.commandName}_init.zsh
+            source ${kubeswitchZshFiles}/share/${cfg.commandName}_completion.zsh
           '';
-        in
-        {
-          programs.zsh.initContent = ''
-            source ${shell_files}/share/${cfg.commandName}_init.zsh
-            source ${shell_files}/share/${cfg.commandName}_completion.zsh
-          '';
-        }
-      ))
-    ]
-  );
+      };
+  };
 }

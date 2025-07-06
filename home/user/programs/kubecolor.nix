@@ -4,6 +4,5 @@
     enable = true;
     package = pkgs-unstable.kubecolor;
     enableAlias = true;
-    enableZshIntegration = true;
   };
 }

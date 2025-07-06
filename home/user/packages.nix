@@ -43,7 +43,6 @@ let
     postgresql
     sqlite
     dogdns # command-line DNS client
-    viddy # Modern watch command
     restic
     rsync
     rclone
