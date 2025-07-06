@@ -3,19 +3,17 @@ let
   cfg = config.mySystem.usbguard;
 in
 {
-  options.mySystem = {
-    usbguard = {
-      enable = lib.mkOption {
-        type = with lib.types; bool;
-        default = false;
-        description = "Enable USBGuard.";
-      };
-      rules = lib.mkOption {
-        type = with lib.types; str;
-        default = "";
-        example = [ ];
-        description = "USBGuard rules.";
-      };
+  options.mySystem.usbguard = {
+    enable = lib.mkOption {
+      type = with lib.types; bool;
+      default = false;
+      description = "Enable USBGuard.";
+    };
+    rules = lib.mkOption {
+      type = with lib.types; str;
+      default = "";
+      example = [ ];
+      description = "USBGuard rules.";
     };
   };
 

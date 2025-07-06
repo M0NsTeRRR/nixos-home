@@ -1,17 +1,17 @@
-{ username, ... }:
+{ pkgs, username, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
     ../../system
-    ../../system/game.nix
-    ../../system/nvidia.nix
     ../../home
   ];
 
   boot.supportedFilesystems = [ "btrfs" ];
 
   mySystem = {
+    game.enable = true;
+    nvidia.enable = true;
     usbguard = {
       enable = true;
       rules = ''

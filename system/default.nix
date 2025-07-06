@@ -10,10 +10,12 @@
     ./dns.nix
     ./file.nix
     ./fwupd.nix
+    ./game.nix
     ./internationalization.nix
     ./logind.nix
     ./network.nix
     ./nixsettings.nix
+    ./nvidia.nix
     ./printer.nix
     ./security.nix
     ./ssh.nix

@@ -8,19 +8,17 @@ let
   cfg = config.mySystem.vpn;
 in
 {
-  options.mySystem = {
-    vpn = {
-      enable = lib.mkOption {
-        type = with lib.types; bool;
-        default = false;
-        description = "Enable VPN.";
-      };
-      addresses = lib.mkOption {
-        type = with lib.types; listOf str;
-        default = [ ];
-        example = [ "192.168.2.1/24" ];
-        description = "The IP addresses of the interface.";
-      };
+  options.mySystem.vpn = {
+    enable = lib.mkOption {
+      type = with lib.types; bool;
+      default = false;
+      description = "Enable VPN.";
+    };
+    addresses = lib.mkOption {
+      type = with lib.types; listOf str;
+      default = [ ];
+      example = [ "192.168.2.1/24" ];
+      description = "The IP addresses of the interface.";
     };
   };
 
