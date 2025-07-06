@@ -1,6 +1,7 @@
 {
   imports = [
     ./audio.nix
+    ./battery.nix
     ./bluetooth.nix
     ./boot.nix
     ./ca-certificates.nix
