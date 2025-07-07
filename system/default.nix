@@ -6,7 +6,6 @@
     ./boot.nix
     ./ca-certificates.nix
     ./cifs.nix
-    ./console.nix
     ./display-manager.nix
     ./dns.nix
     ./file.nix
@@ -17,6 +16,7 @@
     ./network.nix
     ./nixsettings.nix
     ./nvidia.nix
+    ./openlinkhub.nix
     ./printer.nix
     ./security.nix
     ./ssh.nix
