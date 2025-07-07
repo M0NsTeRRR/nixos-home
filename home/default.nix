@@ -1,9 +1,10 @@
 {
   inputs,
-  username,
   pkgs,
   config,
   lib,
+  home-manager-unstable,
+  username,
   ...
 }:
 let
@@ -41,6 +42,14 @@ in
   };
 
   config = {
+    # trippy does not support native unprivileged mode https://github.com/fujiapple852/trippy/issues/741
+    security.wrappers.trip = {
+      owner = username;
+      group = username;
+      capabilities = "cap_net_raw+p";
+      source = "${pkgs-unstable.trippy}/bin/trip";
+    };
+
     home-manager = {
       backupFileExtension = "backup";
       useUserPackages = true;
@@ -48,8 +57,8 @@ in
       extraSpecialArgs = {
         inherit
           inputs
-          username
           pkgs-unstable
+          username
           wslEnabled
           ;
         guiEnabled = !wslEnabled;
@@ -58,7 +67,10 @@ in
       };
 
       users.${username} = {
-        imports = [ ./user ];
+        imports = [
+          (inputs.home-manager-unstable + "/modules/programs/kubeswitch.nix")
+          ./user
+        ];
 
         home = {
           username = "${username}";

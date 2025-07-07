@@ -54,12 +54,12 @@ in
       source <(${lib.getExe cfg.package} --generate bash)
     '';
 
-    programs.zsh.initContent = lib.mkIf cfg.enableZshIntegration ''
-      source <(${lib.getExe cfg.package} --generate zsh)
-    '';
-
     programs.fish.interactiveShellInit = lib.mkIf cfg.enableFishIntegration ''
       source <(${lib.getExe cfg.package} --generate fish)
+    '';
+
+    programs.zsh.initContent = lib.mkIf cfg.enableZshIntegration ''
+      source <(${lib.getExe cfg.package} --generate zsh)
     '';
   };
 }

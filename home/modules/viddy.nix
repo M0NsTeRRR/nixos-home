@@ -15,6 +15,8 @@ in
 
     package = lib.mkPackageOption pkgs "viddy" { };
 
+    enableZshIntegration = lib.hm.shell.mkZshIntegrationOption { inherit config; };
+
     settings = lib.mkOption {
       type = tomlFormat.type;
       default = { };
@@ -43,5 +45,9 @@ in
     xdg.configFile."viddy/viddy.toml" = lib.mkIf (cfg.settings != { }) {
       source = tomlFormat.generate "viddy-config" cfg.settings;
     };
+
+    programs.zsh.initContent = lib.mkIf cfg.enableZshIntegration ''
+      compdef _precommand ${lib.getExe cfg.package}
+    '';
   };
 }
