@@ -16,7 +16,6 @@
     ./network.nix
     ./nixsettings.nix
     ./nvidia.nix
-    ./openlinkhub.nix
     ./printer.nix
     ./security.nix
     ./ssh.nix
