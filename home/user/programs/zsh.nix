@@ -9,7 +9,7 @@
 
     shellAliases = {
       cat = "bat --paging=never";
-      watch = "viddy";
+      watch = "hwatch";
       ls = "eza";
       k = "kubectl";
       top = "btop";

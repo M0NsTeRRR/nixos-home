@@ -68,6 +68,7 @@ in
 
       users.${username} = {
         imports = [
+          (inputs.home-manager-unstable + "/modules/programs/hwatch.nix")
           (inputs.home-manager-unstable + "/modules/programs/kubeswitch.nix")
           ./user
         ];

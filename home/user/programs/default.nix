@@ -5,13 +5,13 @@ let
     ./git.nix
     ./gpg.nix
     ./home-manager.nix
+    ./hwatch.nix
     ./k9s.nix
     ./kubecolor.nix
     ./kubeswitch.nix
     ./starship.nix
     ./tealdeer.nix
     ./trippy.nix
-    ./viddy.nix
     ./zsh.nix
   ];
 
