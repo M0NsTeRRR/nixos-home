@@ -19,7 +19,6 @@ let
       "vscode-extension-MS-python-vscode-pylance"
       "discord"
       "spotify"
-      "google-chrome"
       "packer"
     ];
 

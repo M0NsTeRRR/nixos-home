@@ -2,6 +2,7 @@ let
   browser = "firefox.desktop";
   editor = "vscode.desktop";
   telegram = "org.telegram.desktop.desktop";
+  image = "imv.desktop";
 in
 {
   xdg.configFile."mimeapps.list".force = true;
@@ -27,8 +28,7 @@ in
 
         "inode/directory" = "nemo.desktop";
 
-        "image/*" = "imv.desktop";
-        "video/*" = "vlc.desktop";
+        "image/png" = image;
 
         "x-scheme-handler/tg" = telegram;
         "x-scheme-handler/tonsite" = telegram;
