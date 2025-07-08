@@ -19,6 +19,7 @@ let
     go
     delve # go debugger
     rustup
+    lldb # rust debugger
     protobuf
     bpftrace
     yq # command-line YAML, JSON, XML, CSV, TOML
