@@ -9,7 +9,6 @@
 
   fonts.fontconfig.enable = true;
 
-  # for nemo file manager
   dconf = {
     enable = true;
     settings = {
@@ -41,5 +40,15 @@
       name = "Sans";
       size = 12;
     };
+
+    gtk3.bookmarks = [
+      "file:///home/lortega/Desktop Desktop"
+      "file:///home/lortega/Documents Documents"
+      "file:///home/lortega/Downloads Downloads"
+      "file:///home/lortega/Github Github"
+      "file:///home/lortega/Music Music"
+      "file:///home/lortega/Pictures Pictures"
+      "file:///home/lortega/Videos Videos"
+    ];
   };
 }

@@ -35,6 +35,8 @@
         golang.go
         # rust
         rust-lang.rust-analyzer
+        # llvm-vs-code-extensions.lldb-dap
+        ms-vscode.hexeditor
         # python
         ms-python.python
         ms-python.debugpy
@@ -42,6 +44,7 @@
         charliermarsh.ruff
         # kubernetes
         ms-kubernetes-tools.vscode-kubernetes-tools
+        ms-azuretools.vscode-containers
         # presentation with plain Markdown
         marp-team.marp-vscode
         # misc
