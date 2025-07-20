@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs-unstable, username, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -11,8 +11,10 @@
         "chat.commandCenter.enabled" = false;
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
+        "files.dialog.defaultPath" = "/home/${username}/Github";
         "files.autoSave" = "onFocusChange";
         "editor.formatOnSave" = true;
+        "git.defaultCloneDirectory" = "/home/${username}/Github";
         "git.confirmSync" = false;
         "git.autofetch" = true;
         "git.replaceTagsWhenPull" = true;

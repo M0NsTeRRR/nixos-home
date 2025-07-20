@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   home.pointerCursor = {
     gtk.enable = true;
@@ -42,13 +42,13 @@
     };
 
     gtk3.bookmarks = [
-      "file:///home/lortega/Desktop Desktop"
-      "file:///home/lortega/Documents Documents"
-      "file:///home/lortega/Downloads Downloads"
-      "file:///home/lortega/Github Github"
-      "file:///home/lortega/Music Music"
-      "file:///home/lortega/Pictures Pictures"
-      "file:///home/lortega/Videos Videos"
+      "file:///home/${username}/Desktop Desktop"
+      "file:///home/${username}/Documents Documents"
+      "file:///home/${username}/Downloads Downloads"
+      "file:///home/${username}/Github Github"
+      "file:///home/${username}/Music Music"
+      "file:///home/${username}/Pictures Pictures"
+      "file:///home/${username}/Videos Videos"
     ];
   };
 }
