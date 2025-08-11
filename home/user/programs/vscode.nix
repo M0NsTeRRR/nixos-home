@@ -37,7 +37,7 @@
         golang.go
         # rust
         rust-lang.rust-analyzer
-        # llvm-vs-code-extensions.lldb-dap
+        llvm-vs-code-extensions.lldb-dap
         ms-vscode.hexeditor
         # python
         ms-python.python
