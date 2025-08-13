@@ -98,7 +98,7 @@ let
       protonmail-desktop # email client for proton
       protonvpn-gui # vpn client for proton
       (discord.override { withVencord = true; }) # social media
-      vlc # video player
+      mpv # video player
       imv # image viewer
       qbittorrent # torrent
       spotify # music
