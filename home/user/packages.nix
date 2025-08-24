@@ -53,6 +53,7 @@ let
     wireguard-tools # wireguard vpn
 
     # misc
+    mate.engrampa
     unzip
     gnutar
     pciutils # lspci
