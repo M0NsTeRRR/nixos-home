@@ -1,4 +1,4 @@
-{ pkgs-unstable, guiEnabled, ... }:
+{ guiEnabled, ... }:
 let
   defaultImports = [
     ./atuin.nix

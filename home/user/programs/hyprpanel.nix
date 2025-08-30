@@ -27,18 +27,17 @@
             middle = [
               "clock"
             ];
-            right =
-              [
-                "systray"
-                "media"
-                "volume"
-                "network"
-                "bluetooth"
-              ]
-              ++ (if batteryEnabled then [ "battery" ] else [ ])
-              ++ [
-                "notifications"
-              ];
+            right = [
+              "systray"
+              "media"
+              "volume"
+              "network"
+              "bluetooth"
+            ]
+            ++ (if batteryEnabled then [ "battery" ] else [ ])
+            ++ [
+              "notifications"
+            ];
           };
         };
 

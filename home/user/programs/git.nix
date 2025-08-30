@@ -2,6 +2,7 @@
 {
   programs.git = {
     enable = true;
+    package = pkgs-unstable.git;
     userName = "Ludovic Ortega";
     userEmail = "ludovic.ortega@adminafk.fr";
     signing = {

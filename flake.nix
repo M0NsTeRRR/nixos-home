@@ -8,7 +8,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=2.93.3-2";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

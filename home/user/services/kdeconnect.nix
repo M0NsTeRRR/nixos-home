@@ -2,6 +2,6 @@
 {
   services.kdeconnect = {
     enable = true;
-    package = pkgs-unstable.plasma5Packages.kdeconnect-kde;
+    package = pkgs-unstable.kdePackages.kdeconnect-kde;
   };
 }
