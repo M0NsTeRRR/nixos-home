@@ -21,7 +21,8 @@
         "dev.containers.dockerPath" = "podman";
         "dev.containers.dockerComposePath" = "podman-compose";
         "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
-        "containers.orchestratorClient" = "podman-compose";
+        "containers.containerClient" = "com.microsoft.visualstudio.containers.podman";
+        "containers.orchestratorClient" = "com.microsoft.visualstudio.orchestrators.podmancompose";
         "python.analysis.autoFormatStrings" = true;
         "python.analysis.autoImportCompletions" = true;
         "python.analysis.completeFunctionParens" = true;
