@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   config,
   lib,
   ...
@@ -22,6 +23,7 @@ in
       protonup
       mangohud # monitoring FPS, temperatures, CPU/GPU load and more
       heroic # epic, gog games
+      pkgs-unstable.ankama-launcher # game launcher
     ];
 
     programs = {

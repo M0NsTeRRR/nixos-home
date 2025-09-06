@@ -1,4 +1,5 @@
 {
+  inputs,
   environment,
   pkgs,
   lib,
@@ -32,15 +33,4 @@
       options = "--delete-older-than 7d";
     };
   };
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "nvidia-x11"
-      "nvidia-settings"
-      "steam"
-      "steam-original"
-      "steam-run"
-      "steam-unwrapped"
-    ];
 }

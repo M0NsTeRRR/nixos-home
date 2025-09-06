@@ -158,7 +158,6 @@
       terminal = "ghostty";
 
       theme = {
-        name = "catppuccin_macchiato";
         font = {
           name = "Ubuntu Nerd Font";
           size = "1.0rem";

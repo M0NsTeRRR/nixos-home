@@ -60,13 +60,27 @@
         "wsl"
       ];
       system = "x86_64-linux";
+
       eachSystem =
         f: nixpkgs-stable.lib.genAttrs (import systems) (system: f nixpkgs-stable.legacyPackages.${system});
       lib = nixpkgs-stable.lib;
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+
+      allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "ankama-launcher"
+          "nvidia-x11"
+          "nvidia-settings"
+          "steam"
+          "steam-original"
+          "steam-run"
+          "steam-unwrapped"
+        ];
     in
     {
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
@@ -81,9 +95,17 @@
               username
               inputs
               ;
-            pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-linux";
+            # pkgs-unstable avec la configuration unfree
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfreePredicate = allowUnfreePredicate;
+            };
           };
-          modules = [ ./hosts ];
+          modules = [
+            ./hosts
+            # Configuration unfree pour nixpkgs stable
+            { nixpkgs.config.allowUnfreePredicate = allowUnfreePredicate; }
+          ];
         }
       );
     };
