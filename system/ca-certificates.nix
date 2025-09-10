@@ -3,7 +3,7 @@ let
   # Unicornafk
   unicornafkCert = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/M0NsTeRRR/homelabv3-infra/main/ssl/unicornafk.crt";
-    sha256 = "i51H09zQ+Ff/zKhKSWbXJKa+2TzzX2nRu6K+zGY7glA=";
+    sha256 = "3a3lSEpgBXOreo/50esJYUP2UGHibr+RbtV1bBLG1eA=";
   };
 in
 {
