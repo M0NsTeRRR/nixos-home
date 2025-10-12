@@ -15,7 +15,6 @@ let
     gcc
     gnumake
     python3
-    uv
     go
     delve # go debugger
     rustup

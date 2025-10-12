@@ -12,6 +12,7 @@ let
     ./starship.nix
     ./tealdeer.nix
     ./trippy.nix
+    ./uv.nix
     ./zsh.nix
   ];
 
