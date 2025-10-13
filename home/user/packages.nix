@@ -37,6 +37,7 @@ let
     iperf
     kubectl
     kubernetes-helm
+    fluxcd
     stern
     packer
     pulumi
