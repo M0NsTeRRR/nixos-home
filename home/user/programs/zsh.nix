@@ -13,6 +13,7 @@
       ls = "eza";
       k = "kubectl";
       top = "btop";
+      jq = "yq";
     };
 
     history = {
