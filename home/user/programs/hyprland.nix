@@ -130,6 +130,7 @@
         "$mainMod SHIFT, underscore, movetoworkspace, 8"
         "$mainMod SHIFT, ccedilla, movetoworkspace, 9"
         "$mainMod SHIFT, agrave, movetoworkspace, 10"
+        "$mainMod SHIFT, S, movetoworkspace, special"
         "$mainMod, tab, workspace, e+1"
       ];
 
