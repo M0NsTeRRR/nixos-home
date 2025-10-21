@@ -23,6 +23,7 @@
       ui.color = true;
       merge.conflictStyle = "zdiff3";
       push.autoSetupRemote = true;
+      pull.ff = "only";
     };
   };
 }
