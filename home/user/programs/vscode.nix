@@ -29,6 +29,7 @@
         "python.analysis.typeCheckingMode" = "standard";
         "python.testing.pytestEnabled" = true;
         "python.testing.pytestArgs" = [ "-vv" ];
+        "continue.telemetryEnabled" = false;
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
@@ -51,6 +52,8 @@
         ms-azuretools.vscode-containers
         # presentation with plain Markdown
         marp-team.marp-vscode
+        # AI
+        continue.continue
         # misc
         eamodio.gitlens
         jnoortheen.nix-ide
