@@ -27,6 +27,7 @@
         "python.analysis.autoImportCompletions" = true;
         "python.analysis.completeFunctionParens" = true;
         "python.analysis.typeCheckingMode" = "standard";
+        "python.missingPackage.severity" = "Error";
         "python.testing.pytestEnabled" = true;
         "python.testing.pytestArgs" = [ "-vv" ];
         "continue.telemetryEnabled" = false;
