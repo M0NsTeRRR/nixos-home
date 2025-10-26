@@ -29,6 +29,7 @@ let
     btop # A monitor of resources
     ripgrep
     kind
+    cloud-provider-kind
 
     # infra
     tio # serial device I/O tool
