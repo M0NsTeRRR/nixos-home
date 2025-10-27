@@ -113,7 +113,6 @@ let
       hunspellDicts.fr-moderne
       hunspellDicts.en_US
       gimp # Image Manipulation Program
-      imv # image viewer
     ]);
 in
 {
