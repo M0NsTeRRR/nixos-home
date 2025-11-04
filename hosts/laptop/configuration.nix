@@ -5,6 +5,7 @@
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
     ./disko.nix
     ../../system
+    ../../system/thunderbolt.nix
     ../../home
   ];
 

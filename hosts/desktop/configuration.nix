@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./disko.nix
     ../../system
+    ../../system/thunderbolt.nix
     ../../home
   ];
 
@@ -24,10 +25,13 @@
         allow id 05e3:0608 serial "" name "USB2.0 Hub" hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" parent-hash "jEP/6WzviqdJ5VSeTUY8PatCNBKeaREvo2OqdplND/o=" via-port "1-13" with-interface 09:00:00 with-connect-type "not used"
         allow id 0bda:5411 serial "" name "USB2.1 Hub" hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.2" with-interface { 09:00:01 09:00:02 } with-connect-type "unknown"
         allow id 046d:c547 serial "" name "USB Receiver" hash "gFx7kcPo3OnfDcPhrJk3PxeBiF1o6/JGeTevInhob4A=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.3" with-interface { 03:01:02 03:01:01 03:00:00 } with-connect-type "unknown"
-        allow id 046d:c343 serial "38204108" name "G915 TKL LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard" hash "wOoYIjtLvhooUN8KMxGildFj4zX1KIn9CJylE4pgwVY=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.4" with-interface { 03:01:01 03:01:02 03:00:00 } with-connect-type "unknown"
+        allow id 046d:c343 serial "38204108" name "G915 TKL LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard" hash "wOoYIjtLvhooUN8KMxGildFj4zX1KIn9CJylE4pgwVY=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" with-interface { 03:01:01 03:01:02 03:00:00 } with-connect-type "unknown"
         allow id 1b1c:0c1c serial "820730f0648871aaca52fff51091005f" name "CORSAIR iCUE Commander CORE" hash "lr0O1tI9otMWUZ9SD2CFJQzFRI5VcSDORS5FKqxYO0c=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" with-interface { 03:00:00 03:00:00 } with-connect-type "hotplug"
         allow id 8087:0032 serial "" name "" hash "ClCa9utWpkfhSL14jLzpmilrrbre65+44YYBM4ysI/4=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-13.4" with-interface { e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 } with-connect-type "hotplug"
-        allow id 046d:c094 serial "6EFB9182" name "PRO X Wireless" hash "R2n4+7shSxLVnokFaqYLICqzYcjylvKwoeZHGRa5bfg=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.3" with-interface { 03:01:02 03:01:01 03:00:00 } with-connect-type "unknown"
+        allow id 0bda:5412 serial "" name "USB2.1 Hub" hash "aHZxn+2vL0L+JWPJTei4SvJ73CFyH6fdpbYMTccFyTo=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.1" with-interface { 09:00:01 09:00:02 } with-connect-type "unknown"
+        allow id 0414:a008 serial "200901010001" name "USB Audio" hash "h/AeB1pDOIHRCwYiVLn5xV+pNYhhm0LNkgPAuY0bJmo=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" with-interface { 01:01:00 01:02:00 01:02:00 } with-connect-type "unknown"
+        allow id 048d:8295 serial "" name "ITE Device(8595)" hash "0Ce0vui79xSsDam5XB1ch8ePTHWZaaJhm3nW+95uUjU=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.4" with-interface 03:01:01 with-connect-type "unknown"
+        allow id 0bda:1100 serial "" name "HID Device" hash "CSfaCwN7PxV4r3lixedS5SRSkt5CrxAWAUPOkTSZdro=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.5" with-interface 03:00:00 with-connect-type "unknown"
       '';
     };
     vpn = {
