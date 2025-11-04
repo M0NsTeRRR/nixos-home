@@ -14,6 +14,7 @@
     ./internationalization.nix
     ./logind.nix
     ./network.nix
+    ./nix-ld.nix
     ./nixsettings.nix
     ./nvidia.nix
     ./printer.nix

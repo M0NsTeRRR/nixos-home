@@ -6,6 +6,7 @@
     settings = {
       font-size = 12;
       background-opacity = 0.8;
+      shell-integration-features = "ssh-env";
     };
   };
 }
