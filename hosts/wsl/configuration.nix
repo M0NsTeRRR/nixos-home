@@ -9,6 +9,7 @@
     inputs.nixos-wsl.nixosModules.default
     ../../system/ca-certificates.nix
     ../../system/internationalization.nix
+    ../../system/nix-ld.nix
     ../../system/nixsettings.nix
     ../../system/security.nix
     ../../system/ssh.nix
