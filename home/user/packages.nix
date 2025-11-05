@@ -45,7 +45,7 @@ let
     postgresql
     sqlite
     dogdns # command-line DNS client
-    restic
+    kopia-ui
     rsync
     rclone
     go-task
