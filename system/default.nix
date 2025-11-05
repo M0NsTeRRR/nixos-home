@@ -11,6 +11,7 @@
     ./file.nix
     ./fwupd.nix
     ./game.nix
+    ./gpu-screen-recorder.nix
     ./internationalization.nix
     ./logind.nix
     ./network.nix
