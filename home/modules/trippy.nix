@@ -55,7 +55,7 @@ in
     '';
 
     programs.fish.interactiveShellInit = lib.mkIf cfg.enableFishIntegration ''
-      source <(${lib.getExe cfg.package} --generate fish)
+      ${lib.getExe cfg.package} --generate fish | source
     '';
 
     programs.zsh.initContent = lib.mkIf cfg.enableZshIntegration ''

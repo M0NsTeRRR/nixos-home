@@ -2,6 +2,7 @@
 let
   defaultImports = [
     ./atuin.nix
+    ./fish.nix
     ./git.nix
     ./gpg.nix
     ./home-manager.nix
@@ -13,7 +14,6 @@ let
     ./tealdeer.nix
     ./trippy.nix
     ./uv.nix
-    ./zsh.nix
   ];
 
   guiImports = [

@@ -5,6 +5,8 @@
     package = pkgs-unstable.vscode;
     profiles.default = {
       userSettings = {
+        "telemetry.editStats.enabled" = false;
+        "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.initialHint" = false;
         "chat.agent.enabled" = false;
