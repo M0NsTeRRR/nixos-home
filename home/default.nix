@@ -20,6 +20,7 @@ let
       "discord"
       "spotify"
       "packer"
+      "google-chrome"
     ];
 
   pkgs-unstable = import inputs.nixpkgs-unstable {

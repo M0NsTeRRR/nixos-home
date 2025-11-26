@@ -106,6 +106,7 @@ let
       qbittorrent # torrent
       spotify # music
       telegram-desktop # messaging app
+      google-chrome
 
       # office tool
       libreoffice-qt
