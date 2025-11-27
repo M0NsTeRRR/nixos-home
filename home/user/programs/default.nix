@@ -2,6 +2,7 @@
 let
   defaultImports = [
     ./atuin.nix
+    ./delta.nix
     ./fish.nix
     ./git.nix
     ./gpg.nix

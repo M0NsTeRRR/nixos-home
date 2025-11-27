@@ -78,7 +78,7 @@ let
       wl-clip-persist # Keep Wayland clipboard even after programs close
       kdePackages.polkit-kde-agent-1 # authentication agent
       hyprpanel # wayland bar for hyprland
-      rofi-wayland # Keystroke Launcher
+      rofi # Keystroke Launcher
       nemo # file manager
       yad # gui dialog (used as shortcut reminder)
       nerd-fonts.jetbrains-mono # nerdfonts font

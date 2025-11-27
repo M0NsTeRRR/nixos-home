@@ -3,7 +3,6 @@
   pkgs,
   config,
   lib,
-  home-manager-unstable,
   username,
   ...
 }:
@@ -24,7 +23,7 @@ let
     ];
 
   pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfreePredicate = allowUnfreePredicate;
   };
 in
@@ -42,14 +41,6 @@ in
   };
 
   config = {
-    # trippy does not support native unprivileged mode https://github.com/fujiapple852/trippy/issues/741
-    security.wrappers.trip = {
-      owner = username;
-      group = username;
-      capabilities = "cap_net_raw+p";
-      source = "${pkgs-unstable.trippy}/bin/trip";
-    };
-
     home-manager = {
       backupFileExtension = "backup";
       useUserPackages = true;
@@ -68,8 +59,6 @@ in
 
       users.${username} = {
         imports = [
-          (inputs.home-manager-unstable + "/modules/programs/hwatch.nix")
-          (inputs.home-manager-unstable + "/modules/programs/kubeswitch.nix")
           ./user
         ];
 

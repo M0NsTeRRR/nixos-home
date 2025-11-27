@@ -2,7 +2,7 @@
   description = "Ludovic Ortega Nix configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -13,7 +13,7 @@
     };
 
     home-manager-stable = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -69,7 +69,6 @@
       allowUnfreePredicate =
         pkg:
         builtins.elem (lib.getName pkg) [
-          "ankama-launcher"
           "nvidia-x11"
           "nvidia-settings"
           "steam"
@@ -79,10 +78,10 @@
         ];
     in
     {
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
 
       checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
       });
 
       nixosConfigurations = lib.genAttrs hostNames (

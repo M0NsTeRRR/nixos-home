@@ -1,6 +1,6 @@
 {
-  services.logind = {
-    powerKey = "suspend-then-hibernate";
-    powerKeyLongPress = "poweroff";
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend-then-hibernate";
+    HandlePowerKeyLongPress = "poweroff";
   };
 }
