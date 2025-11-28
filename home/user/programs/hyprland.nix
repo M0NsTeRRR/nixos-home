@@ -99,6 +99,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, ${pkgs.rofi}/bin/rofi -show drun"
         "$mainMod, P, pseudo,"
+        "$mainMod, H, exec, ${pkgs.rofi}/bin/rofi -modi clipboard:cliphist-rofi-img -show clipboard -show-icons"
         "$mainMod, J, togglesplit,"
         "$mainMod, I, hyprexpo:expo, toggle"
         ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures"
