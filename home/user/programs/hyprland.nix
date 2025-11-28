@@ -18,6 +18,11 @@
         "[workspace 0 silent] firefox"
       ];
 
+      ecosystem = {
+        no_update_news = false;
+        no_donation_nag = false;
+      };
+
       general = {
         gaps_in = 5;
         gaps_out = 20;
@@ -76,10 +81,6 @@
           natural_scroll = false;
           "tap-and-drag" = true;
         };
-      };
-
-      gestures = {
-        workspace_swipe = false;
       };
 
       device = {
