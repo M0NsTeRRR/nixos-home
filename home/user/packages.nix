@@ -45,13 +45,12 @@ let
     postgresql
     sqlite
     dogdns # command-line DNS client
-    kopia-ui
     rsync
-    rclone
     go-task
     rdap # Registry Data Access Protocol
     zizmor # Tool for finding security issues in GitHub Actions setups
     wireguard-tools # wireguard vpn
+    plakar
 
     # misc
     mate.engrampa

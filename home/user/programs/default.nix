@@ -11,6 +11,7 @@ let
     ./k9s.nix
     ./kubecolor.nix
     ./kubeswitch.nix
+    ./rclone.nix
     ./starship.nix
     ./tealdeer.nix
     ./trippy.nix

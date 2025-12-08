@@ -11,9 +11,9 @@ let
     ".config/hypr/hyprlock.conf".source = "${configDir}/hypr/hyprlock.conf";
     ".config/hypr/hyprpaper.conf".source = "${configDir}/hypr/hyprpaper.conf";
     ".config/hypr/macchiato.conf".source = "${configDir}/hypr/macchiato.conf";
-    ".local/share/nemo".source = "${configDir}/nemo";
     ".config/rofi".source = "${configDir}/rofi";
     ".config/wallpapers".source = "${configDir}/wallpapers";
+    ".local/share/nemo".source = "${configDir}/nemo";
   };
 
   defaultFile = {

@@ -134,3 +134,4 @@ Some static files must be manually setup :
 - `~/wireguard-keys/homelab.peer`
 - `~/.kube/static-kubeconfigs/<files>`
 - `~/passwords.kdbx`
+- `~/.aws/credentials`
