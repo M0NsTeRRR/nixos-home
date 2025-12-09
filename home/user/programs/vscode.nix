@@ -8,6 +8,7 @@
         "telemetry.editStats.enabled" = false;
         "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
+        "terminal.integrated.suggest.enabled" = true;
         "terminal.integrated.initialHint" = false;
         "chat.agent.enabled" = false;
         "chat.commandCenter.enabled" = false;
