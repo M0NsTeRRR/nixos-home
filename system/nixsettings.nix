@@ -1,5 +1,6 @@
 {
   pkgs,
+  username,
   ...
 }:
 {
@@ -9,6 +10,8 @@
 
   nix = {
     settings = {
+      trusted-users = [ username ];
+
       experimental-features = [
         "nix-command"
         "flakes"
