@@ -21,6 +21,7 @@
     ./nvidia.nix
     ./printer.nix
     ./security.nix
+    ./solaar.nix
     ./ssh.nix
     ./usbguard.nix
     ./user.nix

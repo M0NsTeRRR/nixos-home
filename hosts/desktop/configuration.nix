@@ -41,6 +41,9 @@
         "2a0c:b641:02c0:104::11/128"
       ];
     };
+    solaar = {
+      enable = true;
+    };
   };
 
   home-manager.users.${username} = {

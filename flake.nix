@@ -41,6 +41,11 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    solaar = {
+      url = "github:Svenum/Solaar-Flake";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
