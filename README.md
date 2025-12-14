@@ -34,7 +34,7 @@
    sudo nixos-install
    ```
 
-7. Reboot (be sure to turn off secureboot as it's not configured yet but in setup mode to be able to enroll key)
+7. Reboot (be sure to turn off secureboot as it's not configured yet but in setup mode to be able to auto enroll key)
 
 8. Login with the root account and fetch the flake template
 
@@ -42,10 +42,7 @@
    nix --experimental-features 'nix-command flakes' flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
    ```
 
-9. Follow [Lanzaboot quickstart](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
-   If sbctl is not available in the current context you can do `nix-shell -p sbctl --run "sbctl create-keys"`
-
-10. Update nixos config as needed
+9. Update nixos config as needed
 
    > [!IMPORTANT]
    > Don't forget to whitelist your USB devices otherwise you will not be able to login.
@@ -54,7 +51,7 @@
    nixos-rebuild switch --flake '.#<hostname>'
    ```
 
-11. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
+10. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
 
 12. GG 🥳
 
