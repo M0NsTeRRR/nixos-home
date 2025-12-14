@@ -56,13 +56,12 @@
         ms-azuretools.vscode-containers
         # presentation with plain Markdown
         marp-team.marp-vscode
-        # AI
-        continue.continue
         # misc
         eamodio.gitlens
         jnoortheen.nix-ide
         editorconfig.editorconfig
         redhat.vscode-yaml
+        # tombi-toml.tombi
         ms-vscode.makefile-tools
       ];
     };
