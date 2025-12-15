@@ -11,6 +11,8 @@ let
     # dev
     vim
     strace
+    ltrace
+    lsof
     curl
     gcc
     gnumake
@@ -57,6 +59,7 @@ let
     unzip
     gnutar
     pciutils # lspci
+    usbutils # lsusb
     marp-cli # presentation with plain Markdown
   ];
 
