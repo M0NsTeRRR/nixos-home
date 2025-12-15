@@ -3,7 +3,7 @@
 ## Classic
 
 1. Flash NixOS ISO Image to an USB stick
-2. Boot into it
+2. Boot into it (be sure to turn off secureboot as it's not configured yet but in setup mode to be able to auto enroll key)
 3. Setup wifi (if needed)
     1. Start wpa_supplicant > `systemctl start wpa_supplicant`
     2. Enable a wireless network > `wpa_cli`
@@ -16,44 +16,19 @@
         enable_network 0
         ```
 
-4. Partition the system
+4. Install NixOS
 
    ```bash
-   sudo nix --experimental-features 'nix-command flakes' run github:nix-community/disko -- --mode disko --flake github:m0nsterrr/nixos-home#<hostname>
+   export NIX_CONFIG="experimental-features = nix-command flakes"
+   nix flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
+   sudo nix run github:nix-community/disko -- --mode disko --flake github:m0nsterrr/nixos-home#<hostname>
+   # Don't forget to whitelist your USB devices on USBGuard otherwise you will not be able to login.
+   sudo nixos-install --flake .#hostname
    ```
 
-5. Generate a hardware-configuration.nix
+5. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
 
-   ```bash
-   sudo nixos-generate-config --root /mnt
-   ```
-
-6. Build the system
-
-   ```bash
-   sudo nixos-install
-   ```
-
-7. Reboot (be sure to turn off secureboot as it's not configured yet but in setup mode to be able to auto enroll key)
-
-8. Login with the root account and fetch the flake template
-
-   ```bash
-   nix --experimental-features 'nix-command flakes' flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
-   ```
-
-9. Update nixos config as needed
-
-   > [!IMPORTANT]
-   > Don't forget to whitelist your USB devices otherwise you will not be able to login.
-
-   ```bash
-   nixos-rebuild switch --flake '.#<hostname>'
-   ```
-
-10. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
-
-12. GG 🥳
+6. GG 🥳
 
 ## WSL
 
