@@ -3,7 +3,6 @@ let
   defaultImports = [
     ./atuin.nix
     ./delta.nix
-    ./fish.nix
     ./git.nix
     ./gpg.nix
     ./home-manager.nix
@@ -12,6 +11,7 @@ let
     ./kubecolor.nix
     ./kubeswitch.nix
     ./rclone.nix
+    ./shell.nix
     ./starship.nix
     ./tealdeer.nix
     ./trippy.nix
