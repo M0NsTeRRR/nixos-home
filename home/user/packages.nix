@@ -46,7 +46,7 @@ let
     pulumi
     postgresql
     sqlite
-    dogdns # command-line DNS client
+    knot-dns # command-line DNS client
     rsync
     go-task
     rdap # Registry Data Access Protocol
