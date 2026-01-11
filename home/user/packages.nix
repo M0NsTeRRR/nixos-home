@@ -52,7 +52,7 @@ let
     rdap # Registry Data Access Protocol
     zizmor # Tool for finding security issues in GitHub Actions setups
     wireguard-tools # wireguard vpn
-    plakar
+    kopia-ui
 
     # misc
     mate.engrampa
