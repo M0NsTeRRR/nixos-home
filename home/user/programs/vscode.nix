@@ -26,6 +26,7 @@
         "python.analysis.autoFormatStrings" = true;
         "python.analysis.completeFunctionParens" = true;
         "python.analysis.typeCheckingMode" = "standard";
+        "python.languageServer" = "None";
         "python.missingPackage.severity" = "Error";
         "python.testing.pytestArgs" = [ "-vv" ];
         "python.testing.pytestEnabled" = true;
@@ -53,7 +54,7 @@
         # python
         ms-python.python
         ms-python.debugpy
-        ms-python.vscode-pylance
+        # astral-sh.ty
         charliermarsh.ruff
         # kubernetes
         ms-kubernetes-tools.vscode-kubernetes-tools
