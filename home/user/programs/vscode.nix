@@ -22,10 +22,19 @@
         "git.confirmSync" = false;
         "git.defaultCloneDirectory" = "/home/${username}/Github";
         "git.replaceTagsWhenPull" = true;
-        "python.analysis.autoImportCompletions" = true;
-        "python.analysis.autoFormatStrings" = true;
-        "python.analysis.completeFunctionParens" = true;
-        "python.analysis.typeCheckingMode" = "standard";
+        "go.lintTool" = "golangci-lint";
+        "go.lintFlags" = [
+          "--path-mode=abs"
+          "--fast-only"
+        ];
+        "go.formatTool" = "custom";
+        "go.alternateTools" = {
+          "customFormatter" = "golangci-lint";
+        };
+        "go.formatFlags" = [
+          "fmt"
+          "--stdin"
+        ];
         "python.languageServer" = "None";
         "python.missingPackage.severity" = "Error";
         "python.testing.pytestArgs" = [ "-vv" ];
@@ -36,7 +45,7 @@
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.initialHint" = false;
         "terminal.integrated.suggest.enabled" = false;
-        "update.mode" = null;
+        "update.mode" = "none";
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
       };
