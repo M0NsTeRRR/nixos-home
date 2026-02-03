@@ -69,7 +69,7 @@
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-azuretools.vscode-containers
         # presentation with plain Markdown
-        marp-team.marp-vscode
+        antfu.slidev
         # misc
         eamodio.gitlens
         jnoortheen.nix-ide

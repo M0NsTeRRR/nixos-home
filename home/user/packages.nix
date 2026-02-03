@@ -61,7 +61,7 @@ let
     gnutar
     pciutils # lspci
     usbutils # lsusb
-    marp-cli # presentation with plain Markdown
+    slidev-cli # presentation with plain Markdown
   ];
 
   guiPackages =
