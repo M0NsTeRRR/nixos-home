@@ -2,16 +2,11 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = with pkgs.hyprlandPlugins; [
-      hyprexpo
-    ];
+    plugins = with pkgs.hyprlandPlugins; [ ];
     systemd.variables = [ "--all" ];
     settings = {
-      source = "~/.config/hypr/macchiato.conf";
-
       exec-once = [
         "/usr/lib/polkit-kde-authentication-agent-1"
-        "${pkgs.hyprpaper}/bin/hyprpaper" # wallpaper utility
         "${pkgs.hypridle}/bin/hypridle" # idle daemon
         "[workspace 9 silent] keepassxc"
         "[workspace 9 silent] discord"
@@ -91,18 +86,16 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
-        "$mainMod, C, killactive,"
-        "$mainMod, K, forcekillactive,"
-        "$mainMod, L, exec, pidof ${pkgs.hyprlock}/bin/hyprlock || ${pkgs.hyprlock}/bin/hyprlock"
-        "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, ${pkgs.rofi}/bin/rofi -show drun"
-        "$mainMod, P, pseudo,"
-        "$mainMod, H, exec, ${pkgs.rofi}/bin/rofi -modi clipboard:cliphist-rofi-img -show clipboard -show-icons"
-        "$mainMod, J, togglesplit,"
-        "$mainMod, I, hyprexpo:expo, toggle"
         ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures"
+        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
+        "$mainMod, C, killactive,"
+        "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
+        "$mainMod, J, togglesplit,"
+        "$mainMod, K, forcekillactive,"
+        "$mainMod, L, exec, noctalia-shell ipc call sessionMenu lockAndSuspend"
+        "$mainMod, P, pseudo,"
+        "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
+        "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
@@ -141,19 +134,24 @@
         ", switch:off:Lid Switch, exec, hyprctl dispatch dpms on"
       ];
 
+      plugin = { };
+
       windowrulev2 = [
         "suppressevent maximize, class:.*"
       ];
 
-      plugin = {
-        hyprexpo = {
-          columns = 3;
-          gap_size = 5;
-          bg_col = "rgb(111111)";
-          workspace_method = "first 1";
-          enable_gesture = false;
-        };
-      };
+      workspace = [
+        "1, persistent:true"
+        "2, persistent:true"
+        "3, persistent:true"
+        "4, persistent:true"
+        "5, persistent:true"
+        "6, persistent:true"
+        "7, persistent:true"
+        "8, persistent:true"
+        "9, persistent:true"
+        "10, persistent:true"
+      ];
     };
   };
 }

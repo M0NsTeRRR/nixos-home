@@ -59,6 +59,7 @@ in
 
       users.${username} = {
         imports = [
+          inputs.noctalia.homeModules.default
           ./user
         ];
 

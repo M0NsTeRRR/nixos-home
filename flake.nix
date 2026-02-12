@@ -42,6 +42,11 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
     solaar = {
       url = "github:Svenum/Solaar-Flake";
       inputs.nixpkgs.follows = "nixpkgs-stable";

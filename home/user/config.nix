@@ -7,11 +7,8 @@ let
   configDir = ../config;
 
   guiFile = {
+    ".cache/noctalia/wallpapers.json".source = "${configDir}/noctalia/wallpapers.json";
     ".config/hypr/hypridle.conf".source = "${configDir}/hypr/hypridle.conf";
-    ".config/hypr/hyprlock.conf".source = "${configDir}/hypr/hyprlock.conf";
-    ".config/hypr/hyprpaper.conf".source = "${configDir}/hypr/hyprpaper.conf";
-    ".config/hypr/macchiato.conf".source = "${configDir}/hypr/macchiato.conf";
-    ".config/rofi".source = "${configDir}/rofi";
     ".config/wallpapers".source = "${configDir}/wallpapers";
     ".local/share/nemo".source = "${configDir}/nemo";
   };

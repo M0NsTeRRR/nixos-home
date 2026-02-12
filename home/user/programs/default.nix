@@ -22,7 +22,7 @@ let
     ./firefox.nix
     ./ghostty.nix
     ./hyprland.nix
-    ./hyprpanel.nix
+    ./noctalia.nix
     ./obs.nix
     ./vscode.nix
   ];

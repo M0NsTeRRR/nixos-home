@@ -71,19 +71,12 @@ let
       xdg-desktop-portal-hyprland # Hyprland XDG Desktop Portal
       hyprpicker # color picker
       hyprcursor # cursor
-      hyprlock # screen locking utility
       hypridle # idle daemon
-      hyprpaper # wallpaper utility
       hyprshot # screenshot utility
       hyprpolkitagent # polkit authentication
       # hyprland-qtutils
-      wl-clipboard # copy/paste utilities for Wayland
-      wl-clip-persist # Keep Wayland clipboard even after programs close
       kdePackages.polkit-kde-agent-1 # authentication agent
-      hyprpanel # wayland bar for hyprland
-      rofi # Keystroke Launcher
       nemo # file manager
-      yad # gui dialog (used as shortcut reminder)
       nerd-fonts.jetbrains-mono # nerdfonts font
       qt6.qtwayland
       qt5.qtwayland

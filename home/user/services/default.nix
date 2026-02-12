@@ -10,7 +10,6 @@ let
   ];
 
   guiImports = [
-    ./cliphist.nix
     ./kdeconnect.nix
   ];
 
