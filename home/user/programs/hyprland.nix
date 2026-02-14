@@ -92,7 +92,7 @@
         "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
         "$mainMod, J, togglesplit,"
         "$mainMod, K, forcekillactive,"
-        "$mainMod, L, exec, noctalia-shell ipc call sessionMenu lockAndSuspend"
+        "$mainMod, L, exec, noctalia-shell ipc call lockScreen lock"
         "$mainMod, P, pseudo,"
         "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
         "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
