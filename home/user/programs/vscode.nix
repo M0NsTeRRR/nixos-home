@@ -44,6 +44,7 @@
         "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.initialHint" = false;
+        "terminal.integrated.fontFamily" = "'JetBrainsMono NF'";
         "terminal.integrated.suggest.enabled" = false;
         "update.mode" = "none";
         "update.showReleaseNotes" = false;

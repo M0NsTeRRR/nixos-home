@@ -27,6 +27,7 @@ let
     yq # command-line YAML, JSON, XML, CSV, TOML
     eza # a modern, maintained replacement for ls
     bat # enhanced cat command
+    lstr # tree alternative
     tealdeer # Very fast implementation of tldr in Rust
     hyperfine # benchmarking tool
     btop # A monitor of resources
