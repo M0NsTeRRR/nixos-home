@@ -1,5 +1,7 @@
 {
+  batteryEnabled,
   pkgs-unstable,
+  lib,
   ...
 }:
 {
@@ -97,15 +99,6 @@
           ];
           right = [
             {
-              deviceNativePath = "__default__";
-              displayMode = "graphic";
-              hideIfIdle = false;
-              hideIfNotDetected = true;
-              id = "Battery";
-              showNoctaliaPerformance = false;
-              showPowerProfiles = false;
-            }
-            {
               displayMode = "onhover";
               id = "Volume";
               middleClickCommand = "pwvucontrol || pavucontrol";
@@ -122,6 +115,14 @@
               displayMode = "onhover";
               id = "VPN";
             }
+          ]
+          ++ lib.optional batteryEnabled {
+            displayMode = "onhover";
+            iconColor = "none";
+            id = "Brightness";
+            textColor = "none";
+          }
+          ++ [
             {
               clockColor = "none";
               customFont = "";
@@ -130,6 +131,15 @@
               id = "Clock";
               tooltipFormat = "HH:mm ddd, MMM dd";
               useCustomFont = false;
+            }
+            {
+              deviceNativePath = "__default__";
+              displayMode = "graphic";
+              hideIfIdle = false;
+              hideIfNotDetected = true;
+              id = "Battery";
+              showNoctaliaPerformance = false;
+              showPowerProfiles = false;
             }
             {
               hideWhenZero = false;
