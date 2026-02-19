@@ -5,7 +5,7 @@
     package = pkgs-unstable.vscode;
     profiles.default = {
       userSettings = {
-        "chat.disableAIFeatures" = false;
+        "chat.disableAIFeatures" = true;
         "containers.containerClient" = "com.microsoft.visualstudio.containers.podman";
         "containers.orchestratorClient" = "com.microsoft.visualstudio.orchestrators.podmancompose";
         "dev.containers.dockerComposePath" = "podman-compose";
