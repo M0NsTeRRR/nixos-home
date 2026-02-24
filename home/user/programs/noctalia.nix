@@ -412,7 +412,7 @@
       };
       sessionMenu = {
         enableCountdown = true;
-        countdownDuration = 10000;
+        countdownDuration = 3000;
         position = "center";
         showHeader = true;
         largeButtonsStyle = true;
