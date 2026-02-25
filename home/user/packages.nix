@@ -57,7 +57,7 @@ let
     kopia-ui
 
     # misc
-    mate.engrampa
+    engrampa # file archiver for MATE
     unzip
     gnutar
     pciutils # lspci
