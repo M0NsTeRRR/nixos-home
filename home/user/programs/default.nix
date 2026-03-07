@@ -1,7 +1,6 @@
 { guiEnabled, ... }:
 let
   defaultImports = [
-    ./ai.nix
     ./atuin.nix
     ./delta.nix
     ./git.nix
@@ -11,6 +10,7 @@ let
     ./k9s.nix
     ./kubecolor.nix
     ./kubeswitch.nix
+    ./opencode.nix
     ./rclone.nix
     ./shell.nix
     ./starship.nix
