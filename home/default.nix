@@ -63,6 +63,8 @@ in
           ./user
         ];
 
+        nixpkgs.config.allowUnfreePredicate = allowUnfreePredicate;
+
         home = {
           username = "${username}";
           homeDirectory = "/home/${username}";
