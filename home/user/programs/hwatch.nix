@@ -7,6 +7,7 @@
       "--color"
       "--border"
       "--precise"
+      "--keymap ctrl-c=force_cancel"
     ];
   };
 }
