@@ -48,6 +48,7 @@
         "update.mode" = "none";
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
+        "workbench.colorTheme" = "GitHub Dark";
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
@@ -65,6 +66,10 @@
         ms-python.debugpy
         # astral-sh.ty
         charliermarsh.ruff
+        # github
+        github.github-vscode-theme
+        github.vscode-github-actions
+        github.vscode-pull-request-github
         # kubernetes
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-azuretools.vscode-containers
