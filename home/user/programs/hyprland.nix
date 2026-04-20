@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -7,6 +7,7 @@
     settings = {
       exec-once = [
         "/usr/lib/polkit-kde-authentication-agent-1"
+        "${pkgs-unstable.noctalia-shell}/bin/noctalia-shell" # idle daemon
         "${pkgs.hypridle}/bin/hypridle" # idle daemon
         "[workspace 9 silent] keepassxc"
         "[workspace 9 silent] discord"
@@ -87,15 +88,15 @@
 
       bind = [
         ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures"
-        "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
+        "$mainMod, A, exec, ${pkgs-unstable.noctalia-shell}/bin/noctalia-shell ipc call launcher toggle"
         "$mainMod, C, killactive,"
         "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
         "$mainMod, J, togglesplit,"
         "$mainMod, K, forcekillactive,"
-        "$mainMod, L, exec, noctalia-shell ipc call lockScreen lock"
+        "$mainMod, L, exec, ${pkgs-unstable.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock"
         "$mainMod, P, pseudo,"
         "$mainMod, Q, exec, ${pkgs.ghostty}/bin/ghostty"
-        "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
+        "$mainMod, V, exec, ${pkgs-unstable.noctalia-shell}/bin/noctalia-shell ipc call launcher clipboard"
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"

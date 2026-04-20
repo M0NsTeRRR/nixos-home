@@ -32,6 +32,7 @@
         allow id 0414:a008 serial "200901010001" name "USB Audio" hash "h/AeB1pDOIHRCwYiVLn5xV+pNYhhm0LNkgPAuY0bJmo=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" with-interface { 01:01:00 01:02:00 01:02:00 } with-connect-type "unknown"
         allow id 048d:8295 serial "" name "ITE Device(8595)" hash "0Ce0vui79xSsDam5XB1ch8ePTHWZaaJhm3nW+95uUjU=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.4" with-interface 03:01:01 with-connect-type "unknown"
         allow id 0bda:1100 serial "" name "HID Device" hash "CSfaCwN7PxV4r3lixedS5SRSkt5CrxAWAUPOkTSZdro=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.5" with-interface 03:00:00 with-connect-type "unknown"
+        allow id 046d:c094 serial "6EFB9182" name "PRO X Wireless" hash "R2n4+7shSxLVnokFaqYLICqzYcjylvKwoeZHGRa5bfg=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.3" with-interface { 03:01:02 03:01:01 03:00:00 } with-connect-type "unknown"
       '';
     };
     vpn = {

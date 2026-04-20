@@ -8,7 +8,6 @@
   programs.noctalia-shell = {
     enable = true;
     package = (pkgs-unstable.noctalia-shell.override { calendarSupport = true; });
-    systemd.enable = true;
     plugins = {
       sources = [
         {
