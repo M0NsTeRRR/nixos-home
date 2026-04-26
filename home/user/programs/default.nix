@@ -10,6 +10,7 @@ let
     ./k9s.nix
     ./kubecolor.nix
     ./kubeswitch.nix
+    ./onlyoffice.nix
     ./opencode.nix
     ./rclone.nix
     ./shell.nix

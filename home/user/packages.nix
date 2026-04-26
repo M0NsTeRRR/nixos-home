@@ -106,7 +106,6 @@ let
       google-chrome
 
       # office tool
-      libreoffice-qt
       hunspell
       hunspellDicts.fr-moderne
       hunspellDicts.en_US
