@@ -25,6 +25,7 @@
         allow id 06cb:00bd serial "63fca17d8711" name "" hash "hzchVuNcbEL4hPcdm2HeT//pL5wUZasLbB2hSl31Cas=" parent-hash "Hp8B0Enf+ACRT2tyy0EqXj7eNsFDAnTRZadzuh/Iqd4=" with-interface ff:00:00 with-connect-type "not used"
         allow id 0489:e0cd serial "000000000" name "Wireless_Device" hash "3JopVFWGRS5OUECbrpyI91sYwRcWP7uB1x2MwHhAtnM=" parent-hash "Hp8B0Enf+ACRT2tyy0EqXj7eNsFDAnTRZadzuh/Iqd4=" with-interface { e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 } with-connect-type "not used"
         allow id 04f2:b6d0 serial "0001" name "Integrated Camera" hash "hUs7N/nTwEEB6EYs8fjHI8+/hhSGPEqX9IJhrMQ0lzY=" parent-hash "ryHCmG3nsLVuHD/YMplTUyPWzK2YMO368ASLReR84VQ=" with-interface { 0e:01:00 0e:02:00 0e:02:00 0e:02:00 0e:02:00 0e:02:00 0e:02:00 0e:02:00 0e:02:00 0e:01:01 0e:02:01 0e:02:01 0e:02:01 0e:02:01 0e:02:01 0e:02:01 0e:02:01 0e:02:01 fe:01:01 } with-connect-type "not used"
+        allow id 18d1:4ee1 serial "5A161FDCH001QU" name "Pixel 10 Pro" hash "kt8halcoC4acrofc0rkbTULafWQ4SB90b6RIBJgK6IA=" parent-hash "jEP/6WzviqdJ5VSeTUY8PatCNBKeaREvo2OqdplND/o=" via-port "1-8" with-interface 06:01:01 with-connect-type "hotplug"
       '';
     };
     vpn = {
