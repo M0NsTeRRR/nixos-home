@@ -24,7 +24,7 @@ let
     lldb # rust debugger
     protobuf
     bpftrace
-    yq # command-line YAML, JSON, XML, CSV, TOML
+    yq-go # command-line YAML, JSON, XML, CSV, TOML
     eza # a modern, maintained replacement for ls
     bat # enhanced cat command
     lstr # tree alternative
