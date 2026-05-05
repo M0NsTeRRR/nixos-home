@@ -19,6 +19,7 @@ let
     python3
     go
     delve # go debugger
+    gopls
     golangci-lint
     rustup
     lldb # rust debugger
