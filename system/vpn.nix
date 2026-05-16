@@ -28,10 +28,8 @@ in
         autostart = false;
         address = cfg.addresses;
         dns = [
-          "192.168.10.21"
-          "192.168.10.22"
-          "2a0c:b641:02c0:110::21"
-          "2a0c:b641:02c0:110::22"
+          "192.168.6.1"
+          "2a0c:b641:02c0:106::1"
           "unicornafk.fr"
         ];
         privateKeyFile = "/home/${username}/wireguard-keys/homelab.priv";
