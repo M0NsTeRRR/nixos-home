@@ -16,6 +16,7 @@ let
     curl
     gcc
     gnumake
+    devenv
     python3
     go
     delve # go debugger

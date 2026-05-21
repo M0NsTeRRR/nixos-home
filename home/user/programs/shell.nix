@@ -16,6 +16,7 @@
 
     interactiveShellInit = ''
       set fish_greeting
+      devenv hook fish | source
     '';
   };
 }
