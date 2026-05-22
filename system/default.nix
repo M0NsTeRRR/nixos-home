@@ -1,5 +1,6 @@
 {
   imports = [
+    ../options.nix
     ./adb.nix
     ./audio.nix
     ./battery.nix

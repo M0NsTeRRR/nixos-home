@@ -12,6 +12,7 @@
   boot.supportedFilesystems = [ "btrfs" ];
 
   mySystem = {
+    battery.enable = true;
     usbguard = {
       enable = true;
       rules = ''
@@ -38,10 +39,6 @@
     solaar = {
       enable = true;
     };
-  };
-
-  myHome = {
-    battery.enable = true;
   };
 
   home-manager.users.${username} = {

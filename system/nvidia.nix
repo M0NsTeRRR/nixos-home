@@ -4,19 +4,8 @@
   lib,
   ...
 }:
-let
-  cfg = config.mySystem.nvidia;
-in
 {
-  options.mySystem.nvidia = {
-    enable = lib.mkOption {
-      type = with lib.types; bool;
-      default = false;
-      description = "Enable NVIDIA.";
-    };
-  };
-
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf config.mySystem.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
     environment.variables = {

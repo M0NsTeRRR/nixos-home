@@ -4,19 +4,8 @@
   lib,
   ...
 }:
-let
-  cfg = config.mySystem.game;
-in
 {
-  options.mySystem.game = {
-    enable = lib.mkOption {
-      type = with lib.types; bool;
-      default = false;
-      description = "Enable Game.";
-    };
-  };
-
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf config.mySystem.game.enable {
     environment.systemPackages = with pkgs; [
       steam-run
       protonup-ng

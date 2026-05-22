@@ -30,15 +30,8 @@ in
 {
   imports = [
     inputs.home-manager-stable.nixosModules.home-manager
+    ../options.nix
   ];
-
-  options.myHome = {
-    battery.enable = lib.mkOption {
-      type = with lib.types; bool;
-      default = false;
-      description = "Enable battery configurations.";
-    };
-  };
 
   config = {
     home-manager = {
@@ -53,7 +46,7 @@ in
           wslEnabled
           ;
         guiEnabled = !wslEnabled;
-        batteryEnabled = config.myHome.battery.enable;
+        batteryEnabled = config.mySystem.battery.enable;
         nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };
 
