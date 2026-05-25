@@ -8,6 +8,7 @@ let
     ./home-manager.nix
     ./hwatch.nix
     ./k9s.nix
+    ./keepassxc.nix
     ./kubecolor.nix
     ./kubeswitch.nix
     ./onlyoffice.nix

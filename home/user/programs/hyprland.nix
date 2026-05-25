@@ -9,7 +9,6 @@
         "/usr/lib/polkit-kde-authentication-agent-1"
         "${pkgs-unstable.noctalia-shell}/bin/noctalia-shell" # idle daemon
         "${pkgs.hypridle}/bin/hypridle" # idle daemon
-        "[workspace 9 silent] keepassxc"
         "[workspace 9 silent] discord"
         "[workspace 0 silent] firefox"
       ];

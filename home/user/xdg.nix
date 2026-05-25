@@ -5,10 +5,10 @@ let
   image = "imv.desktop";
 in
 {
-  xdg.configFile."mimeapps.list".force = true;
 
   xdg = {
-    userDirs.enable = true;
+    autostart.enable = true;
+    configFile."mimeapps.list".force = true;
     mimeApps = {
       enable = true;
       defaultApplications = {
@@ -34,5 +34,6 @@ in
         "x-scheme-handler/tonsite" = telegram;
       };
     };
+    userDirs.enable = true;
   };
 }
