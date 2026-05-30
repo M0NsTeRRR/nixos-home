@@ -3,6 +3,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = with pkgs.hyprlandPlugins; [ ];
+    configType = "hyprlang";
     systemd.variables = [ "--all" ];
     settings = {
       exec-once = [
@@ -10,6 +11,7 @@
         "${pkgs-unstable.noctalia-shell}/bin/noctalia-shell" # idle daemon
         "${pkgs.hypridle}/bin/hypridle" # idle daemon
         "[workspace 9 silent] discord"
+        "[workspace 9 silent] keepassxc"
         "[workspace 0 silent] firefox"
       ];
 
@@ -90,7 +92,7 @@
         "$mainMod, A, exec, ${pkgs-unstable.noctalia-shell}/bin/noctalia-shell ipc call launcher toggle"
         "$mainMod, C, killactive,"
         "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, J, layoutmsg, togglesplit"
         "$mainMod, K, forcekillactive,"
         "$mainMod, L, exec, ${pkgs-unstable.noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock"
         "$mainMod, P, pseudo,"
@@ -136,8 +138,8 @@
 
       plugin = { };
 
-      windowrulev2 = [
-        "suppressevent maximize, class:.*"
+      windowrule = [
+        "match:class .*, suppress_event maximize"
       ];
 
       workspace = [

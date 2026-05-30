@@ -2,18 +2,13 @@
   description = "Ludovic Ortega Nix configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=2.93.3-2";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
     home-manager-stable = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

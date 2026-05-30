@@ -4,7 +4,6 @@
     enable = true;
     package = pkgs-unstable.opencode;
     settings = {
-      theme = "opencode";
       share = "disabled";
       autoupdate = false;
       permission = {
@@ -34,6 +33,10 @@
         "anthropic"
         "google"
       ];
+    };
+
+    tui = {
+      theme = "opencode";
     };
   };
 }

@@ -94,6 +94,7 @@ let
       playerctl # media player command-line controller
       gpu-screen-recorder-gtk
       deskflow # keyboard and mouse sharing app
+      pkgs.android-tools # for adb
 
       # app
       protonmail-desktop # email client for proton

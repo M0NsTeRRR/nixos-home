@@ -1,7 +1,6 @@
 {
   imports = [
     ../options.nix
-    ./adb.nix
     ./audio.nix
     ./battery.nix
     ./bluetooth.nix
@@ -15,6 +14,7 @@
     ./game.nix
     ./gpu-screen-recorder.nix
     ./internationalization.nix
+    ./lix.nix
     ./logind.nix
     ./network.nix
     ./nix-ld.nix

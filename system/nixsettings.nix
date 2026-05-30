@@ -4,7 +4,7 @@
   ...
 }:
 {
-  environment.systemPackages = [ pkgs.nixfmt-rfc-style ];
+  environment.systemPackages = [ pkgs.nixfmt ];
 
   documentation.nixos.enable = false;
 

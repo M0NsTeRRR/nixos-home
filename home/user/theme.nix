@@ -1,4 +1,9 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  config,
+  username,
+  ...
+}:
 {
   home.pointerCursor = {
     gtk.enable = true;
@@ -50,5 +55,7 @@
       "file:///home/${username}/Pictures Pictures"
       "file:///home/${username}/Videos Videos"
     ];
+
+    gtk4.theme = config.gtk.theme;
   };
 }
