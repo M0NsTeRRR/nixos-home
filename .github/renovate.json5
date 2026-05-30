@@ -1,9 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
+    "config:best-practices",
+    ":enableVulnerabilityAlerts",
     ":automergePr",
     ":automergePatch",
+    ":automergeDigest",
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
@@ -17,8 +19,9 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
+  "minimumReleaseAge": "3 days",
   "schedule": [
-    "before 9pm on friday",
+    "before 9pm on friday"
   ],
   "labels": [
     "dependencies",

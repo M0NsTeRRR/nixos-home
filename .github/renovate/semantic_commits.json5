@@ -4,7 +4,7 @@
     {
       "matchDatasources": ["nix"],
       "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "feat(container)!: ",
+      "commitMessagePrefix": "feat(nix)!: ",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
     },
@@ -12,7 +12,7 @@
       "matchDatasources": ["nix"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "semanticCommitScope": "container",
+      "semanticCommitScope": "nix",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
     },
@@ -20,7 +20,7 @@
       "matchDatasources": ["nix"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
-      "semanticCommitScope": "container",
+      "semanticCommitScope": "nix",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
     },
@@ -28,7 +28,7 @@
       "matchDatasources": ["nix"],
       "matchUpdateTypes": ["digest"],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "container",
+      "semanticCommitScope": "nix",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )"
     },
