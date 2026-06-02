@@ -13,7 +13,7 @@ let
     ./kdeconnect.nix
   ];
 
-  sshAgentImports = if wslEnabled then [ ./ssh-agent-proxy.nix ] else [ ./ssh-agent.nix ];
+  sshAgentImports = if wslEnabled then [ ] else [ ./ssh-agent.nix ];
 in
 {
   imports = defaultImports ++ lib.optionals guiEnabled guiImports ++ sshAgentImports;

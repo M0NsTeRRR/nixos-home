@@ -18,8 +18,11 @@
     ../../home
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = username;
+  wsl = {
+    enable = true;
+    defaultUser = username;
+    ssh-agent.enable = true;
+  };
 
   environment.etc."resolv.conf".source = "/etc/resolv.conf";
 
