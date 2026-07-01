@@ -3,6 +3,7 @@ let
   defaultImports = [
     ./atuin.nix
     ./delta.nix
+    ./devenv.nix
     ./git.nix
     ./gpg.nix
     ./home-manager.nix
