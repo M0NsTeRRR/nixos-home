@@ -51,8 +51,11 @@ in
       };
 
       users.${username} = {
+        disabledModules = [ "programs/fish.nix" ];
         imports = [
           inputs.noctalia.homeModules.default
+          (inputs.home-manager-unstable + "/modules/programs/devenv.nix")
+          (inputs.home-manager-unstable + "/modules/programs/fish.nix")
           ./user
         ];
 
