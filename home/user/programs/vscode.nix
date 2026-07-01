@@ -12,7 +12,7 @@
         "dev.containers.dockerPath" = "podman";
         "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
         "editor.formatOnSave" = true;
-        "extensions.autoUpdate" = false;
+        "extensions.autoUpdate" = "off";
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
         "files.autoSave" = "onFocusChange";
