@@ -45,8 +45,6 @@ let
     kubernetes-helm
     fluxcd
     stern
-    packer
-    pulumi
     postgresql
     sqlite
     knot-dns # command-line DNS client
