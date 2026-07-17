@@ -1,10 +1,9 @@
-{ username, ... }:
+{ config, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
     ../../system
-    ../../system/thunderbolt.nix
     ../../home
   ];
 
@@ -13,6 +12,7 @@
   mySystem = {
     game.enable = true;
     nvidia.enable = true;
+    thunderbolt.enable = true;
     usbguard = {
       enable = true;
       rules = ''
@@ -48,7 +48,7 @@
     };
   };
 
-  home-manager.users.${username} = {
+  home-manager.users.${config.mySystem.user.name} = {
     wayland.windowManager.hyprland.settings = {
       monitor = [
         "DP-1,2560x1440@240.00Hz,0x0,1"

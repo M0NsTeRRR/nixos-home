@@ -1,11 +1,10 @@
-{ username, inputs, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
     ./disko.nix
     ../../system
-    ../../system/thunderbolt.nix
     ../../home
   ];
 
@@ -41,7 +40,7 @@
     };
   };
 
-  home-manager.users.${username} = {
+  home-manager.users.${config.mySystem.user.name} = {
     wayland.windowManager.hyprland.settings.monitor = [
       "eDP-1,highres,auto,2,bitdepth,10"
       ",preferred,auto,auto"

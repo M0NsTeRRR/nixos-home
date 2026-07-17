@@ -3,7 +3,6 @@
   pkgs,
   config,
   lib,
-  username,
   ...
 }:
 let
@@ -42,15 +41,15 @@ in
         inherit
           inputs
           pkgs-unstable
-          username
           wslEnabled
           ;
+        username = config.mySystem.user.name;
         guiEnabled = !wslEnabled;
         batteryEnabled = config.mySystem.battery.enable;
         nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };
 
-      users.${username} = {
+      users.${config.mySystem.user.name} = {
         disabledModules = [ "programs/fish.nix" ];
         imports = [
           inputs.noctalia.homeModules.default
@@ -62,8 +61,8 @@ in
         nixpkgs.config.allowUnfreePredicate = allowUnfreePredicate;
 
         home = {
-          username = "${username}";
-          homeDirectory = "/home/${username}";
+          username = "${config.mySystem.user.name}";
+          homeDirectory = "/home/${config.mySystem.user.name}";
         };
 
         # This value determines the NixOS release from which the default

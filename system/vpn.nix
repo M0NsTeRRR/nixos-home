@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  username,
   ...
 }:
 let
@@ -18,12 +17,12 @@ in
           "2a0c:b641:02c0:106::1"
           "unicornafk.fr"
         ];
-        privateKeyFile = "/home/${username}/wireguard-keys/homelab.priv";
+        privateKeyFile = "/home/${config.mySystem.user.name}/wireguard-keys/homelab.priv";
 
         peers = [
           {
             publicKey = "S8x303fQKjZ2DI+dhbf4y4fGMYgv90mvipgG8XF8rl4=";
-            presharedKeyFile = "/home/${username}/wireguard-keys/homelab.peer";
+            presharedKeyFile = "/home/${config.mySystem.user.name}/wireguard-keys/homelab.peer";
             allowedIPs = [
               "0.0.0.0/0"
               "::/0"

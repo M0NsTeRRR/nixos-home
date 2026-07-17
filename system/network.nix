@@ -1,6 +1,6 @@
-{ hostName, username, ... }:
+{ config, hostName, ... }:
 {
-  users.users.${username} = {
+  users.users.${config.mySystem.user.name} = {
     extraGroups = [ "networkmanager" ];
   };
 

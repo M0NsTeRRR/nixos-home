@@ -24,6 +24,7 @@
     ./security.nix
     ./solaar.nix
     ./ssh.nix
+    ./thunderbolt.nix
     ./usbguard.nix
     ./user.nix
     ./video.nix

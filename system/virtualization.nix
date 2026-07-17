@@ -1,6 +1,6 @@
-{ pkgs, username, ... }:
+{ config, pkgs, ... }:
 {
-  users.users.${username} = {
+  users.users.${config.mySystem.user.name} = {
     extraGroups = [ "libvirtd" ];
   };
 

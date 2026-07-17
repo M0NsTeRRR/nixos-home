@@ -1,18 +1,16 @@
-{ username, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.fish.enable = true;
 
   users.users.root.hashedPassword = "!";
 
-  users.groups.${username} = { };
-  users.users.${username} = {
+  users.groups.${config.mySystem.user.name} = { };
+  users.users.${config.mySystem.user.name} = {
     isNormalUser = true;
     initialPassword = "temp123";
-    group = username;
+    group = config.mySystem.user.name;
     shell = pkgs.fish;
     extraGroups = [ "wheel" ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvw79Nxlt23DXgQTglV7pw3HdHuTrDEWrlGTHhbWie1 ${username}"
-    ];
+    openssh.authorizedKeys.keys = config.mySystem.user.authorizedKeys;
   };
 }

@@ -58,7 +58,6 @@
       ...
     }@inputs:
     let
-      username = "lortega";
       hostNames = [
         "laptop"
         "desktop"
@@ -95,7 +94,6 @@
           specialArgs = {
             inherit
               hostName
-              username
               inputs
               ;
             # pkgs-unstable avec la configuration unfree

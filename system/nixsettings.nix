@@ -1,6 +1,6 @@
 {
+  config,
   pkgs,
-  username,
   ...
 }:
 {
@@ -10,7 +10,7 @@
 
   nix = {
     settings = {
-      trusted-users = [ username ];
+      trusted-users = [ config.mySystem.user.name ];
 
       experimental-features = [
         "nix-command"

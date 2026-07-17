@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     cifs-utils
@@ -11,7 +11,7 @@
       commonMountOptions = {
         type = "cifs";
         mountConfig = {
-          Options = "noatime,rw,credentials=/home/${username}/cifs/credentials";
+          Options = "noatime,rw,credentials=/home/${config.mySystem.user.name}/cifs/credentials";
         };
       };
     in

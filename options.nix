@@ -21,6 +21,11 @@
       default = false;
       description = "Enable solaar.";
     };
+    thunderbolt.enable = lib.mkOption {
+      type = with lib.types; bool;
+      default = false;
+      description = "Enable thunderbolt.";
+    };
     usbguard = {
       enable = lib.mkOption {
         type = with lib.types; bool;
@@ -32,6 +37,20 @@
         default = "";
         example = [ ];
         description = "USBGuard rules.";
+      };
+    };
+    user = {
+      name = lib.mkOption {
+        type = with lib.types; str;
+        default = "lortega";
+        description = "Configure your user.";
+      };
+      authorizedKeys = lib.mkOption {
+        type = with lib.types; listOf singleLineStr;
+        default = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvw79Nxlt23DXgQTglV7pw3HdHuTrDEWrlGTHhbWie1 lortega"
+        ];
+        description = "SSH public keys to authorize for this user.";
       };
     };
     vpn = {

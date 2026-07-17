@@ -1,5 +1,5 @@
 {
-  username,
+  config,
   inputs,
   pkgs,
   ...
@@ -20,7 +20,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = username;
+    defaultUser = config.mySystem.user.name;
     ssh-agent.enable = true;
   };
 
