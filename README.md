@@ -1,5 +1,10 @@
 # Install
 
+## nixos-anywhere
+
+1. Ensure you fullfill the steps required to run nixos-anywhere https://nix-community.github.io/nixos-anywhere/quickstart.html#steps-required-to-run-nixos-anywhere
+2. Run `nix run github:nix-community/nixos-anywhere -- --flake github:m0nsterrr/nixos-home#<hostname> --target-host root@<ip address>`
+
 ## Classic
 
 1. Flash NixOS ISO Image to an USB stick
