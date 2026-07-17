@@ -11,6 +11,11 @@
       default = false;
       description = "Enable Game.";
     };
+    gui.enable = lib.mkOption {
+      type = with lib.types; bool;
+      default = true;
+      description = "Enable GUI.";
+    };
     nvidia.enable = lib.mkOption {
       type = with lib.types; bool;
       default = false;

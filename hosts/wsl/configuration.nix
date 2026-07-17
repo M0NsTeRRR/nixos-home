@@ -30,4 +30,6 @@
   environment.systemPackages = [
     pkgs.wget
   ];
+
+  system.stateVersion = "24.05";
 }

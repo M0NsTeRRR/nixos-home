@@ -46,4 +46,6 @@
       ",preferred,auto,auto"
     ];
   };
+
+  system.stateVersion = "24.05";
 }

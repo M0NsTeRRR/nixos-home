@@ -13,7 +13,6 @@ let
     builtins.elem (lib.getName pkg) [
       "discord"
       "google-chrome"
-      "packer"
       "spotify"
       "vscode"
       "vscode-extension-ms-vscode-remote-remote-ssh"
@@ -44,7 +43,7 @@ in
           wslEnabled
           ;
         username = config.mySystem.user.name;
-        guiEnabled = !wslEnabled;
+        guiEnabled = !wslEnabled && config.mySystem.gui.enable;
         batteryEnabled = config.mySystem.battery.enable;
         nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };
@@ -52,10 +51,12 @@ in
       users.${config.mySystem.user.name} = {
         disabledModules = [ "programs/fish.nix" ];
         imports = [
-          inputs.noctalia.homeModules.default
           (inputs.home-manager-unstable + "/modules/programs/devenv.nix")
           (inputs.home-manager-unstable + "/modules/programs/fish.nix")
           ./user
+        ]
+        ++ lib.optionals (inputs ? noctalia) [
+          inputs.noctalia.homeModules.default
         ];
 
         nixpkgs.config.allowUnfreePredicate = allowUnfreePredicate;
