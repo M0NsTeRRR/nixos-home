@@ -546,6 +546,20 @@
         startup = "";
         session = "";
       };
+      idle = {
+        enabled = true;
+        screenOffTimeout = 150;
+        lockTimeout = 300;
+        suspendTimeout = 1800;
+        fadeDuration = 5;
+        screenOffCommand = "";
+        lockCommand = "";
+        suspendCommand = "";
+        resumeScreenOffCommand = "";
+        resumeLockCommand = "";
+        resumeSuspendCommand = "";
+        customCommands = "[]";
+      };
       desktopWidgets = {
         enabled = false;
         gridSnap = false;

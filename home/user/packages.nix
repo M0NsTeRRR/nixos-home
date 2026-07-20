@@ -67,21 +67,17 @@ let
   guiPackages =
     (with pkgs; [
       # DE (Desktop Environment) - stable
-      hyprland # dynamic tiling Wayland compositor
-      xdg-desktop-portal-hyprland # Hyprland XDG Desktop Portal
       hyprpicker # color picker
-      hyprcursor # cursor
-      hypridle # idle daemon
       hyprshot # screenshot utility
       hyprpolkitagent # polkit authentication
-      # hyprland-qtutils
-      kdePackages.polkit-kde-agent-1 # authentication agent
       nemo # file manager
       nerd-fonts.jetbrains-mono # nerdfonts font
       qt6.qtwayland
       qt5.qtwayland
     ])
     ++ (with pkgs-unstable; [
+      hyprland # dynamic tiling Wayland compositor
+
       # dev tools
       hoppscotch # open-source alternative to Postman
       wireshark

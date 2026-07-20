@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, config, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -49,25 +49,30 @@
   };
 
   home-manager.users.${config.mySystem.user.name} = {
-    wayland.windowManager.hyprland.settings = {
-      monitor = [
-        "DP-1,2560x1440@240.00Hz,0x0,1"
-        "DP-2,2560x1440@144.00Hz,-2560x0,1"
-        ",preferred,auto,auto"
-      ];
-      workspace = [
-        "1,monitor:DP-1"
-        "2,monitor:DP-1"
-        "3,monitor:DP-1"
-        "4,monitor:DP-1"
-        "5,monitor:DP-1"
-        "6,monitor:DP-1"
-        "7,monitor:DP-1"
-        "8,monitor:DP-1"
-        "9,monitor:DP-2"
-        "10,monitor:DP-2"
-      ];
-    };
+    wayland.windowManager.hyprland.extraConfig = lib.concatStringsSep "\n" [
+      ''
+        -----------------------
+        ---- MONITORS ---------
+        -----------------------
+        hl.monitor({ output = "DP-1", mode = "2560x1440@240.00", position = "0x0",     scale = 1 })
+        hl.monitor({ output = "DP-2", mode = "2560x1440@144.00", position = "-2560x0", scale = 1 })
+        hl.monitor({ output = "",     mode = "preferred",        position = "auto",    scale = "auto" })
+
+        -----------------------
+        ---- WORKSPACES -------
+        -----------------------
+        hl.workspace_rule({ workspace = "1",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "2",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "3",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "4",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "5",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "6",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "7",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "8",  monitor = "DP-1", persistent = true })
+        hl.workspace_rule({ workspace = "9",  monitor = "DP-2", persistent = true })
+        hl.workspace_rule({ workspace = "10", monitor = "DP-2", persistent = true })
+      ''
+    ];
   };
 
   system.stateVersion = "24.05";

@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -41,9 +46,29 @@
   };
 
   home-manager.users.${config.mySystem.user.name} = {
-    wayland.windowManager.hyprland.settings.monitor = [
-      "eDP-1,highres,auto,2,bitdepth,10"
-      ",preferred,auto,auto"
+    wayland.windowManager.hyprland.extraConfig = lib.concatStringsSep "\n" [
+      ''
+        -----------------------
+        ---- MONITORS ---------
+        -----------------------
+        hl.monitor({ output = "DP-1", mode = "2560x1440@240.00", position = "0x0",     scale = 1 })
+        hl.monitor({ output = "DP-2", mode = "2560x1440@144.00", position = "-2560x0", scale = 1 })
+        hl.monitor({ output = "",     mode = "preferred",        position = "auto",    scale = "auto" })
+
+        -----------------------
+        ---- WORKSPACES -------
+        -----------------------
+        hl.workspace_rule({ workspace = "1",  persistent = true })
+        hl.workspace_rule({ workspace = "2",  persistent = true })
+        hl.workspace_rule({ workspace = "3",  persistent = true })
+        hl.workspace_rule({ workspace = "4",  persistent = true })
+        hl.workspace_rule({ workspace = "5",  persistent = true })
+        hl.workspace_rule({ workspace = "6",  persistent = true })
+        hl.workspace_rule({ workspace = "7",  persistent = true })
+        hl.workspace_rule({ workspace = "8",  persistent = true })
+        hl.workspace_rule({ workspace = "9",  persistent = true })
+        hl.workspace_rule({ workspace = "10", persistent = true })
+      ''
     ];
   };
 
