@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs-unstable, mySystem, ... }:
 {
   programs.git = {
     enable = true;
@@ -6,7 +6,7 @@
     settings = {
       user = {
         name = "Ludovic Ortega";
-        email = "ludovic.ortega@adminafk.fr";
+        email = mySystem.git.email;
       };
       core.editor = "vi";
       ui.color = true;
@@ -15,7 +15,7 @@
       pull.ff = "only";
     };
     signing = {
-      key = "81E390A404C7D583A6D6958E22F86C9B1BEC401D";
+      key = mySystem.git.signingKey;
       signByDefault = true;
     };
   };

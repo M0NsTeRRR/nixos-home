@@ -11,6 +11,18 @@
       default = false;
       description = "Enable Game.";
     };
+    git = {
+      email = lib.mkOption {
+        type = with lib.types; str;
+        default = "ludovic.ortega@adminafk.fr";
+        description = "Git email.";
+      };
+      signingKey = lib.mkOption {
+        type = with lib.types; str;
+        default = "81E390A404C7D583A6D6958E22F86C9B1BEC401D";
+        description = "Git signing key.";
+      };
+    };
     gui.enable = lib.mkOption {
       type = with lib.types; bool;
       default = true;

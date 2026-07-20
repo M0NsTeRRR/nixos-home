@@ -42,9 +42,8 @@ in
           pkgs-unstable
           wslEnabled
           ;
-        username = config.mySystem.user.name;
+        mySystem = config.mySystem;
         guiEnabled = !wslEnabled && config.mySystem.gui.enable;
-        batteryEnabled = config.mySystem.battery.enable;
         nvidiaEnabled = lib.elem "nvidia" config.services.xserver.videoDrivers;
       };
 

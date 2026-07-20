@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  username,
+  mySystem,
   ...
 }:
 {
@@ -47,13 +47,13 @@
     };
 
     gtk3.bookmarks = [
-      "file:///home/${username}/Desktop Desktop"
-      "file:///home/${username}/Documents Documents"
-      "file:///home/${username}/Downloads Downloads"
-      "file:///home/${username}/Github Github"
-      "file:///home/${username}/Music Music"
-      "file:///home/${username}/Pictures Pictures"
-      "file:///home/${username}/Videos Videos"
+      "file:///home/${mySystem.user.name}/Desktop Desktop"
+      "file:///home/${mySystem.user.name}/Documents Documents"
+      "file:///home/${mySystem.user.name}/Downloads Downloads"
+      "file:///home/${mySystem.user.name}/Github Github"
+      "file:///home/${mySystem.user.name}/Music Music"
+      "file:///home/${mySystem.user.name}/Pictures Pictures"
+      "file:///home/${mySystem.user.name}/Videos Videos"
     ];
 
     gtk4.theme = config.gtk.theme;

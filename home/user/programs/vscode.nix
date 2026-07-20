@@ -1,4 +1,4 @@
-{ pkgs-unstable, username, ... }:
+{ pkgs-unstable, mySystem, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -16,10 +16,10 @@
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
         "files.autoSave" = "onFocusChange";
-        "files.dialog.defaultPath" = "/home/${username}/Github";
+        "files.dialog.defaultPath" = "/home/${mySystem.user.name}/Github";
         "git.autofetch" = true;
         "git.confirmSync" = false;
-        "git.defaultCloneDirectory" = "/home/${username}/Github";
+        "git.defaultCloneDirectory" = "/home/${mySystem.user.name}/Github";
         "git.replaceTagsWhenPull" = true;
         "go.lintTool" = "golangci-lint";
         "go.lintFlags" = [

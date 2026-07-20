@@ -1,5 +1,5 @@
 {
-  batteryEnabled,
+  mySystem,
   pkgs-unstable,
   lib,
   ...
@@ -115,7 +115,7 @@
               id = "VPN";
             }
           ]
-          ++ lib.optional batteryEnabled {
+          ++ lib.optional mySystem.battery.enable {
             displayMode = "onhover";
             iconColor = "none";
             id = "Brightness";
