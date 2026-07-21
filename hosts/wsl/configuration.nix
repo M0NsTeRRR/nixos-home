@@ -18,6 +18,10 @@
     ../../home
   ];
 
+  mySystem = {
+    stateVersion = "24.05";
+  };
+
   wsl = {
     enable = true;
     defaultUser = config.mySystem.user.name;
@@ -30,6 +34,4 @@
   environment.systemPackages = [
     pkgs.wget
   ];
-
-  system.stateVersion = "24.05";
 }

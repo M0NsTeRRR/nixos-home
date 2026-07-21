@@ -38,6 +38,10 @@
       default = false;
       description = "Enable solaar.";
     };
+    stateVersion = lib.mkOption {
+      type = with lib.types; str;
+      description = "Pinned version shared by system.stateVersion and home.stateVersion.";
+    };
     thunderbolt.enable = lib.mkOption {
       type = with lib.types; bool;
       default = false;

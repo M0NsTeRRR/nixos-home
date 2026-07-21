@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   imports = [
     ../options.nix
@@ -31,4 +32,6 @@
     ./virtualization.nix
     ./vpn.nix
   ];
+
+  system.stateVersion = config.mySystem.stateVersion;
 }

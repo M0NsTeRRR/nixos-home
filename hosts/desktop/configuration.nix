@@ -46,6 +46,8 @@
     solaar = {
       enable = true;
     };
+
+    stateVersion = "24.05";
   };
 
   home-manager.users.${config.mySystem.user.name} = {
@@ -74,6 +76,4 @@
       ''
     ];
   };
-
-  system.stateVersion = "24.05";
 }
