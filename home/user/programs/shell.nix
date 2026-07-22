@@ -7,7 +7,7 @@
     k = "kubectl";
     top = "btop";
     jq = "yq";
-    tree = "lstr";
+    tree = "lstr --icons";
   };
 
   programs.fish = {

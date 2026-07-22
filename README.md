@@ -1,10 +1,5 @@
 # Install
 
-## nixos-anywhere
-
-1. Ensure you fullfill the steps required to run nixos-anywhere https://nix-community.github.io/nixos-anywhere/quickstart.html#steps-required-to-run-nixos-anywhere
-2. Run `nix run github:nix-community/nixos-anywhere -- --flake github:m0nsterrr/nixos-home#<hostname> --target-host root@<ip address>`
-
 ## Classic
 
 1. Flash NixOS ISO Image to an USB stick
@@ -21,19 +16,15 @@
         enable_network 0
         ```
 
-4. Install NixOS
+4. Ensure you fullfill the steps required to run nixos-anywhere https://nix-community.github.io/nixos-anywhere/quickstart.html#steps-required-to-run-nixos-anywhere
+5. Install NixOS
 
    ```bash
    export NIX_CONFIG="experimental-features = nix-command flakes"
-   nix flake new -t github:m0nsterrr/nixos-home ./nixos-home && cd nixos-home
-   sudo nix run github:nix-community/disko -- --mode disko --flake github:m0nsterrr/nixos-home#<hostname>
-   # Don't forget to whitelist your USB devices on USBGuard otherwise you will not be able to login.
-   sudo nixos-install --flake .#hostname
+   nix run github:nix-community/nixos-anywhere -- --flake github:m0nsterrr/nixos-home#<hostname> --target-host root@<ip address>
    ```
 
-5. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !
-
-6. GG 🥳
+6. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !🥳
 
 ## WSL
 
