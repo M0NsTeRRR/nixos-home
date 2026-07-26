@@ -3,9 +3,9 @@
 
   inputs = {
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -23,7 +23,7 @@
     };
 
     disko = {
-      url = "github:nix-community/disko";
+      url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -33,7 +33,7 @@
     };
 
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      url = "github:numtide/treefmt-nix/main";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -96,7 +96,6 @@
               hostName
               inputs
               ;
-            # pkgs-unstable avec la configuration unfree
             pkgs-unstable = import nixpkgs-unstable {
               inherit system;
               config.allowUnfreePredicate = allowUnfreePredicate;
@@ -104,7 +103,6 @@
           };
           modules = [
             ./hosts
-            # Configuration unfree pour nixpkgs stable
             { nixpkgs.config.allowUnfreePredicate = allowUnfreePredicate; }
           ];
         }

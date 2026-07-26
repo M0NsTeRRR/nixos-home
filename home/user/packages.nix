@@ -6,7 +6,6 @@
   ...
 }:
 let
-  # Packages CLI/serveur uniquement (pas de GUI)
   cliPackages = with pkgs-unstable; [
     # dev
     vim
