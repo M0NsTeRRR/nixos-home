@@ -71,8 +71,6 @@
         # kubernetes
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-azuretools.vscode-containers
-        # presentation with plain Markdown
-        antfu.slidev
         # misc
         eamodio.gitlens
         jnoortheen.nix-ide
