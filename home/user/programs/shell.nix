@@ -8,6 +8,7 @@
     top = "btop";
     jq = "yq";
     tree = "lstr --icons";
+    dig = "kdig";
   };
 
   programs.fish = {
