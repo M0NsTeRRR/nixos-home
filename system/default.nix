@@ -18,6 +18,7 @@
     ./lix.nix
     ./logind.nix
     ./network.nix
+    ./nh.nix
     ./nix-ld.nix
     ./nixsettings.nix
     ./nvidia.nix

@@ -78,6 +78,7 @@ Enable ssh agent support for OpenSSH on keepassXC
 
    ```bash
    sudo nixos-rebuild switch --flake github:m0nsterrr/nixos-home#<hostname>
+   sudo nh os switch github:m0nsterrr/nixos-home -H <hostname>
    ```
 
 # Update dependencies

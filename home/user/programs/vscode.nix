@@ -16,10 +16,10 @@
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
         "files.autoSave" = "onFocusChange";
-        "files.dialog.defaultPath" = "/home/${mySystem.user.name}/Github";
+        "files.dialog.defaultPath" = "/home/${mySystem.user.name}/development";
         "git.autofetch" = true;
         "git.confirmSync" = false;
-        "git.defaultCloneDirectory" = "/home/${mySystem.user.name}/Github";
+        "git.defaultCloneDirectory" = "/home/${mySystem.user.name}/development";
         "git.replaceTagsWhenPull" = true;
         "go.lintTool" = "golangci-lint";
         "go.lintFlags" = [
