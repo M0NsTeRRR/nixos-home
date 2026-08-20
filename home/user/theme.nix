@@ -50,7 +50,7 @@
       "file:///home/${mySystem.user.name}/Desktop Desktop"
       "file:///home/${mySystem.user.name}/Documents Documents"
       "file:///home/${mySystem.user.name}/Downloads Downloads"
-      "file:///home/${mySystem.user.name}/Github Github"
+      "file:///home/${mySystem.user.name}/development Development"
       "file:///home/${mySystem.user.name}/Music Music"
       "file:///home/${mySystem.user.name}/Pictures Pictures"
       "file:///home/${mySystem.user.name}/Videos Videos"
