@@ -12,6 +12,11 @@
         "dev.containers.dockerPath" = "podman";
         "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
         "editor.formatOnSave" = true;
+        # https://code.visualstudio.com/api/references/vscode-api#CodeActionKind
+        "editor.codeActionsOnSave" = {
+          "source.organizeImports" = "always";
+          "source.fixAll" = "always";
+        };
         "extensions.autoUpdate" = "off";
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
