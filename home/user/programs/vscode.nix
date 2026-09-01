@@ -53,6 +53,7 @@
         "update.mode" = "none";
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
+        "workbench.colorTheme" = "Dark Modern";
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
