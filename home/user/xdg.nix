@@ -24,11 +24,16 @@ in
         "application/x-zerosize" = editor; # Empty files
         "application/x-trash" = editor; # Backup files
         "application/json" = editor;
+        "application/toml" = editor;
+        "application/yaml" = editor;
         "text/markdown" = editor;
 
         "inode/directory" = "nemo.desktop";
 
         "image/png" = image;
+        "image/jpg" = image;
+        "image/jpeg" = image;
+        "image/svg" = image;
 
         "x-scheme-handler/tg" = telegram;
         "x-scheme-handler/tonsite" = telegram;

@@ -1,9 +1,13 @@
+-----------------------------
+---- ENVIRONMENT VARIABLES --
+-----------------------------
+hl.env("SSH_AUTH_SOCK", os.getenv("XDG_RUNTIME_DIR") .. "/ssh-agent")
+
 -----------------------
 ---- AUTOSTART --------
 -----------------------
 hl.on("hyprland.start", function()
-  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
-  hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd("noctalia")
   hl.exec_cmd("discord", { workspace = 9 })
   hl.exec_cmd("keepassxc", { workspace = 9 })
   hl.exec_cmd("firefox", { workspace = 0 })
@@ -101,16 +105,16 @@ hl.device({
 local mainMod = "SUPER"
 
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o " .. os.getenv("HOME") .. "/Pictures"))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nemo"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 -- forcekillactive -> window.kill() (SIGKILL, sans attendre la fermeture propre)
 hl.bind(mainMod .. " + K", hl.dsp.window.kill())
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia-shell ipc call lockScreen lock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("ghostty"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("noctalia-shell ipc call launcher clipboard"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

@@ -68,7 +68,6 @@ let
       # DE (Desktop Environment) - stable
       hyprpicker # color picker
       hyprshot # screenshot utility
-      hyprpolkitagent # polkit authentication
       nemo # file manager
       nerd-fonts.jetbrains-mono # nerdfonts font
       qt6.qtwayland

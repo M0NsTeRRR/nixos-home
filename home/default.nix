@@ -75,5 +75,10 @@ in
         home.stateVersion = config.mySystem.stateVersion;
       };
     };
+
+    environment.pathsToLink = [
+      "/share/applications"
+      "/share/xdg-desktop-portal"
+    ];
   };
 }

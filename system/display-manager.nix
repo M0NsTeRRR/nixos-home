@@ -2,29 +2,21 @@
 {
   programs.hyprland.enable = true;
 
-  services.displayManager = {
-    defaultSession = "hyprland";
-    sddm = {
-      enable = true;
-      autoNumlock = true;
-      # needed for sddm theme (qt6 sddm version)
-      package = pkgs.kdePackages.sddm;
-      theme = "sddm-astronaut-theme";
-      enableHidpi = true;
-      wayland.enable = true;
-      extraPackages = with pkgs; [
-        sddm-astronaut
-      ];
+  programs.noctalia-greeter = {
+    enable = true;
+
+    settings = {
+      appearance = {
+        scheme = "Tokyo-Night";
+      };
+      cursor = {
+        theme = "Bibata-Modern-Classic";
+        size = 24;
+        path = "${pkgs.bibata-cursors}/share/icons";
+      };
+      keyboard.layout = "fr";
+      session.default = "Hyprland";
+      user.default = "lortega";
     };
   };
-
-  environment.systemPackages = [
-    (pkgs.sddm-astronaut.override {
-      themeConfig = {
-        AccentColor = "#B2D0E2";
-        FormPosition = "left";
-        ForceHideCompletePassword = true;
-      };
-    })
-  ];
 }
