@@ -16,7 +16,6 @@
           "bluetooth"
           "network"
           "brightness"
-          "clock"
           "battery"
           "notifications"
           "session"
@@ -31,6 +30,7 @@
         start = [
           "control-center"
           "launcher"
+          "clock"
           "privacy"
         ];
       };
@@ -183,6 +183,9 @@
       };
 
       widget = {
+        clock = {
+          format = "{: %d/%m/%Y - %H:%M}";
+        };
         control-center = {
           custom_image = "${pkgs-unstable.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
         };
