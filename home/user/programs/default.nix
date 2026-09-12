@@ -4,6 +4,7 @@ let
     ./atuin.nix
     ./delta.nix
     ./devenv.nix
+    ./gh.nix
     ./git.nix
     ./gpg.nix
     ./home-manager.nix
