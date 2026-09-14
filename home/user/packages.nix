@@ -31,6 +31,9 @@ let
     tealdeer # Very fast implementation of tldr in Rust
     hyperfine # benchmarking tool
     btop # A monitor of resources
+    syswatch
+    netwatch
+    diskwatch
     ripgrep
     kind
     cloud-provider-kind
