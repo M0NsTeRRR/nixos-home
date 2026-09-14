@@ -16,6 +16,7 @@
     ./gpu-screen-recorder.nix
     ./internationalization.nix
     ./lix.nix
+    ./localsend.nix
     ./logind.nix
     ./network.nix
     ./nh.nix
