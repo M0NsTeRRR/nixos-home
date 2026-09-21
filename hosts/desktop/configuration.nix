@@ -34,6 +34,7 @@
         allow id 0bda:1100 serial "" name "HID Device" hash "CSfaCwN7PxV4r3lixedS5SRSkt5CrxAWAUPOkTSZdro=" parent-hash "JrnQAEQOFCw4rfvQjkGslWM1/Hbc3vKzAWT7760mI1c=" via-port "1-11.2.5" with-interface 03:00:00 with-connect-type "unknown"
         allow id 046d:c094 serial "6EFB9182" name "PRO X Wireless" hash "R2n4+7shSxLVnokFaqYLICqzYcjylvKwoeZHGRa5bfg=" parent-hash "W6l+xvpLKIN6p2T3tTOGGy7Qm+zPESG43Fox/qV9OCE=" via-port "1-11.3" with-interface { 03:01:02 03:01:01 03:00:00 } with-connect-type "unknown"
         allow id 18d1:4ee1 serial "5A161FDCH001QU" name "Pixel 10 Pro" hash "kt8halcoC4acrofc0rkbTULafWQ4SB90b6RIBJgK6IA=" parent-hash "jEP/6WzviqdJ5VSeTUY8PatCNBKeaREvo2OqdplND/o=" via-port "1-8" with-interface 06:01:01 with-connect-type "hotplug"
+        allow id 1d6b:0104 serial "" name "USB Emulation Device" hash "a9rsFYACMcKj36wsObGrkwR3ICK/DCeMWtAZMs3mkck=" parent-hash "jEP/6WzviqdJ5VSeTUY8PatCNBKeaREvo2OqdplND/o=" via-port "1-7" with-interface { 03:01:01 03:00:02 03:01:02 08:06:50 } with-connect-type "hotplug"
       '';
     };
     vpn = {
