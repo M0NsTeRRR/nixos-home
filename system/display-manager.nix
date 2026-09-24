@@ -2,7 +2,7 @@
 {
   programs.hyprland.enable = true;
 
-  programs.noctalia-greeter = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
 
     settings = {
