@@ -50,6 +50,7 @@
         "terminal.integrated.initialHint" = false;
         "terminal.integrated.fontFamily" = "'JetBrainsMono NF'";
         "terminal.integrated.suggest.enabled" = false;
+        "terminal.integrated.stickyScroll.enabled" = false;
         "update.mode" = "none";
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
