@@ -3,6 +3,7 @@
   environment.systemPackages = [ pkgs.sbctl ];
 
   boot = {
+    initrd.systemd.enable = true;
     kernel.sysctl = {
       # ANSSI R9
       "kernel.dmesg_restrict" = 1;
@@ -52,6 +53,15 @@
       pkiBundle = "/var/lib/sbctl";
       autoGenerateKeys.enable = true;
       autoEnrollKeys.enable = true;
+      configurationLimit = 4;
+      measuredBoot = {
+        enable = true;
+        pcrs = [
+          0
+          4
+          7
+        ];
+      };
     };
   };
 }
