@@ -8,6 +8,10 @@
     enable = true;
 
     settings = {
+      audio = {
+        enable_sounds = false;
+      };
+
       bar.default = {
         center = [ "taskbar" ];
         end = [
