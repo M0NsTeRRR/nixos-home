@@ -28,10 +28,11 @@
         external_directory = "ask";
         doom_loop = "ask";
       };
-      plugin = [ "opencode-gemini-auth@latest" ];
+      plugin = [
+        "@dietrichgebert/ponytail:v4.10.0"
+      ];
       enabled_providers = [
         "anthropic"
-        "google"
       ];
     };
 
