@@ -30,6 +30,7 @@
       };
       plugin = [
         "@dietrichgebert/ponytail:v4.10.0"
+        "@obra/superpowers:v6.4.2"
       ];
       enabled_providers = [
         "anthropic"
