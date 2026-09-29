@@ -24,7 +24,9 @@
    nix run github:nix-community/nixos-anywhere -- --flake github:m0nsterrr/nixos-home#<hostname> --target-host root@<ip address>
    ```
 
-6. Reboot, login with `lortega` user with password `temp123` and don't forget to change it !🥳
+6. Reboot, login with `lortega` user with password `temp123` and don't forget to change it.
+7. [Complete the measured boot configuration by enrolling the policy](https://nix-community.github.io/lanzaboote/how-to-guides/enable-measured-boot.html#enroll-the-policy)
+8. 🥳
 
 ## WSL
 
