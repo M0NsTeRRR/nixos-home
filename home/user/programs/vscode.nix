@@ -55,6 +55,14 @@
         "update.showReleaseNotes" = false;
         "window.titleBarStyle" = "native";
         "workbench.colorTheme" = "Dark Modern";
+        "yaml.disableSchemaDetection" = [
+          "**/.github/workflows/*.yml"
+          "**/.github/workflows/*.yaml"
+          "**/.gitea/workflows/*.yml"
+          "**/.gitea/workflows/*.yaml"
+          "**/.forgejo/workflows/*.yml"
+          "**/.forgejo/workflows/*.yaml"
+        ];
       };
 
       extensions = with pkgs-unstable.vscode-extensions; [
