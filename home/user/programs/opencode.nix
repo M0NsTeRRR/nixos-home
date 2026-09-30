@@ -1,5 +1,7 @@
 { pkgs-unstable, ... }:
 {
+  home.packages = [ pkgs-unstable.claude-code ];
+
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
@@ -31,9 +33,10 @@
       plugin = [
         "@dietrichgebert/ponytail:v4.10.0"
         "@obra/superpowers:v6.4.2"
+        "@openchamber/opencode-claude@0.14"
       ];
       enabled_providers = [
-        "anthropic"
+        "claude-code"
       ];
     };
 
