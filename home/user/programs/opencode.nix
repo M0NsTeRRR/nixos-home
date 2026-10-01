@@ -31,8 +31,8 @@
         doom_loop = "ask";
       };
       plugin = [
-        "@dietrichgebert/ponytail:v4.10.0"
-        "@obra/superpowers:v6.4.2"
+        "@dietrichgebert/ponytail@v4.10.0"
+        "superpowers@git+https://github.com/obra/superpowers.git#v6.4.2"
         "@openchamber/opencode-claude@0.14"
       ];
       enabled_providers = [
