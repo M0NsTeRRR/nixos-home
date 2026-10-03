@@ -108,6 +108,7 @@ hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o " .. os.getenv("HOME") .
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nemo"))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 -- forcekillactive -> window.kill() (SIGKILL, sans attendre la fermeture propre)
 hl.bind(mainMod .. " + K", hl.dsp.window.kill())
