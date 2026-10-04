@@ -86,7 +86,6 @@ let
       # misc
       brightnessctl # controlling backlight
       playerctl # media player command-line controller
-      gpu-screen-recorder-gtk
       deskflow # keyboard and mouse sharing app
       pkgs.android-tools # for adb
 
