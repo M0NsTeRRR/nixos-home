@@ -141,6 +141,7 @@
       osd = {
         kinds = {
           media = false;
+          lock_keys = false;
         };
       };
 
