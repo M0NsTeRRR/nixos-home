@@ -11,12 +11,12 @@
         "dev.containers.dockerComposePath" = "podman-compose";
         "dev.containers.dockerPath" = "podman";
         "dev.containers.dockerSocketPath" = "/var/run/podman/podman.sock";
-        "editor.formatOnSave" = true;
         # https://code.visualstudio.com/api/references/vscode-api#CodeActionKind
         "editor.codeActionsOnSave" = {
           "source.organizeImports" = "always";
           "source.fixAll" = "always";
         };
+        "editor.formatOnSave" = true;
         "extensions.autoUpdate" = "off";
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
@@ -26,12 +26,6 @@
         "git.confirmSync" = false;
         "git.defaultCloneDirectory" = "/home/${mySystem.user.name}/development";
         "git.replaceTagsWhenPull" = true;
-        "go.lintTool" = "golangci-lint";
-        "go.lintFlags" = [
-          "--path-mode=abs"
-          "--fast-only"
-        ];
-        "go.formatTool" = "custom";
         "go.alternateTools" = {
           "customFormatter" = "golangci-lint";
         };
@@ -39,6 +33,12 @@
           "fmt"
           "--stdin"
         ];
+        "go.formatTool" = "custom";
+        "go.lintFlags" = [
+          "--path-mode=abs"
+          "--fast-only"
+        ];
+        "go.lintTool" = "golangci-lint";
         "python.languageServer" = "None";
         "python.missingPackage.severity" = "Error";
         "python.testing.pytestArgs" = [ "-vv" ];
