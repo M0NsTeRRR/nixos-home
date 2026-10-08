@@ -54,6 +54,8 @@
       "file:///home/${mySystem.user.name}/Music Music"
       "file:///home/${mySystem.user.name}/Pictures Pictures"
       "file:///home/${mySystem.user.name}/Videos Videos"
+      "file:///mnt/backup Backup"
+      "file:///mnt/multimedia Multimedia"
     ];
 
     gtk4.theme = config.gtk.theme;
