@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  users.users.${config.mySystem.user.name} = {
-    extraGroups = [ "libvirtd" ];
-  };
-
   environment.systemPackages = with pkgs; [
     podman-compose
     qemu
@@ -15,6 +11,16 @@
     win-spice
     virtio-win
   ];
+
+  users.users.${config.mySystem.user.name} = {
+    extraGroups = [ "libvirtd" ];
+  };
+
+  networking.firewall.trustedInterfaces = [ "virbr0" ];
+  networking.firewall.extraForwardRules = ''
+    iifname "virbr0" accept
+    oifname "virbr0" ct state { established, related } accept
+  '';
 
   virtualisation = {
     spiceUSBRedirection.enable = true;

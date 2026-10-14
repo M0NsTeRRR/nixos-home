@@ -19,6 +19,10 @@
     settings = {
       "org/cinnamon/desktop/applications/terminal".exec = "ghostty";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/virt-manager/virt-manager/connections" = {
+        uris = [ "qemu:///system" ];
+        autoconnect = [ "qemu:///system" ];
+      };
     };
   };
 
