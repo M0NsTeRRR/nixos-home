@@ -102,6 +102,7 @@ gpg --import-ownertrust < trust.asc
 Some static files must be manually setup :
 
 - `~/cifs/credentials`
+- `~/wireguard-keys/homelab.priv`
 - `~/wireguard-keys/homelab.peer`
 - `~/.kube/static-kubeconfigs/<files>`
 - `~/passwords.kdbx`
