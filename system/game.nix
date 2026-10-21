@@ -9,7 +9,7 @@
     environment.systemPackages = with pkgs; [
       steam-run
       protonup-ng
-      mangohud # monitoring FPS, temperatures, CPU/GPU load and more
+      goverlay # monitoring FPS, temperatures, CPU/GPU load and more
       heroic # epic, gog games
     ];
 
