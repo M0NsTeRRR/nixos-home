@@ -12,6 +12,7 @@
     ":timezone(Europe/Paris)",
     "github>m0nsterrr/nixos-home//.github/renovate/labels.json5",
     "github>m0nsterrr/nixos-home//.github/renovate/semantic_commits.json5",
+    "github>m0nsterrr/nixos-home//.github/renovate/opencode.json5",
   ],
   "lockFileMaintenance": {
     "enabled": true,
