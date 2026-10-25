@@ -27,6 +27,11 @@
           # disable translation popup panel
           "browser.translations.automaticallyPopup" = false;
 
+          # DNS over HTTPS via AdGuard
+          "network.trr.mode" = 2;
+          "network.trr.uri" = "https://dns.adguard-dns.com/dns-query";
+          "network.trr.excluded-domains" = "adminafk.fr,as212510.net,unicornafk.fr";
+
           # tell websites not to sell or share my data
           "privacy.globalprivacycontrol.enabled" = true;
 
