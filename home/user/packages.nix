@@ -96,7 +96,7 @@ let
       mpv # video player
       imv # image viewer
       qbittorrent # torrent
-      spotify # music
+      spotube # music
       telegram-desktop # messaging app
       google-chrome
 

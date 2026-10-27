@@ -15,7 +15,6 @@ let
       "discord"
       "discord-unwrapped"
       "google-chrome"
-      "spotify"
       "vscode"
       "vscode-extension-ms-vscode-remote-remote-ssh"
       "vscode-extension-ms-vscode-remote-remote-containers"
