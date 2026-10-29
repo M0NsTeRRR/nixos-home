@@ -45,6 +45,7 @@ let
     iperf
     kubectl
     kubernetes-helm
+    kubelogin-oidc
     fluxcd
     stern
     postgresql
