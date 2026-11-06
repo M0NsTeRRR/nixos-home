@@ -86,7 +86,7 @@
 
       plugins = [
         "@dietrichgebert/ponytail@v5.3.3"
-        "superpowers@git+https://github.com/obra/superpowers.git#v7.0.1"
+        "superpowers@git+https://github.com/obra/superpowers.git#v7.0.2"
         "@openchamber/opencode-claude@v1.7.0"
       ];
     };
