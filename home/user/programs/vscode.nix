@@ -26,6 +26,8 @@
         "git.confirmSync" = false;
         "git.defaultCloneDirectory" = "/home/${mySystem.user.name}/development";
         "git.replaceTagsWhenPull" = true;
+        "githubPullRequests.openPullLinks" = false;
+        "githubPullRequests.terminalLinksHandler" = "github";
         "go.alternateTools" = {
           "customFormatter" = "golangci-lint";
         };
