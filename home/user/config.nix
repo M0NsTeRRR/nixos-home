@@ -8,6 +8,7 @@ let
 
   guiFile = {
     ".cache/noctalia/wallpapers.json".source = "${configDir}/noctalia/wallpapers.json";
+    ".config/solaar/rules.yaml".source = "${configDir}/solaar/rules.yaml";
     ".config/wallpapers".source = "${configDir}/wallpapers";
     ".local/share/nemo".source = "${configDir}/nemo";
   };

@@ -1,0 +1,4 @@
+---
+- Rule:
+  - Key: [Screen Capture, pressed]
+  - Execute: [/etc/profiles/per-user/lortega/bin/hyprshot, -m, region, -o, /home/lortega/Pictures]
