@@ -85,6 +85,7 @@ hl.config({
   input = {
     kb_layout = "fr",
     kb_variant = "oss_latin9",
+    numlock_by_default = true,
     follow_mouse = 1,
     sensitivity = 0,
     touchpad = {
