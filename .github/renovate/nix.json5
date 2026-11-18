@@ -1,0 +1,19 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  customManagers: [
+    {
+      // fetchFromGitHub { owner; repo; rev = "<sha>"; } : suit la branche main
+      customType: 'regex',
+      managerFilePatterns: [
+        '/\\.nix$/',
+      ],
+      matchStrings: [
+        'fetchFromGitHub\\s*\\{[^}]*?owner\\s*=\\s*"(?<owner>[^"]+)";\\s*repo\\s*=\\s*"(?<repo>[^"]+)";\\s*rev\\s*=\\s*"(?<currentDigest>[a-f0-9]{40})";',
+      ],
+      depNameTemplate: '{{{owner}}}/{{{repo}}}',
+      packageNameTemplate: 'https://github.com/{{{owner}}}/{{{repo}}}',
+      datasourceTemplate: 'git-refs',
+      currentValueTemplate: 'main',
+    },
+  ],
+}

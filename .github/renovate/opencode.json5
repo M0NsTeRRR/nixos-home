@@ -1,24 +1,28 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "customManagers": [
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  customManagers: [
     {
-      "customType": "regex",
-      "fileMatch": ["home/user/programs/opencode\\.nix"],
-      "matchStrings": [
-        "\"(?<depName>@[\\w-]+/[\\w-]+)@v(?<currentValue>[\\d.]+)\""
+      customType: 'regex',
+      managerFilePatterns: [
+        '/home/user/programs/opencode\\.nix$/',
       ],
-      "datasourceTemplate": "npm",
-      "versioningTemplate": "npm",
-      "extractVersionTemplate": "^v?(?<version>.*)$"
+      matchStrings: [
+        '"(?<depName>@[\\w-]+/[\\w-]+)@v(?<currentValue>[\\d.]+)"',
+      ],
+      datasourceTemplate: 'npm',
+      versioningTemplate: 'npm',
+      extractVersionTemplate: '^v?(?<version>.*)$',
     },
     {
-      "customType": "regex",
-      "fileMatch": ["home/user/programs/opencode\\.nix"],
-      "matchStrings": [
-        "git\\+https://github\\.com/(?<depName>[\\w-]+/[\\w-]+)\\.git#v(?<currentValue>[\\d.]+)"
+      customType: 'regex',
+      managerFilePatterns: [
+        '/home/user/programs/opencode\\.nix$/',
       ],
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "semver"
-    }
-  ]
+      matchStrings: [
+        'git\\+https://github\\.com/(?<depName>[\\w-]+/[\\w-]+)\\.git#v(?<currentValue>[\\d.]+)',
+      ],
+      datasourceTemplate: 'github-tags',
+      versioningTemplate: 'semver',
+    },
+  ],
 }

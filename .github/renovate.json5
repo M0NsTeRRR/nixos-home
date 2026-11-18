@@ -1,30 +1,36 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":enableVulnerabilityAlerts",
-    ":automergePr",
-    ":automergePatch",
-    ":automergeDigest",
-    ":disableRateLimiting",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":timezone(Europe/Paris)",
-    "github>m0nsterrr/nixos-home//.github/renovate/labels.json5",
-    "github>m0nsterrr/nixos-home//.github/renovate/semantic_commits.json5",
-    "github>m0nsterrr/nixos-home//.github/renovate/opencode.json5",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:best-practices',
+    ':enableVulnerabilityAlerts',
+    ':automergePr',
+    ':automergePatch',
+    ':automergeDigest',
+    ':disableRateLimiting',
+    ':dependencyDashboard',
+    ':semanticCommits',
+    ':timezone(Europe/Paris)',
+    'github>m0nsterrr/nixos-home//.github/renovate/labels.json5',
+    'github>m0nsterrr/nixos-home//.github/renovate/semantic_commits.json5',
+    'github>m0nsterrr/nixos-home//.github/renovate/opencode.json5',
+    'github>m0nsterrr/nixos-home//.github/renovate/nix.json5',
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
+  lockFileMaintenance: {
+    enabled: true,
   },
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
-  "minimumReleaseAge": "3 days",
-  "schedule": [
-    "before 9pm on friday"
+  dependencyDashboard: {
+    title: 'Renovate Dashboard 🤖',
+  },
+  suppressNotifications: [
+    'prEditedNotification',
+    'prIgnoreNotification',
   ],
-  "labels": [
-    "dependencies",
-  ]
+  rebaseWhen: 'conflicted',
+  minimumReleaseAge: '3 days',
+  schedule: [
+    'before 9pm on friday',
+  ],
+  labels: [
+    'dependencies',
+  ],
 }
