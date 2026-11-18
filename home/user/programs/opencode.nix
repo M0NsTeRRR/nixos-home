@@ -1,4 +1,12 @@
-{ pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
+let
+  anthropic-skills = pkgs.fetchFromGitHub {
+    owner = "anthropics";
+    repo = "skills";
+    rev = "e4bb5d960d87126ff3b3a8af1a104b7db67560ba";
+    hash = "sha256-Gr9LatjawHHK9uKpoclWoiDHZ0NTpP3/4Pmeatl8p/Q=";
+  };
+in
 {
   home.packages = [ pkgs-unstable.claude-code ];
 
@@ -90,6 +98,8 @@
       ];
     };
   };
+
+  xdg.configFile."opencode/skills/skill-creator".source = "${anthropic-skills}/skills/skill-creator";
 
   xdg.configFile."opencode/cli.json".text = builtins.toJSON {
     "$schema" = "https://opencode.ai/v2/cli.json";
