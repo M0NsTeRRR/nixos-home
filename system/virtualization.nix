@@ -16,6 +16,14 @@
     extraGroups = [ "libvirtd" ];
   };
 
+  boot.binfmt = {
+    emulatedSystems = [
+      "aarch64-linux"
+    ];
+    # Static qemu + "F" flag: required so containers (podman) can run foreign-arch binaries
+    preferStaticEmulators = true;
+  };
+
   networking.firewall.trustedInterfaces = [ "virbr0" ];
   networking.firewall.extraForwardRules = ''
     iifname "virbr0" accept
